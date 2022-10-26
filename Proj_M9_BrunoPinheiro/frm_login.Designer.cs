@@ -40,20 +40,20 @@
             this.pnl_2 = new System.Windows.Forms.Panel();
             this.pnl_1 = new System.Windows.Forms.Panel();
             this.pnl_top = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_minimize = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pic_mostrar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pic_ocultado = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_minimize = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.pic_password = new System.Windows.Forms.PictureBox();
             this.pic_username = new System.Windows.Forms.PictureBox();
             this.pnl_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_mostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ocultado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_username)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,7 @@
             this.lbl_registrar.Size = new System.Drawing.Size(177, 15);
             this.lbl_registrar.TabIndex = 42;
             this.lbl_registrar.Text = "Ainda não tem conta? Registre-se";
+            this.lbl_registrar.Click += new System.EventHandler(this.lbl_registrar_Click);
             // 
             // lbl_invalido
             // 
@@ -145,8 +146,9 @@
             // 
             this.btn_login.BackColor = System.Drawing.Color.White;
             this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_login.FlatAppearance.BorderSize = 3;
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.Black;
             this.btn_login.Location = new System.Drawing.Point(90, 387);
             this.btn_login.Name = "btn_login";
@@ -159,11 +161,11 @@
             // lbl_login
             // 
             this.lbl_login.AutoSize = true;
-            this.lbl_login.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_login.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_login.Location = new System.Drawing.Point(99, 175);
+            this.lbl_login.Location = new System.Drawing.Point(90, 173);
             this.lbl_login.Name = "lbl_login";
-            this.lbl_login.Size = new System.Drawing.Size(129, 40);
+            this.lbl_login.Size = new System.Drawing.Size(145, 38);
             this.lbl_login.TabIndex = 34;
             this.lbl_login.Text = "LOG IN";
             // 
@@ -196,44 +198,6 @@
             this.pnl_top.Size = new System.Drawing.Size(337, 28);
             this.pnl_top.TabIndex = 43;
             this.pnl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_top_MouseDown);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btn_minimize
-            // 
-            this.btn_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimize.FlatAppearance.BorderSize = 0;
-            this.btn_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimize.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.minus__3___1_;
-            this.btn_minimize.Location = new System.Drawing.Point(278, 0);
-            this.btn_minimize.Name = "btn_minimize";
-            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
-            this.btn_minimize.TabIndex = 8;
-            this.btn_minimize.UseVisualStyleBackColor = true;
-            this.btn_minimize.Click += new System.EventHandler(this.btn_minimize_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.close__1___1_;
-            this.btn_close.Location = new System.Drawing.Point(306, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(31, 28);
-            this.btn_close.TabIndex = 7;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label1
             // 
@@ -282,6 +246,44 @@
             this.pic_ocultado.TabStop = false;
             this.pic_ocultado.Visible = false;
             this.pic_ocultado.Click += new System.EventHandler(this.pic_ocultado_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_minimize
+            // 
+            this.btn_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimize.FlatAppearance.BorderSize = 0;
+            this.btn_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimize.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.minus__3___1_;
+            this.btn_minimize.Location = new System.Drawing.Point(278, 0);
+            this.btn_minimize.Name = "btn_minimize";
+            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
+            this.btn_minimize.TabIndex = 8;
+            this.btn_minimize.UseVisualStyleBackColor = true;
+            this.btn_minimize.Click += new System.EventHandler(this.btn_minimize_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.close__1___1_;
+            this.btn_close.Location = new System.Drawing.Point(306, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(31, 28);
+            this.btn_close.TabIndex = 7;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // pic_password
             // 
@@ -334,10 +336,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_login_FormClosed);
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_mostrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ocultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_username)).EndInit();
             this.ResumeLayout(false);

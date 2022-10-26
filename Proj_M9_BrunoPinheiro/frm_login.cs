@@ -49,7 +49,8 @@ namespace Proj_M9_BrunoPinheiro
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frm_sair frm_sair = new frm_sair();
+            frm_sair.Show();
         }
 
         private void lbl_limpar_Click(object sender, EventArgs e)
@@ -134,8 +135,10 @@ namespace Proj_M9_BrunoPinheiro
 
             if (count == 1)
             {
+                frm_menu frm_menu = new frm_menu();
+                frm_menu.Show();
                 this.Hide();
-                MessageBox.Show("Log in concluido com sucesso.", "Log in - CUF Descobertas");
+                MessageBox.Show("Log in concluido com sucesso.", "Snake - Log in");
             }
             else
             {
@@ -169,6 +172,13 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_limpar.Visible = true;
                 lbl_limpar.Enabled = true;
             }
+        }
+
+        private void lbl_registrar_Click(object sender, EventArgs e)
+        {
+            frm_signin frm_signin = new frm_signin();
+            frm_signin.Show();
+            this.Hide();
         }
     }
 }

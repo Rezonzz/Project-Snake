@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_top = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_close = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_close = new System.Windows.Forms.Button();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(69, 64);
+            this.label2.Location = new System.Drawing.Point(65, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(210, 50);
             this.label2.TabIndex = 14;
@@ -108,6 +108,16 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Sair da Aplicação";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.question;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_close
             // 
             this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -121,16 +131,6 @@
             this.btn_close.TabIndex = 6;
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.question;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // frm_sair
             // 
