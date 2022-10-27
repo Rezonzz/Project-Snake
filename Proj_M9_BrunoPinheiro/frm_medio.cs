@@ -308,7 +308,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "I scored: " + score + " and my highscore is " + highScore + " on the Snake";
+            caption.Text = "Pontuação de: " + score + " e maior pontuação de: " + highScore + " no Jogo do Snake";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
             caption.ForeColor = Color.White;
             caption.AutoSize = false;

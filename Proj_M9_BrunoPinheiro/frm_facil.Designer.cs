@@ -34,6 +34,7 @@
             this.lbl_highscore = new System.Windows.Forms.Label();
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
             this.mst_snake = new System.Windows.Forms.MenuStrip();
+            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dificuldadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,8 +43,9 @@
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_prima = new System.Windows.Forms.Label();
-            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pic_canvas = new System.Windows.Forms.PictureBox();
+            this.lbl_timer = new System.Windows.Forms.Label();
+            this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.mst_snake.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +97,15 @@
             this.mst_snake.TabIndex = 76;
             this.mst_snake.Text = "mst_top";
             this.mst_snake.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mst_snake_MouseDown);
+            // 
+            // snakeToolStripMenuItem
+            // 
+            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
+            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
+            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
+            this.snakeToolStripMenuItem.Text = "Snake";
             // 
             // tsmi_menu
             // 
@@ -170,15 +181,6 @@
             this.lbl_prima.TabIndex = 77;
             this.lbl_prima.Text = "Prima \"Enter\" para começar / Prima \"S\" para tirar um Screenshot";
             // 
-            // snakeToolStripMenuItem
-            // 
-            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
-            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
-            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
-            this.snakeToolStripMenuItem.Text = "Snake";
-            // 
             // pic_canvas
             // 
             this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -189,12 +191,28 @@
             this.pic_canvas.TabStop = false;
             this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             // 
+            // lbl_timer
+            // 
+            this.lbl_timer.AutoSize = true;
+            this.lbl_timer.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_timer.Location = new System.Drawing.Point(617, 156);
+            this.lbl_timer.Name = "lbl_timer";
+            this.lbl_timer.Size = new System.Drawing.Size(146, 33);
+            this.lbl_timer.TabIndex = 78;
+            this.lbl_timer.Text = "00 : 00 . 00";
+            // 
+            // tmr_temp
+            // 
+            this.tmr_temp.Enabled = true;
+            this.tmr_temp.Tick += new System.EventHandler(this.tmr_temp_Tick);
+            // 
             // frm_facil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.lbl_prima);
             this.Controls.Add(this.mst_snake);
             this.Controls.Add(this.pic_canvas);
@@ -206,6 +224,7 @@
             this.Name = "frm_facil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake - Modo Fácil";
+            this.Load += new System.EventHandler(this.frm_facil_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.mst_snake.ResumeLayout(false);
@@ -231,5 +250,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_logout;
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
         private System.Windows.Forms.Label lbl_prima;
+        private System.Windows.Forms.Label lbl_timer;
+        private System.Windows.Forms.Timer tmr_temp;
     }
 }

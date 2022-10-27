@@ -9,16 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace Proj_M9_BrunoPinheiro
 {
     public partial class frm_facil : Form
     {
-
+        Stopwatch stopWatch;
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
         int maxWidth, maxHeight, score, highScore, maxWidthS, maxHeightS;
+        string time, highTime;
 
         Random rand = new Random();
 
@@ -75,6 +77,31 @@ namespace Proj_M9_BrunoPinheiro
             }
         }
 
+        private void frm_facil_Load(object sender, EventArgs e)
+        {
+            stopWatch = new Stopwatch();
+        }
+
+        private void StartTimer()
+        {
+            stopWatch.Start();
+        }
+
+        private void StopTimer()
+        {
+            stopWatch.Stop();
+        }
+
+        private void ResetTimer()
+        {
+            stopWatch.Reset();
+        }
+
+        private void tmr_temp_Tick(object sender, EventArgs e)
+        {
+            lbl_timer.Text = String.Format("{0:mm\\:ss\\.ff}", stopWatch.Elapsed);
+        }
+
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -108,6 +135,7 @@ namespace Proj_M9_BrunoPinheiro
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+
         private void tsmi_medio_Click(object sender, EventArgs e)
         {
             frm_medio frm_medio = new frm_medio();
@@ -131,12 +159,13 @@ namespace Proj_M9_BrunoPinheiro
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "I scored: " + score + " and my highscore is " + highScore + " on the Snake";
+            caption.Text = "Pontuação de: " + score + " em " + time + " e Maior Pontuação de: " + highScore + " em " + highTime + " no Jogo do Snake";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
-            caption.ForeColor = Color.White;
+            caption.ForeColor = Color.RoyalBlue;
+            caption.BackColor = Color.Transparent;
             caption.AutoSize = false;
             caption.Width = pic_canvas.Width;
-            caption.Height = 30;
+            caption.Height = 60;
             caption.TextAlign = ContentAlignment.MiddleCenter;
             pic_canvas.Controls.Add(caption);
 
@@ -290,6 +319,8 @@ namespace Proj_M9_BrunoPinheiro
             maxHeight = pic_canvas.Height / Settings.Height - 1;
 
             Snake.Clear();
+            ResetTimer();
+            StartTimer();
             lbl_prima.Visible = false;
             score = 0;
             lbl_score.Text = "Pontuação: " + score;
@@ -327,11 +358,13 @@ namespace Proj_M9_BrunoPinheiro
         private void GameOver()
         {
             tmr_game.Stop();
-
+            StopTimer();
+            time = lbl_timer.Text;
             if (score > highScore)
             {
                 highScore = score;
                 lbl_highscore.Text = "Maior pontuação: " + highScore;
+                highTime = time;
             }
             lbl_prima.Visible = true;
         }
