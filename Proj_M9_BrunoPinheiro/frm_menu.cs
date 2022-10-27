@@ -128,5 +128,11 @@ namespace Proj_M9_BrunoPinheiro
             frm_dificuldade.Show();
             this.Hide();
         }
+
+        private void pic_info_Click(object sender, EventArgs e)
+        {
+            frm_info frm_info = new frm_info();
+            frm_info.Show();
+        }
     }
 }

@@ -90,7 +90,9 @@ namespace Proj_M9_BrunoPinheiro
 
         private void btn_medio_Click(object sender, EventArgs e)
         {
-
+            frm_medio frm_medio = new frm_medio();
+            frm_medio.Show();
+            this.Hide();
         }
 
         private void btn_dificil_MouseDown(object sender, MouseEventArgs e)

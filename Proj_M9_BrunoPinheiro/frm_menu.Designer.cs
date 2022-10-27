@@ -39,8 +39,10 @@
             this.btn_regras = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
+            this.pic_info = new System.Windows.Forms.PictureBox();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_top
@@ -128,7 +130,7 @@
             this.btn_jogar.Name = "btn_jogar";
             this.btn_jogar.Size = new System.Drawing.Size(160, 43);
             this.btn_jogar.TabIndex = 69;
-            this.btn_jogar.Text = "Jogar";
+            this.btn_jogar.Text = "Modo Singleplayer";
             this.btn_jogar.UseVisualStyleBackColor = true;
             this.btn_jogar.Click += new System.EventHandler(this.btn_jogar_Click);
             this.btn_jogar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_jogar_MouseDown);
@@ -185,12 +187,24 @@
             this.btn_logout.MouseLeave += new System.EventHandler(this.btn_logout_MouseLeave);
             this.btn_logout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_logout_MouseMove);
             // 
+            // pic_info
+            // 
+            this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
+            this.pic_info.Location = new System.Drawing.Point(290, 467);
+            this.pic_info.Name = "pic_info";
+            this.pic_info.Size = new System.Drawing.Size(35, 35);
+            this.pic_info.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_info.TabIndex = 75;
+            this.pic_info.TabStop = false;
+            this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
+            // 
             // frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(337, 514);
+            this.Controls.Add(this.pic_info);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_regras);
@@ -204,6 +218,7 @@
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +236,6 @@
         private System.Windows.Forms.Button btn_regras;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.PictureBox pic_info;
     }
 }

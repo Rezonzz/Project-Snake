@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="Circle2.cs" />
     <Compile Include="frm_dificuldade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,11 +62,23 @@
     <Compile Include="frm_facil.Designer.cs">
       <DependentUpon>frm_facil.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_info.Designer.cs">
+      <DependentUpon>frm_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_medio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_medio.Designer.cs">
+      <DependentUpon>frm_medio.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_menu.cs">
       <SubType>Form</SubType>
@@ -88,6 +101,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Settings2.cs" />
     <Compile Include="UsersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,8 +113,14 @@
     <EmbeddedResource Include="frm_facil.resx">
       <DependentUpon>frm_facil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_info.resx">
+      <DependentUpon>frm_info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_medio.resx">
+      <DependentUpon>frm_medio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
@@ -183,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\snake1.png" />
+    <None Include="Resources\information.png" />
     <Content Include="Users.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
