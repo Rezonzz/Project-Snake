@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace Proj_M9_BrunoPinheiro
 {
@@ -17,7 +18,7 @@ namespace Proj_M9_BrunoPinheiro
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
-        int maxWidth, maxHeight, score, highScore;
+        int maxWidth, maxHeight, score, highScore, maxWidthS, maxHeightS;
 
         Random rand = new Random();
 
@@ -40,43 +41,23 @@ namespace Proj_M9_BrunoPinheiro
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            frm_sair frm_sair = new frm_sair();
-            frm_sair.Show();
-        }
-
-        private void btn_minimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void mst_snake_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void tsmi_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
-        private void tsmi_menu_Click(object sender, EventArgs e)
-        {
-            frm_menu frm_menu = new frm_menu();
-            frm_menu.Show();
-            this.Close();
-        }
+        
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Left && Settings.directions != "right")
+            if (e.KeyCode == Keys.Enter)
+            {
+                RestartGame();
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                TakeSnapShot();
+            }
+            if (e.KeyCode == Keys.Left && Settings.directions != "right")
             {
                 goLeft = true;
             }
@@ -119,9 +100,63 @@ namespace Proj_M9_BrunoPinheiro
             RestartGame();
         }
 
+        private void tsmi_logout_Click(object sender, EventArgs e)
+        {
+            frm_login frm_login = new frm_login();
+            frm_login.Show();
+            this.Close();
+        }
+
+        private void mst_snake_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void tsmi_menu_Click(object sender, EventArgs e)
+        {
+            frm_menu frm_menu = new frm_menu();
+            frm_menu.Show();
+            this.Hide();
+        }
+
+        private void tsmi_sair_Click(object sender, EventArgs e)
+        {
+            frm_sair frm_sair = new frm_sair();
+            frm_sair.Show();
+        }
+        private void TakeSnapShot()
+        {
+            Label caption = new Label();
+            caption.Text = "I scored: " + score + " and my highscore is " + highScore + " on the Snake";
+            caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
+            caption.ForeColor = Color.White;
+            caption.AutoSize = false;
+            caption.Width = pic_canvas.Width;
+            caption.Height = 30;
+            caption.TextAlign = ContentAlignment.MiddleCenter;
+            pic_canvas.Controls.Add(caption);
+
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.FileName = "Snake Snapshot";
+            dialog.DefaultExt = "png";
+            dialog.Filter = "PNG Image File | *.png";
+            dialog.ValidateNames = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                int width = Convert.ToInt32(pic_canvas.Width);
+                int height = Convert.ToInt32(pic_canvas.Height);
+                Bitmap bmp = new Bitmap(width, height);
+                pic_canvas.DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
+                bmp.Save(dialog.FileName, ImageFormat.Png);
+                pic_canvas.Controls.Remove(caption);
+            }
+        }
+
         private void TakeSnapShot(object sender, EventArgs e)
         {
-
+            
         }
 
         private void GameTimerEvent(object sender, EventArgs e)
@@ -184,6 +219,26 @@ namespace Proj_M9_BrunoPinheiro
                         Snake[i].Y = 0;
                     }
 
+                    if (Snake[i].X == food.X && Snake[i].Y == food.Y)
+                    {
+                        EatFood();
+                    }
+
+                    for (int j = 1; j < Snake.Count; j++)
+                    {
+                        if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
+                        {
+                            GameOver();
+                        }
+                    }
+                    // restrict the snake from leaving the canvas
+                    maxWidthS = pic_canvas.Size.Width / Settings.Width - 1;
+                    maxHeightS = pic_canvas.Size.Height / Settings.Height - 1;
+                    if (Snake[i].X == 0 || Snake[i].Y == 0 || Snake[i].X == maxWidthS || Snake[i].Y == maxHeightS)
+                    {
+                        // end the game is snake either reaches edge of the canvas
+                        GameOver();
+                    }
                 }
                 else
                 {
@@ -205,11 +260,11 @@ namespace Proj_M9_BrunoPinheiro
             {
                 if (i == 0)
                 {
-                    snakeColour = Brushes.White;
+                    snakeColour = Brushes.LightSlateGray;
                 }
                 else
                 {
-                    snakeColour = Brushes.Gray;
+                    snakeColour = Brushes.White;
                 }
 
                 canvas.FillEllipse(snakeColour, new Rectangle
@@ -236,13 +291,9 @@ namespace Proj_M9_BrunoPinheiro
             maxHeight = pic_canvas.Height / Settings.Height - 1;
 
             Snake.Clear();
-
-            btn_comecar.Enabled = false;
-            btn_snap.Enabled = false;
-            btn_close.Enabled = false;
-            btn_minimize.Enabled = false;
+            lbl_prima.Visible = false;
             score = 0;
-            lbl_score.Text = "Score: " + score;
+            lbl_score.Text = "Pontuação: " + score;
 
             Circle head = new Circle { X = 10, Y = 5 };
             Snake.Add(head); // adding the head part of the snake to the list
@@ -259,12 +310,31 @@ namespace Proj_M9_BrunoPinheiro
         }
         private void EatFood()
         {
+            score += 1;
 
+            lbl_score.Text = "Pontuação: " + score;
+
+            Circle body = new Circle
+            {
+                X = Snake[Snake.Count - 1].X,
+                Y = Snake[Snake.Count - 1].Y
+            };
+
+            Snake.Add(body);
+
+            food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
         }
         
         private void GameOver()
         {
+            tmr_game.Stop();
 
+            if (score > highScore)
+            {
+                highScore = score;
+                lbl_highscore.Text = "Maior pontuação: " + highScore;
+            }
+            lbl_prima.Visible = true;
         }
     }
 }

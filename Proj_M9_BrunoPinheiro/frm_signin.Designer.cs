@@ -254,7 +254,7 @@
             this.btn_signin.BackColor = System.Drawing.Color.White;
             this.btn_signin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_signin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_signin.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_signin.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signin.ForeColor = System.Drawing.Color.Black;
             this.btn_signin.Location = new System.Drawing.Point(88, 440);
             this.btn_signin.Name = "btn_signin";

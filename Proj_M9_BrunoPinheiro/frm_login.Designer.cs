@@ -147,7 +147,7 @@
             this.btn_login.BackColor = System.Drawing.Color.White;
             this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.Black;
             this.btn_login.Location = new System.Drawing.Point(90, 387);
             this.btn_login.Name = "btn_login";
