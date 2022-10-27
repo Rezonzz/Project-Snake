@@ -142,10 +142,12 @@ namespace Proj_M9_BrunoPinheiro
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
-            if (txt_username.Text == "" && txt_password.Text == "" && txt_confirm.Text == "")
+            if (txt_username.Text == "" || txt_password.Text == "" || txt_confirm.Text == "" || txt_username.Text == "Username" || txt_password.Text == "Password" || txt_confirm.Text == "Confirm Password")
             {
-                MessageBox.Show("As caixas do Username e Password estão vazios", "Sign in Falhado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                btn_signin.Size = new Size(130, 35);
+                btn_signin.Location = new Point(95, 440);
+                lbl_invalido.Visible = false;
+                lbl_vazio.Visible = true;
             }
             else if (txt_password.Text == txt_confirm.Text)
             {
@@ -154,6 +156,8 @@ namespace Proj_M9_BrunoPinheiro
                 cmd = new OleDbCommand(register, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
+                btn_signin.Size = new Size(130, 35);
+                btn_signin.Location = new Point(100, 442);
                 frm_login frm_login = new frm_login();
                 frm_login.Show();
                 this.Close();
@@ -162,10 +166,18 @@ namespace Proj_M9_BrunoPinheiro
             else
             {
                 lbl_invalido.Visible = true;
+                lbl_vazio.Visible = false;
+                txt_username.Clear();
+                txt_password.Clear();
+                txt_confirm.Clear();
+                txt_username.ResetText();
                 txt_password.ResetText();
                 txt_confirm.ResetText();
-                txt_password.Focus();
+                txt_username.Focus();
             }
+            btn_signin.Size = new Size(140, 37);
+            btn_signin.Location = new Point(89, 440);
+            
         }
 
         private void btn_close_Click(object sender, EventArgs e)

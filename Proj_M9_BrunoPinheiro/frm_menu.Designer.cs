@@ -130,6 +130,10 @@
             this.btn_jogar.TabIndex = 69;
             this.btn_jogar.Text = "Jogar";
             this.btn_jogar.UseVisualStyleBackColor = true;
+            this.btn_jogar.Click += new System.EventHandler(this.btn_jogar_Click);
+            this.btn_jogar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_jogar_MouseDown);
+            this.btn_jogar.MouseLeave += new System.EventHandler(this.btn_jogar_MouseLeave);
+            this.btn_jogar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_jogar_MouseMove);
             // 
             // btn_regras
             // 
@@ -143,6 +147,9 @@
             this.btn_regras.TabIndex = 70;
             this.btn_regras.Text = "Regras";
             this.btn_regras.UseVisualStyleBackColor = true;
+            this.btn_regras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_regras_MouseDown);
+            this.btn_regras.MouseLeave += new System.EventHandler(this.btn_regras_MouseLeave);
+            this.btn_regras.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_regras_MouseMove);
             // 
             // btn_sair
             // 
@@ -156,6 +163,9 @@
             this.btn_sair.TabIndex = 71;
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = true;
+            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            this.btn_sair.MouseLeave += new System.EventHandler(this.btn_sair_MouseLeave);
+            this.btn_sair.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_sair_MouseMove);
             // 
             // btn_logout
             // 

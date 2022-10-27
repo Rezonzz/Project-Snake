@@ -135,6 +135,8 @@ namespace Proj_M9_BrunoPinheiro
 
             if (count == 1)
             {
+                btn_login.Size = new Size(130, 35);
+                btn_login.Location = new Point(96, 388);
                 frm_menu frm_menu = new frm_menu();
                 frm_menu.Show();
                 this.Hide();
@@ -142,12 +144,16 @@ namespace Proj_M9_BrunoPinheiro
             }
             else
             {
+                btn_login.Size = new Size(130, 35);
+                btn_login.Location = new Point(96, 388);
                 lbl_invalido.Visible = true;
                 txt_username.Clear();
                 txt_password.Clear();
                 txt_username.Focus();
             }
             connection.Close();
+            btn_login.Size = new Size(140, 37);
+            btn_login.Location = new Point(90, 387);
         }
 
         private void lbl_sair_Click(object sender, EventArgs e)
