@@ -62,7 +62,7 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_facil_MouseDown(object sender, MouseEventArgs e)
         {
             btn_facil.Size = new Size(145, 40);
-            btn_facil.Location = new Point(93, 134);
+            btn_facil.Location = new Point(95, 190);
         }
 
         private void btn_facil_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_medio_MouseDown(object sender, MouseEventArgs e)
         {
             btn_medio.Size = new Size(145, 40);
-            btn_medio.Location = new Point(93, 208);
+            btn_medio.Location = new Point(95, 250);
         }
 
         private void btn_medio_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_dificil_MouseDown(object sender, MouseEventArgs e)
         {
             btn_dificil.Size = new Size(145, 40);
-            btn_dificil.Location = new Point(93, 285);
+            btn_dificil.Location = new Point(95, 311);
         }
 
         private void btn_dificil_MouseMove(object sender, MouseEventArgs e)
@@ -116,6 +116,29 @@ namespace Proj_M9_BrunoPinheiro
             frm_menu frm_menu = new frm_menu();
             frm_menu.Show();
             this.Close();
+        }
+
+        private void btn_mtfacil_MouseLeave(object sender, EventArgs e)
+        {
+            btn_mtfacil.BackColor = Color.FromArgb(24, 24, 27);
+        }
+
+        private void btn_mtfacil_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_mtfacil.BackColor = Color.FromArgb(128, 255, 137);
+        }
+
+        private void btn_mtfacil_Click(object sender, EventArgs e)
+        {
+            frm_mtfacil frm_mtfacil = new frm_mtfacil();
+            frm_mtfacil.Show();
+            this.Hide();
+        }
+
+        private void btn_mtfacil_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_mtfacil.Size = new Size(145, 40);
+            btn_mtfacil.Location = new Point(95, 131);
         }
     }
 }

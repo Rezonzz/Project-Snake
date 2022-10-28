@@ -30,35 +30,34 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_medio));
-            this.lbl_prima = new System.Windows.Forms.Label();
             this.mst_snake = new System.Windows.Forms.MenuStrip();
+            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dificuldadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
             this.dificilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmr_game = new System.Windows.Forms.Timer(this.components);
+            this.lbl_timer = new System.Windows.Forms.Label();
+            this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.lbl_highscore = new System.Windows.Forms.Label();
             this.lbl_score = new System.Windows.Forms.Label();
-            this.tmr_game = new System.Windows.Forms.Timer(this.components);
-            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_modo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_gameover = new System.Windows.Forms.Label();
+            this.pic_obanai = new System.Windows.Forms.PictureBox();
+            this.lbl_prima = new System.Windows.Forms.Label();
+            this.lbl_prima2 = new System.Windows.Forms.Label();
+            this.lbl_win = new System.Windows.Forms.Label();
             this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.mst_snake.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbl_prima
-            // 
-            this.lbl_prima.AutoSize = true;
-            this.lbl_prima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.lbl_prima.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_prima.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_prima.Location = new System.Drawing.Point(42, 210);
-            this.lbl_prima.Name = "lbl_prima";
-            this.lbl_prima.Size = new System.Drawing.Size(529, 23);
-            this.lbl_prima.TabIndex = 82;
-            this.lbl_prima.Text = "Prima \"Enter\" para começar / Prima \"S\" para tirar um Screenshot";
             // 
             // mst_snake
             // 
@@ -76,6 +75,15 @@
             this.mst_snake.TabIndex = 81;
             this.mst_snake.Text = "mst_top";
             this.mst_snake.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mst_snake_MouseDown);
+            // 
+            // snakeToolStripMenuItem
+            // 
+            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
+            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
+            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
+            this.snakeToolStripMenuItem.Text = "Snake";
             // 
             // tsmi_menu
             // 
@@ -97,6 +105,7 @@
             // dificuldadeToolStripMenuItem
             // 
             this.dificuldadeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_mtfacil,
             this.tsmi_facil,
             this.dificilToolStripMenuItem});
             this.dificuldadeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,12 +114,21 @@
             this.dificuldadeToolStripMenuItem.Size = new System.Drawing.Size(123, 30);
             this.dificuldadeToolStripMenuItem.Text = "Dificuldade";
             // 
+            // tsmi_mtfacil
+            // 
+            this.tsmi_mtfacil.BackColor = System.Drawing.Color.Black;
+            this.tsmi_mtfacil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_mtfacil.Name = "tsmi_mtfacil";
+            this.tsmi_mtfacil.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_mtfacil.Text = "Muito Fácil";
+            this.tsmi_mtfacil.Click += new System.EventHandler(this.tsmi_mtfacil_Click);
+            // 
             // tsmi_facil
             // 
             this.tsmi_facil.BackColor = System.Drawing.Color.Black;
             this.tsmi_facil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_facil.Name = "tsmi_facil";
-            this.tsmi_facil.Size = new System.Drawing.Size(135, 30);
+            this.tsmi_facil.Size = new System.Drawing.Size(180, 30);
             this.tsmi_facil.Text = "Fácil";
             this.tsmi_facil.Click += new System.EventHandler(this.tsmi_facil_Click);
             // 
@@ -119,7 +137,7 @@
             this.dificilToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.dificilToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dificilToolStripMenuItem.Name = "dificilToolStripMenuItem";
-            this.dificilToolStripMenuItem.Size = new System.Drawing.Size(135, 30);
+            this.dificilToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.dificilToolStripMenuItem.Text = "Dificil";
             // 
             // tsmi_logout
@@ -140,53 +158,149 @@
             this.tsmi_sair.Text = "Sair";
             this.tsmi_sair.Click += new System.EventHandler(this.tsmi_sair_Click);
             // 
+            // tmr_game
+            // 
+            this.tmr_game.Interval = 55;
+            this.tmr_game.Tick += new System.EventHandler(this.GameTimerEvent);
+            // 
+            // lbl_timer
+            // 
+            this.lbl_timer.AutoSize = true;
+            this.lbl_timer.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_timer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_timer.Location = new System.Drawing.Point(634, 90);
+            this.lbl_timer.Name = "lbl_timer";
+            this.lbl_timer.Size = new System.Drawing.Size(118, 33);
+            this.lbl_timer.TabIndex = 83;
+            this.lbl_timer.Text = "00:00.00";
+            // 
+            // tmr_temp
+            // 
+            this.tmr_temp.Enabled = true;
+            this.tmr_temp.Tick += new System.EventHandler(this.tmr_temp_Tick);
+            // 
             // lbl_highscore
             // 
             this.lbl_highscore.AutoSize = true;
-            this.lbl_highscore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_highscore.Enabled = false;
-            this.lbl_highscore.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_highscore.ForeColor = System.Drawing.Color.White;
-            this.lbl_highscore.Location = new System.Drawing.Point(614, 79);
+            this.lbl_highscore.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_highscore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_highscore.Location = new System.Drawing.Point(621, 182);
             this.lbl_highscore.Name = "lbl_highscore";
-            this.lbl_highscore.Size = new System.Drawing.Size(124, 19);
-            this.lbl_highscore.TabIndex = 79;
-            this.lbl_highscore.Text = "Maior Pontuação: ";
+            this.lbl_highscore.Size = new System.Drawing.Size(151, 21);
+            this.lbl_highscore.TabIndex = 84;
+            this.lbl_highscore.Text = "Maior Pontuação: 0";
             // 
             // lbl_score
             // 
             this.lbl_score.AutoSize = true;
-            this.lbl_score.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_score.Enabled = false;
-            this.lbl_score.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_score.ForeColor = System.Drawing.Color.White;
-            this.lbl_score.Location = new System.Drawing.Point(614, 47);
+            this.lbl_score.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_score.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_score.Location = new System.Drawing.Point(622, 150);
             this.lbl_score.Name = "lbl_score";
-            this.lbl_score.Size = new System.Drawing.Size(83, 19);
-            this.lbl_score.TabIndex = 78;
-            this.lbl_score.Text = "Pontuação: ";
+            this.lbl_score.Size = new System.Drawing.Size(104, 21);
+            this.lbl_score.TabIndex = 85;
+            this.lbl_score.Text = "Pontuação: 0";
             // 
-            // tmr_game
+            // lbl_modo
             // 
-            this.tmr_game.Interval = 45;
-            this.tmr_game.Tick += new System.EventHandler(this.GameTimerEvent);
+            this.lbl_modo.AutoSize = true;
+            this.lbl_modo.Font = new System.Drawing.Font("Comic Sans MS", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_modo.Location = new System.Drawing.Point(610, 47);
+            this.lbl_modo.Name = "lbl_modo";
+            this.lbl_modo.Size = new System.Drawing.Size(171, 32);
+            this.lbl_modo.TabIndex = 86;
+            this.lbl_modo.Text = "Modo - Médio";
             // 
-            // snakeToolStripMenuItem
+            // panel1
             // 
-            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
-            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
-            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
-            this.snakeToolStripMenuItem.Text = "Snake";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(615, 137);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(160, 1);
+            this.panel1.TabIndex = 96;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(635, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 87);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "Objetivo: 50 pontos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_gameover
+            // 
+            this.lbl_gameover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_gameover.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_gameover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_gameover.Location = new System.Drawing.Point(12, 144);
+            this.lbl_gameover.Name = "lbl_gameover";
+            this.lbl_gameover.Size = new System.Drawing.Size(580, 59);
+            this.lbl_gameover.TabIndex = 98;
+            this.lbl_gameover.Text = "Tu Falhaste!";
+            this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_gameover.Visible = false;
+            // 
+            // pic_obanai
+            // 
+            this.pic_obanai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai.Location = new System.Drawing.Point(166, 291);
+            this.pic_obanai.Name = "pic_obanai";
+            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai.TabIndex = 97;
+            this.pic_obanai.TabStop = false;
+            this.pic_obanai.Visible = false;
+            // 
+            // lbl_prima
+            // 
+            this.lbl_prima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lbl_prima.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_prima.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_prima.Location = new System.Drawing.Point(12, 223);
+            this.lbl_prima.Name = "lbl_prima";
+            this.lbl_prima.Size = new System.Drawing.Size(580, 23);
+            this.lbl_prima.TabIndex = 88;
+            this.lbl_prima.Text = "Prima \"Enter\" para começar / Prima \"S\" para tirar um Screenshot";
+            this.lbl_prima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_prima2
+            // 
+            this.lbl_prima2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lbl_prima2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_prima2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_prima2.Location = new System.Drawing.Point(12, 240);
+            this.lbl_prima2.Name = "lbl_prima2";
+            this.lbl_prima2.Size = new System.Drawing.Size(580, 23);
+            this.lbl_prima2.TabIndex = 95;
+            this.lbl_prima2.Text = "Prima \"Enter\" para recomeçar / Prima \"S\" para tirar um Screenshot";
+            this.lbl_prima2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_prima2.Visible = false;
+            // 
+            // lbl_win
+            // 
+            this.lbl_win.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_win.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_win.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(137)))));
+            this.lbl_win.Location = new System.Drawing.Point(12, 144);
+            this.lbl_win.Name = "lbl_win";
+            this.lbl_win.Size = new System.Drawing.Size(580, 59);
+            this.lbl_win.TabIndex = 96;
+            this.lbl_win.Text = "Objetivo Concluído!";
+            this.lbl_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_win.Visible = false;
             // 
             // pic_canvas
             // 
             this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pic_canvas.Location = new System.Drawing.Point(12, 47);
+            this.pic_canvas.Location = new System.Drawing.Point(12, 52);
             this.pic_canvas.Name = "pic_canvas";
             this.pic_canvas.Size = new System.Drawing.Size(580, 420);
-            this.pic_canvas.TabIndex = 80;
+            this.pic_canvas.TabIndex = 86;
             this.pic_canvas.TabStop = false;
             this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             // 
@@ -196,20 +310,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.lbl_win);
+            this.Controls.Add(this.lbl_gameover);
+            this.Controls.Add(this.pic_obanai);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_prima);
-            this.Controls.Add(this.mst_snake);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_prima2);
+            this.Controls.Add(this.lbl_modo);
+            this.Controls.Add(this.lbl_score);
             this.Controls.Add(this.pic_canvas);
             this.Controls.Add(this.lbl_highscore);
-            this.Controls.Add(this.lbl_score);
+            this.Controls.Add(this.lbl_timer);
+            this.Controls.Add(this.mst_snake);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_medio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_medio";
+            this.Load += new System.EventHandler(this.frm_medio_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.mst_snake.ResumeLayout(false);
             this.mst_snake.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,8 +341,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_prima;
         private System.Windows.Forms.MenuStrip mst_snake;
         private System.Windows.Forms.ToolStripMenuItem snakeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_menu;
@@ -228,9 +350,20 @@
         private System.Windows.Forms.ToolStripMenuItem dificilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_logout;
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
-        private System.Windows.Forms.PictureBox pic_canvas;
+        private System.Windows.Forms.Timer tmr_game;
+        private System.Windows.Forms.Label lbl_timer;
+        private System.Windows.Forms.Timer tmr_temp;
         private System.Windows.Forms.Label lbl_highscore;
         private System.Windows.Forms.Label lbl_score;
-        private System.Windows.Forms.Timer tmr_game;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_mtfacil;
+        private System.Windows.Forms.Label lbl_modo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_gameover;
+        private System.Windows.Forms.PictureBox pic_obanai;
+        private System.Windows.Forms.Label lbl_prima;
+        private System.Windows.Forms.Label lbl_prima2;
+        private System.Windows.Forms.Label lbl_win;
+        private System.Windows.Forms.PictureBox pic_canvas;
     }
 }

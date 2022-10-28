@@ -47,7 +47,7 @@ namespace Proj_M9_BrunoPinheiro
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        
+
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
@@ -135,6 +135,17 @@ namespace Proj_M9_BrunoPinheiro
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void tsmi_mtfacil_Click(object sender, EventArgs e)
+        {
+            frm_mtfacil frm_mtfacil = new frm_mtfacil();
+            frm_mtfacil.Show();
+            this.Hide();
+        }
+
+        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void tsmi_medio_Click(object sender, EventArgs e)
         {
@@ -278,41 +289,6 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Invalidate();
         }
 
-        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
-        {
-            Graphics canvas = e.Graphics;
-
-            Brush snakeColour;
-
-            for (int i = 0; i < Snake.Count; i++)
-            {
-                if (i == 0)
-                {
-                    snakeColour = Brushes.LightSlateGray;
-                }
-                else
-                {
-                    snakeColour = Brushes.White;
-                }
-
-                canvas.FillEllipse(snakeColour, new Rectangle
-                    (
-                    Snake[i].X * Settings.Width,
-                    Snake[i].Y * Settings.Height,
-                    Settings.Width, Settings.Height
-                    ));
-            }
-
-
-            canvas.FillEllipse(Brushes.DarkRed, new Rectangle
-            (
-            food.X * Settings.Width,
-            food.Y * Settings.Height,
-            Settings.Width, Settings.Height
-            ));
-
-        }
-
         private void RestartGame()
         {
             maxWidth = pic_canvas.Width / Settings.Width - 1;
@@ -328,7 +304,7 @@ namespace Proj_M9_BrunoPinheiro
             Circle head = new Circle { X = 10, Y = 5 };
             Snake.Add(head); // adding the head part of the snake to the list
 
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Circle body = new Circle();
                 Snake.Add(body);
@@ -354,19 +330,37 @@ namespace Proj_M9_BrunoPinheiro
 
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
         }
-        
-        private void GameOver()
+
+        private void Win()
         {
             tmr_game.Stop();
-            StopTimer();
             time = lbl_timer.Text;
             if (score > highScore)
             {
                 highScore = score;
-                lbl_highscore.Text = "Maior pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Pontuação: " + highScore;
                 highTime = time;
             }
-            lbl_prima.Visible = true;
+            Snake.Clear();
+            food = new Circle { X = -1, Y = -1 };
+            lbl_prima2.BackColor = Color.Transparent;
+            pic_obanai.Visible = true;
+            lbl_prima2.Visible = true;
+            lbl_win.Visible = true;
+            StopTimer();
+        }
+        private void GameOver()
+        {
+            tmr_game.Stop();
+            time = lbl_timer.Text;
+            if (score > highScore)
+            {
+                highScore = score;
+                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                highTime = time;
+            }
+            food = new Circle { X = 0, Y = 0 };
+            StopTimer();
         }
     }
 }
