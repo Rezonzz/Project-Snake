@@ -56,7 +56,7 @@ namespace Proj_M9_BrunoPinheiro
             {
                 RestartGame();
             }
-            if (e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.T)
             {
                 TakeSnapShot();
             }
@@ -73,6 +73,22 @@ namespace Proj_M9_BrunoPinheiro
                 goUp = true;
             }
             if (e.KeyCode == Keys.Down && Settings1.directions != "up")
+            {
+                goDown = true;
+            }
+            if (e.KeyCode == Keys.A && Settings2.directions != "right")
+            {
+                goLeft = true;
+            }
+            if (e.KeyCode == Keys.D && Settings2.directions != "left")
+            {
+                goRight = true;
+            }
+            if (e.KeyCode == Keys.W && Settings2.directions != "down")
+            {
+                goUp = true;
+            }
+            if (e.KeyCode == Keys.S && Settings2.directions != "up")
             {
                 goDown = true;
             }
@@ -93,6 +109,22 @@ namespace Proj_M9_BrunoPinheiro
                 goUp = false;
             }
             if (e.KeyCode == Keys.Down)
+            {
+                goDown = false;
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                goLeft = false;
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                goRight = false;
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                goUp = false;
+            }
+            if (e.KeyCode == Keys.S)
             {
                 goDown = false;
             }
@@ -118,6 +150,7 @@ namespace Proj_M9_BrunoPinheiro
             {
                 Settings1.directions = "up";
             }
+
             // end of directions
 
             for (int i = Snake.Count - 1; i >= 0; i--)
@@ -268,6 +301,16 @@ namespace Proj_M9_BrunoPinheiro
             stopWatch.Stop();
         }
 
+        private void tsmi_dificuldade_Click(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.Black;
+        }
+
+        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.White;
+        }
+
         private void ResetTimer()
         {
             stopWatch.Reset();
@@ -280,7 +323,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void RestartGame()
         {
-            if (score < 15)
+            if (score < 10)
             {
                 maxWidth = pic_canvas.Width / Settings1.Width - 1;
                 maxHeight = pic_canvas.Height / Settings1.Height - 1;
@@ -354,7 +397,7 @@ namespace Proj_M9_BrunoPinheiro
             Snake.Add(body);
 
             food = new Circle1 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            if (score >= 15)
+            if (score >= 10)
             {
                 Win();
             }
@@ -403,7 +446,7 @@ namespace Proj_M9_BrunoPinheiro
             caption.Visible = true;
             caption.Text = "Pontuação de: " + score + " em " + time + " e Maior Pontuação de: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Muito Fácil";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
-            caption.ForeColor = Color.RoyalBlue;
+            caption.ForeColor = Color.White;
             caption.BackColor = Color.Transparent;
             caption.AutoSize = false;
             caption.Width = pic_canvas.Width;

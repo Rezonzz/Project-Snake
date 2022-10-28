@@ -15,8 +15,8 @@ namespace Proj_M9_BrunoPinheiro
 
         public Settings2()
         {
-            Width = 16;
-            Height = 16;
+            Width = 14;
+            Height = 14;
             directions = "left";
         }
     }

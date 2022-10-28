@@ -35,7 +35,7 @@ namespace Proj_M9_BrunoPinheiro
             {
                 RestartGame();
             }
-            if (e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.T)
             {
                 TakeSnapShot();
             }
@@ -52,6 +52,22 @@ namespace Proj_M9_BrunoPinheiro
                 goUp = true;
             }
             if (e.KeyCode == Keys.Down && Settings2.directions != "up")
+            {
+                goDown = true;
+            }
+            if (e.KeyCode == Keys.A && Settings2.directions != "right")
+            {
+                goLeft = true;
+            }
+            if (e.KeyCode == Keys.D && Settings2.directions != "left")
+            {
+                goRight = true;
+            }
+            if (e.KeyCode == Keys.W && Settings2.directions != "down")
+            {
+                goUp = true;
+            }
+            if (e.KeyCode == Keys.S && Settings2.directions != "up")
             {
                 goDown = true;
             }
@@ -72,6 +88,22 @@ namespace Proj_M9_BrunoPinheiro
                 goUp = false;
             }
             if (e.KeyCode == Keys.Down)
+            {
+                goDown = false;
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                goLeft = false;
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                goRight = false;
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                goUp = false;
+            }
+            if (e.KeyCode == Keys.S)
             {
                 goDown = false;
             }
@@ -142,21 +174,23 @@ namespace Proj_M9_BrunoPinheiro
                         EatFood();
                     }
 
+                    // restrict the snake from leaving the canvas
+                    maxWidthS = pic_canvas.Size.Width / Settings2.Width - 1;
+                    maxHeightS = pic_canvas.Size.Height / Settings2.Height - 1;
+
                     for (int j = 1; j < Snake.Count; j++)
                     {
                         if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
                         {
                             GameOver();
                         }
+                        else if (Snake[i].X == 0 || Snake[i].Y == 0 || Snake[i].X == maxWidthS || Snake[i].Y == maxHeightS)
+                        {
+                            // end the game is snake either reaches edge of the canvas
+                            GameOver();
+                        }
                     }
-                    // restrict the snake from leaving the canvas
-                    maxWidthS = pic_canvas.Size.Width / Settings2.Width - 1;
-                    maxHeightS = pic_canvas.Size.Height / Settings2.Height - 1;
-                    if (Snake[i].X == 0 || Snake[i].Y == 0 || Snake[i].X == maxWidthS || Snake[i].Y == maxHeightS)
-                    {
-                        // end the game is snake either reaches edge of the canvas
-                        GameOver();
-                    }
+                    
                 }
                 else
                 {
@@ -168,39 +202,6 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Invalidate();
         }
 
-        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
-        {
-            Graphics canvas = e.Graphics;
-
-            Brush snakeColour;
-
-            for (int i = 0; i < Snake.Count; i++)
-            {
-                if (i == 0)
-                {
-                    snakeColour = Brushes.LightSlateGray;
-                }
-                else
-                {
-                    snakeColour = Brushes.White;
-                }
-
-                canvas.FillEllipse(snakeColour, new Rectangle
-                    (
-                    Snake[i].X * Settings2.Width,
-                    Snake[i].Y * Settings2.Height,
-                    Settings2.Width, Settings2.Height
-                    ));
-            }
-
-
-            canvas.FillEllipse(Brushes.DarkRed, new Rectangle
-            (
-            food.X * Settings2.Width,
-            food.Y * Settings2.Height,
-            Settings2.Width, Settings2.Height
-            ));
-        }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -263,6 +264,50 @@ namespace Proj_M9_BrunoPinheiro
             lbl_timer.Text = String.Format("{0:mm\\:ss\\.ff}", stopWatch.Elapsed);
         }
 
+        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
+        {
+            Graphics canvas = e.Graphics;
+
+            Brush snakeColour;
+
+            for (int i = 0; i < Snake.Count; i++)
+            {
+                if (i == 0)
+                {
+                    snakeColour = Brushes.LightSlateGray;
+                }
+                else
+                {
+                    snakeColour = Brushes.White;
+                }
+
+                canvas.FillEllipse(snakeColour, new Rectangle
+                    (
+                    Snake[i].X * Settings2.Width,
+                    Snake[i].Y * Settings2.Height,
+                    Settings2.Width, Settings2.Height
+                    ));
+            }
+
+
+            canvas.FillEllipse(Brushes.DarkRed, new Rectangle
+            (
+            food.X * Settings2.Width,
+            food.Y * Settings2.Height,
+            Settings2.Width, Settings2.Height
+            ));
+        }
+
+        private void tsmi_dificuldade_Click(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.Black;
+        }
+
+        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.White;
+        }
+
         private void tsmi_sair_Click(object sender, EventArgs e)
         {
             frm_sair frm_sair = new frm_sair();
@@ -289,37 +334,92 @@ namespace Proj_M9_BrunoPinheiro
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+
+
+        private void Win()
+        {
+            tmr_game.Stop();
+            time = lbl_timer.Text;
+            if (score > highScore)
+            {
+                highScore = score;
+                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                highTime = time;
+            }
+            Snake.Clear();
+            food = new Circle2 { X = 0, Y = 0 };
+            pic_obanai.Visible = true;
+            lbl_prima2.Visible = true;
+            lbl_win.Visible = true;
+            StopTimer();
+        }
         private void RestartGame()
         {
-            maxWidth = pic_canvas.Width / Settings2.Width - 1;
-            maxHeight = pic_canvas.Height / Settings2.Height - 1;
-
-            Snake.Clear();
-            ResetTimer();
-            StartTimer();
-            lbl_prima.Visible = false;
-            score = 0;
-            lbl_score.Text = "Pontuação: " + score;
-
-            Circle2 head = new Circle2 { X = 10, Y = 5 };
-            Snake.Add(head); // adding the head part of the snake to the list
-
-            for (int i = 0; i < 10; i++)
+            if (score < 40)
             {
-                Circle2 body = new Circle2();
-                Snake.Add(body);
+                maxWidth = pic_canvas.Width / Settings2.Width - 1;
+                maxHeight = pic_canvas.Height / Settings2.Height - 1;
+
+                Snake.Clear();
+                ResetTimer();
+                StartTimer();
+                lbl_prima.Visible = false;
+                lbl_prima2.Visible = false;
+                pic_obanai.Visible = false;
+                lbl_win.Visible = false;
+                lbl_gameover.Visible = false;
+                score = 0;
+                lbl_score.Text = "Pontuação: " + score;
+
+                Circle2 head = new Circle2 { X = 10, Y = 5 };
+                Snake.Add(head); // adding the head part of the snake to the list
+
+                for (int i = 0; i < 10; i++)
+                {
+                    Circle2 body = new Circle2();
+                    Snake.Add(body);
+                }
+
+                food = new Circle2 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+
+                tmr_game.Start();
             }
+            else
+            {
+                maxWidth = pic_canvas.Width / Settings2.Width - 1;
+                maxHeight = pic_canvas.Height / Settings2.Height - 1;
 
-            food = new Circle2 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+                Snake.Clear();
+                ResetTimer();
+                StartTimer();
+                lbl_prima.Visible = false;
+                lbl_prima2.Visible = false;
+                pic_obanai.Visible = false;
+                lbl_win.Visible = false;
+                lbl_gameover.Visible = false;
+                score = 0;
+                lbl_score.Text = "Pontuação: " + score;
+                highScore = 0;
+                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                Circle2 head = new Circle2 { X = 10, Y = 5 };
+                Snake.Add(head); // adding the head part of the snake to the list
 
-            tmr_game.Start();
+                for (int i = 0; i < 10; i++)
+                {
+                    Circle2 body = new Circle2();
+                    Snake.Add(body);
+                }
+
+                food = new Circle2 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+
+                tmr_game.Start();
+            }
         }
         private void EatFood()
         {
             score += 1;
 
             lbl_score.Text = "Pontuação: " + score;
-
             Circle2 body = new Circle2
             {
                 X = Snake[Snake.Count - 1].X,
@@ -329,6 +429,10 @@ namespace Proj_M9_BrunoPinheiro
             Snake.Add(body);
 
             food = new Circle2 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            if (score >= 40)
+            {
+                Win();
+            }
         }
 
         private void GameOver()
@@ -343,21 +447,30 @@ namespace Proj_M9_BrunoPinheiro
             }
             lbl_prima.Visible = true;
             StopTimer();
+
+            
+            Snake.Clear();
+            food = new Circle2 { X = -1, Y = -1 };
+            lbl_gameover.Visible = true;
+            pic_obanai.Visible = true;
         }
 
         private void TakeSnapShot()
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "Pontuação de: " + score + " em " + time + " e Maior Pontuação de: " + highScore + " em " + highTime + " no Jogo do Snake";
+            caption.Text = "Pontuação de: " + score + " em " + time + " e Maior Pontuação de: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Muito Fácil";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
-            caption.ForeColor = Color.RoyalBlue;
+            caption.ForeColor = Color.White;
             caption.BackColor = Color.Transparent;
             caption.AutoSize = false;
             caption.Width = pic_canvas.Width;
             caption.Height = 60;
             caption.TextAlign = ContentAlignment.MiddleCenter;
             pic_canvas.Controls.Add(caption);
+            pic_canvas.Controls.Add(lbl_gameover);
+            pic_canvas.Controls.Add(lbl_win);
+            pic_canvas.Controls.Add(pic_obanai);
 
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.FileName = "Snake Snapshot";
