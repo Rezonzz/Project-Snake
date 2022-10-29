@@ -37,7 +37,7 @@
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
-            this.dificilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dificil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
@@ -113,7 +113,7 @@
             this.tsmi_dificuldade.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_mtfacil,
             this.tsmi_facil,
-            this.dificilToolStripMenuItem});
+            this.tsmi_dificil});
             this.tsmi_dificuldade.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmi_dificuldade.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificuldade.Name = "tsmi_dificuldade";
@@ -140,13 +140,14 @@
             this.tsmi_facil.Text = "Fácil";
             this.tsmi_facil.Click += new System.EventHandler(this.tsmi_facil_Click);
             // 
-            // dificilToolStripMenuItem
+            // tsmi_dificil
             // 
-            this.dificilToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.dificilToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dificilToolStripMenuItem.Name = "dificilToolStripMenuItem";
-            this.dificilToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.dificilToolStripMenuItem.Text = "Dificil";
+            this.tsmi_dificil.BackColor = System.Drawing.Color.Black;
+            this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_dificil.Name = "tsmi_dificil";
+            this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_dificil.Text = "Dificil";
+            this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
             // 
             // tsmi_logout
             // 
@@ -236,7 +237,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 87);
             this.label1.TabIndex = 95;
-            this.label1.Text = "Objetivo: 40 pontos";
+            this.label1.Text = "Objetivo: 30 pontos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -399,7 +400,7 @@
         private System.Windows.Forms.ToolStripMenuItem regrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificuldade;
         private System.Windows.Forms.ToolStripMenuItem tsmi_facil;
-        private System.Windows.Forms.ToolStripMenuItem dificilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dificil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_logout;
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
         private System.Windows.Forms.Timer tmr_game;

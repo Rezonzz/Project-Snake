@@ -38,7 +38,7 @@
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_medio = new System.Windows.Forms.ToolStripMenuItem();
-            this.dificilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dificil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_timer = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.tsmi_dificuldade.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_mtfacil,
             this.tsmi_medio,
-            this.dificilToolStripMenuItem});
+            this.tsmi_dificil});
             this.tsmi_dificuldade.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmi_dificuldade.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificuldade.Name = "tsmi_dificuldade";
@@ -145,13 +145,14 @@
             this.tsmi_medio.Text = "Médio";
             this.tsmi_medio.Click += new System.EventHandler(this.tsmi_medio_Click);
             // 
-            // dificilToolStripMenuItem
+            // tsmi_dificil
             // 
-            this.dificilToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.dificilToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dificilToolStripMenuItem.Name = "dificilToolStripMenuItem";
-            this.dificilToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.dificilToolStripMenuItem.Text = "Dificil";
+            this.tsmi_dificil.BackColor = System.Drawing.Color.Black;
+            this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_dificil.Name = "tsmi_dificil";
+            this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_dificil.Text = "Dificil";
+            this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
             // 
             // tsmi_logout
             // 
@@ -213,7 +214,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 87);
             this.label1.TabIndex = 89;
-            this.label1.Text = "Objetivo: 20 pontos";
+            this.label1.Text = "Objetivo: 15 pontos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_modo
@@ -354,6 +355,7 @@
             this.pic_canvas.Size = new System.Drawing.Size(580, 416);
             this.pic_canvas.TabIndex = 86;
             this.pic_canvas.TabStop = false;
+            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             // 
             // frm_facil
             // 
@@ -376,7 +378,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake - Modo Fácil";
             this.Load += new System.EventHandler(this.frm_facil_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.mst_snake.ResumeLayout(false);
@@ -397,7 +398,7 @@
         private System.Windows.Forms.ToolStripMenuItem regrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificuldade;
         private System.Windows.Forms.ToolStripMenuItem tsmi_medio;
-        private System.Windows.Forms.ToolStripMenuItem dificilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dificil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_logout;
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
         private System.Windows.Forms.Label lbl_timer;

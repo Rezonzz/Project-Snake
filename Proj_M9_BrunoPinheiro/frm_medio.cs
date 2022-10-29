@@ -308,6 +308,13 @@ namespace Proj_M9_BrunoPinheiro
             tsmi_dificuldade.ForeColor = Color.White;
         }
 
+        private void tsmi_dificil_Click(object sender, EventArgs e)
+        {
+            frm_dificil frm_dificil = new frm_dificil();
+            frm_dificil.Show();
+            this.Hide();
+        }
+
         private void tsmi_sair_Click(object sender, EventArgs e)
         {
             frm_sair frm_sair = new frm_sair();
@@ -343,7 +350,7 @@ namespace Proj_M9_BrunoPinheiro
             if (score > highScore)
             {
                 highScore = score;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
                 highTime = time;
             }
             Snake.Clear();
@@ -355,7 +362,7 @@ namespace Proj_M9_BrunoPinheiro
         }
         private void RestartGame()
         {
-            if (score < 40)
+            if (score < 30)
             {
                 maxWidth = pic_canvas.Width / Settings2.Width - 1;
                 maxHeight = pic_canvas.Height / Settings2.Height - 1;
@@ -369,9 +376,9 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_win.Visible = false;
                 lbl_gameover.Visible = false;
                 score = 0;
-                lbl_score.Text = "Pontuação: " + score;
+                lbl_score.Text = "Maçãs: " + score;
 
-                Circle2 head = new Circle2 { X = 10, Y = 5 };
+                Circle2 head = new Circle2 { X = 20, Y = 14 };
                 Snake.Add(head); // adding the head part of the snake to the list
 
                 for (int i = 0; i < 10; i++)
@@ -398,9 +405,9 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_win.Visible = false;
                 lbl_gameover.Visible = false;
                 score = 0;
-                lbl_score.Text = "Pontuação: " + score;
+                lbl_score.Text = "Maçãs: " + score;
                 highScore = 0;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
                 Circle2 head = new Circle2 { X = 10, Y = 5 };
                 Snake.Add(head); // adding the head part of the snake to the list
 
@@ -419,7 +426,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             score += 1;
 
-            lbl_score.Text = "Pontuação: " + score;
+            lbl_score.Text = "Maçãs: " + score;
             Circle2 body = new Circle2
             {
                 X = Snake[Snake.Count - 1].X,
@@ -429,7 +436,7 @@ namespace Proj_M9_BrunoPinheiro
             Snake.Add(body);
 
             food = new Circle2 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            if (score >= 40)
+            if (score >= 30)
             {
                 Win();
             }
@@ -442,7 +449,7 @@ namespace Proj_M9_BrunoPinheiro
             if (score > highScore)
             {
                 highScore = score;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
                 highTime = time;
             }
             lbl_prima.Visible = true;
@@ -459,7 +466,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "Pontuação de: " + score + " em " + time + " e Maior Pontuação de: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Muito Fácil";
+            caption.Text = "Número de Maçãs Comidas: " + score + " em " + time + " e Maior Número de Maçãs Comidas: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Médio";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
             caption.ForeColor = Color.White;
             caption.BackColor = Color.Transparent;

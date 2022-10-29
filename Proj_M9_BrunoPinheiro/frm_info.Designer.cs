@@ -48,6 +48,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -208,7 +210,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(2, 490);
+            this.label10.Location = new System.Drawing.Point(7, 561);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(231, 23);
             this.label10.TabIndex = 77;
@@ -241,18 +243,18 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(17, 419);
+            this.label13.Location = new System.Drawing.Point(17, 440);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 20);
+            this.label13.Size = new System.Drawing.Size(46, 20);
             this.label13.TabIndex = 80;
-            this.label13.Text = "Regras";
+            this.label13.Text = "Menu";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(54, 448);
+            this.label14.Location = new System.Drawing.Point(54, 469);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(134, 18);
             this.label14.TabIndex = 81;
@@ -268,12 +270,36 @@
             this.label15.TabIndex = 82;
             this.label15.Text = "• Modo contra ao tempo (Minimo de \r\n  Pontos em Certo Tempo)";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label16.Location = new System.Drawing.Point(54, 495);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(150, 18);
+            this.label16.TabIndex = 83;
+            this.label16.Text = "• Controlos adicionadas";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label17.Location = new System.Drawing.Point(54, 415);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(227, 18);
+            this.label17.TabIndex = 84;
+            this.label17.Text = "• Possibilidade de Jogar com WASD";
+            // 
             // frm_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(337, 514);
+            this.ClientSize = new System.Drawing.Size(337, 593);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -324,5 +350,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

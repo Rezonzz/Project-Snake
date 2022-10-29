@@ -13,41 +13,47 @@ using System.Windows.Forms;
 
 namespace Proj_M9_BrunoPinheiro
 {
-    public partial class frm_mtfacil : Form
+    public partial class frm_dificil : Form
     {
-
         Stopwatch stopWatch;
-        private List<Circle1> Snake = new List<Circle1>();
-        private Circle1 food = new Circle1();
+        private List<Circle3> Snake = new List<Circle3>();
+        private Circle3 food = new Circle3();
 
-        int maxWidth, maxHeight, score, highScore;
+        int maxWidth, maxHeight, score, highScore, maxWidthS, maxHeightS;
+        string time, highTime;
 
         Random rand = new Random();
 
         bool goLeft, goRight, goDown, goUp;
 
-        string time, highTime;
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-       (
-           int nLeftRect,
-           int nTopRect,
-           int nRightRect,
-           int nBottomRect,
-           int nWidthEllipse,
-           int nHeightEllipse
-       );
-        public frm_mtfacil()
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void tmr_temp_Tick(object sender, EventArgs e)
         {
-            InitializeComponent();
-            new Settings1();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
+            lbl_timer.Text = String.Format("{0:mm\\:ss\\.ff}", stopWatch.Elapsed);
         }
 
-        private void tsmi_sair_Click(object sender, EventArgs e)
+        private void StartTimer()
         {
-            frm_sair frm_sair = new frm_sair();
-            frm_sair.Show();
+            stopWatch.Start();
+        }
+
+        private void StopTimer()
+        {
+            stopWatch.Stop();
+        }
+
+        private void ResetTimer()
+        {
+            stopWatch.Reset();
+        }
+
+        private void frm_dificil_Load(object sender, EventArgs e)
+        {
+            stopWatch = new Stopwatch();
         }
 
         private void KeyIsDown(object sender, KeyEventArgs e)
@@ -60,35 +66,35 @@ namespace Proj_M9_BrunoPinheiro
             {
                 TakeSnapShot();
             }
-            if (e.KeyCode == Keys.Left && Settings1.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings3.directions != "right")
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.Right && Settings1.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings3.directions != "left")
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.Up && Settings1.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings3.directions != "down")
             {
                 goUp = true;
             }
-            if (e.KeyCode == Keys.Down && Settings1.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings3.directions != "up")
             {
                 goDown = true;
             }
-            if (e.KeyCode == Keys.A && Settings2.directions != "right")
+            if (e.KeyCode == Keys.A && Settings3.directions != "right")
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.D && Settings2.directions != "left")
+            if (e.KeyCode == Keys.D && Settings3.directions != "left")
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.W && Settings2.directions != "down")
+            if (e.KeyCode == Keys.W && Settings3.directions != "down")
             {
                 goUp = true;
             }
-            if (e.KeyCode == Keys.S && Settings2.directions != "up")
+            if (e.KeyCode == Keys.S && Settings3.directions != "up")
             {
                 goDown = true;
             }
@@ -130,27 +136,76 @@ namespace Proj_M9_BrunoPinheiro
             }
         }
 
+        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
+        {
+            Graphics canvas = e.Graphics;
+
+            Brush snakeColour;
+
+            for (int i = 0; i < Snake.Count; i++)
+            {
+                if (i == 0)
+                {
+                    snakeColour = Brushes.LightSlateGray;
+                }
+                else
+                {
+                    snakeColour = Brushes.White;
+                }
+
+                canvas.FillEllipse(snakeColour, new Rectangle
+                    (
+                    Snake[i].X * Settings3.Width,
+                    Snake[i].Y * Settings3.Height,
+                    Settings3.Width, Settings3.Height
+                    ));
+            }
+
+
+            canvas.FillEllipse(Brushes.DarkRed, new Rectangle
+            (
+            food.X * Settings3.Width,
+            food.Y * Settings3.Height,
+            Settings3.Width, Settings3.Height
+            ));
+        }
+
+        private void tsmi_dificuldade_Click(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.Black;
+        }
+
+        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.White;
+        }
+
+        private void mst_snake_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         private void GameTimerEvent(object sender, EventArgs e)
         {
             // setting the directions
 
             if (goLeft)
             {
-                Settings1.directions = "left";
+                Settings3.directions = "left";
             }
             if (goRight)
             {
-                Settings1.directions = "right";
+                Settings3.directions = "right";
             }
             if (goDown)
             {
-                Settings1.directions = "down";
+                Settings3.directions = "down";
             }
             if (goUp)
             {
-                Settings1.directions = "up";
+                Settings3.directions = "up";
             }
-
             // end of directions
 
             for (int i = Snake.Count - 1; i >= 0; i--)
@@ -158,7 +213,7 @@ namespace Proj_M9_BrunoPinheiro
                 if (i == 0)
                 {
 
-                    switch (Settings1.directions)
+                    switch (Settings3.directions)
                     {
                         case "left":
                             Snake[i].X--;
@@ -196,13 +251,23 @@ namespace Proj_M9_BrunoPinheiro
                         EatFood();
                     }
 
+                    // restrict the snake from leaving the canvas
+                    maxWidthS = pic_canvas.Size.Width / Settings3.Width - 1;
+                    maxHeightS = pic_canvas.Size.Height / Settings3.Height - 1;
+
                     for (int j = 1; j < Snake.Count; j++)
                     {
                         if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
                         {
                             GameOver();
                         }
+                        else if (Snake[i].X == 0 || Snake[i].Y == 0 || Snake[i].X == maxWidthS || Snake[i].Y == maxHeightS)
+                        {
+                            // end the game is snake either reaches edge of the canvas
+                            GameOver();
+                        }
                     }
+
                 }
                 else
                 {
@@ -214,38 +279,27 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Invalidate();
         }
 
-        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+       (
+           int nLeftRect,
+           int nTopRect,
+           int nRightRect,
+           int nBottomRect,
+           int nWidthEllipse,
+           int nHeightEllipse
+       );
+        public frm_dificil()
         {
-            Graphics canvas = e.Graphics;
+            InitializeComponent();
+            new Settings3();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
+        }
 
-            Brush snakeColour;
-
-            for (int i = 0; i < Snake.Count; i++)
-            {
-                if (i == 0)
-                {
-                    snakeColour = Brushes.LightSlateGray;
-                }
-                else
-                {
-                    snakeColour = Brushes.White;
-                }
-
-                canvas.FillEllipse(snakeColour, new Rectangle
-                    (
-                    Snake[i].X * Settings1.Width,
-                    Snake[i].Y * Settings1.Height,
-                    Settings1.Width, Settings1.Height
-                    ));
-            }
-
-
-            canvas.FillEllipse(Brushes.DarkRed, new Rectangle
-            (
-            food.X * Settings1.Width,
-            food.Y * Settings1.Height,
-            Settings1.Width, Settings1.Height
-            ));
+        private void tsmi_sair_Click(object sender, EventArgs e)
+        {
+            frm_sair frm_sair = new frm_sair();
+            frm_sair.Show();
         }
 
         private void tsmi_logout_Click(object sender, EventArgs e)
@@ -261,25 +315,12 @@ namespace Proj_M9_BrunoPinheiro
             frm_menu.Show();
             this.Hide();
         }
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void tmr_temp_Tick(object sender, EventArgs e)
+        private void tsmi_mtfacil_Click(object sender, EventArgs e)
         {
-            lbl_timer.Text = String.Format("{0:mm\\:ss\\.ff}", stopWatch.Elapsed);
-        }
-
-        private void mst_snake_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void StartTimer()
-        {
-            stopWatch.Start();
+            frm_mtfacil frm_mtfacil = new frm_mtfacil();
+            frm_mtfacil.Show();
+            this.Hide();
         }
 
         private void tsmi_facil_Click(object sender, EventArgs e)
@@ -296,162 +337,11 @@ namespace Proj_M9_BrunoPinheiro
             this.Hide();
         }
 
-        private void StopTimer()
-        {
-            stopWatch.Stop();
-        }
-
-        private void tsmi_dificuldade_Click(object sender, EventArgs e)
-        {
-            tsmi_dificuldade.ForeColor = Color.Black;
-        }
-
-        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
-        {
-            tsmi_dificuldade.ForeColor = Color.White;
-        }
-
-        private void tsmi_dificil_Click(object sender, EventArgs e)
-        {
-            frm_dificil frm_dificil = new frm_dificil();
-            frm_dificil.Show();
-            this.Hide();
-        }
-
-        private void ResetTimer()
-        {
-            stopWatch.Reset();
-        }
-
-        private void frm_mtfacil_Load(object sender, EventArgs e)
-        {
-            stopWatch = new Stopwatch();
-        }
-
-        private void RestartGame()
-        {
-            if (score < 10)
-            {
-                maxWidth = pic_canvas.Width / Settings1.Width - 1;
-                maxHeight = pic_canvas.Height / Settings1.Height - 1;
-
-                Snake.Clear();
-                ResetTimer();
-                StartTimer();
-                lbl_prima.Visible = false;
-                lbl_prima2.Visible = false;
-                pic_obanai.Visible = false;
-                lbl_win.Visible = false;
-                lbl_gameover.Visible = false;
-                score = 0;
-                lbl_score.Text = "Maçãs: " + score;
-
-                Circle1 head = new Circle1 { X = 17, Y = 12 };
-                Snake.Add(head); // adding the head part of the snake to the list
-
-                for (int i = 0; i < 10; i++)
-                {
-                    Circle1 body = new Circle1();
-                    Snake.Add(body);
-                }
-
-                food = new Circle1 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-
-                tmr_game.Start();
-            }
-            else
-            {
-                maxWidth = pic_canvas.Width / Settings1.Width - 1;
-                maxHeight = pic_canvas.Height / Settings1.Height - 1;
-
-                Snake.Clear();
-                ResetTimer();
-                StartTimer();
-                lbl_prima.Visible = false;
-                lbl_prima2.Visible = false;
-                pic_obanai.Visible = false;
-                lbl_win.Visible = false;
-                lbl_gameover.Visible = false;
-                score = 0;
-                lbl_score.Text = "Maçãs: " + score;
-                highScore = 0;
-                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
-                Circle1 head = new Circle1 { X = 10, Y = 5 };
-                Snake.Add(head); // adding the head part of the snake to the list
-
-                for (int i = 0; i < 10; i++)
-                {
-                    Circle1 body = new Circle1();
-                    Snake.Add(body);
-                }
-
-                food = new Circle1 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-
-                tmr_game.Start();
-            }
-        }
-        private void EatFood()
-        {
-            score += 1;
-
-            lbl_score.Text = "Maçãs: " + score;
-            Circle1 body = new Circle1
-            {
-                X = Snake[Snake.Count - 1].X,
-                Y = Snake[Snake.Count - 1].Y
-            };
-
-            Snake.Add(body);
-
-            food = new Circle1 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            if (score >= 10)
-            {
-                Win();
-            }
-        }
-
-        private void Win()
-        {
-            tmr_game.Stop();
-            time = lbl_timer.Text;
-            if (score > highScore)
-            {
-                highScore = score;
-                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
-                highTime = time;
-            }
-            Snake.Clear();
-            food = new Circle1 { X = -1, Y = -1 };
-            lbl_prima2.BackColor = Color.Transparent;
-            pic_obanai.Visible = true;
-            lbl_prima2.Visible = true;
-            lbl_win.Visible = true;
-            StopTimer();
-        }
-        private void GameOver()
-        {
-            tmr_game.Stop();
-            time = lbl_timer.Text;
-            if (score > highScore)
-            {
-                highScore = score;
-                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
-                highTime = time;
-            }
-            Snake.Clear();
-            food = new Circle1 { X = -1, Y = -1 };
-            lbl_gameover.Visible = true;
-            pic_obanai.Visible = true;
-            lbl_prima.BackColor = Color.Transparent;
-            lbl_prima.Visible = true;
-            StopTimer();
-        }
-
         private void TakeSnapShot()
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "Número de Maçãs Comidas: " + score + " em " + time + " e Maior Número de Maçãs Comidas: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Muito Fácil";
+            caption.Text = "Número de Maçãs Comidas: " + score + " em " + time + " e Maior Número de Maçãs Comidas: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Difícil";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
             caption.ForeColor = Color.White;
             caption.BackColor = Color.Transparent;
@@ -480,6 +370,124 @@ namespace Proj_M9_BrunoPinheiro
                 pic_canvas.Controls.Remove(caption);
             }
             caption.Visible = false;
+        }
+        private void RestartGame()
+        {
+            if (score < 40)
+            {
+                maxWidth = pic_canvas.Width / Settings3.Width - 1;
+                maxHeight = pic_canvas.Height / Settings3.Height - 1;
+
+                Snake.Clear();
+                ResetTimer();
+                StartTimer();
+                lbl_prima.Visible = false;
+                lbl_prima2.Visible = false;
+                pic_obanai.Visible = false;
+                lbl_win.Visible = false;
+                lbl_gameover.Visible = false;
+                score = 0;
+                lbl_score.Text = "Maçãs: " + score;
+
+                Circle3 head = new Circle3 { X = 23, Y = 16 };
+                Snake.Add(head); // adding the head part of the snake to the list
+
+                for (int i = 0; i < 10; i++)
+                {
+                    Circle3 body = new Circle3();
+                    Snake.Add(body);
+                }
+
+                food = new Circle3 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+
+                tmr_game.Start();
+            }
+            else
+            {
+                maxWidth = pic_canvas.Width / Settings3.Width - 1;
+                maxHeight = pic_canvas.Height / Settings3.Height - 1;
+
+                Snake.Clear();
+                ResetTimer();
+                StartTimer();
+                lbl_prima.Visible = false;
+                lbl_prima2.Visible = false;
+                pic_obanai.Visible = false;
+                lbl_win.Visible = false;
+                lbl_gameover.Visible = false;
+                score = 0;
+                lbl_score.Text = "Maçãs: " + score;
+                highScore = 0;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
+                Circle3 head = new Circle3 { X = 10, Y = 5 };
+                Snake.Add(head); // adding the head part of the snake to the list
+
+                for (int i = 0; i < 10; i++)
+                {
+                    Circle3 body = new Circle3();
+                    Snake.Add(body);
+                }
+
+                food = new Circle3 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+
+                tmr_game.Start();
+            }
+        }
+        private void EatFood()
+        {
+            score += 1;
+
+            lbl_score.Text = "Maçãs: " + score;
+            Circle3 body = new Circle3
+            {
+                X = Snake[Snake.Count - 1].X,
+                Y = Snake[Snake.Count - 1].Y
+            };
+
+            Snake.Add(body);
+
+            food = new Circle3 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            if (score >= 40)
+            {
+                Win();
+            }
+        }
+
+        private void Win()
+        {
+            tmr_game.Stop();
+            time = lbl_timer.Text;
+            if (score > highScore)
+            {
+                highScore = score;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
+                highTime = time;
+            }
+            Snake.Clear();
+            food = new Circle3 { X = 0, Y = 0 };
+            pic_obanai.Visible = true;
+            lbl_prima2.Visible = true;
+            lbl_win.Visible = true;
+            StopTimer();
+        }
+        private void GameOver()
+        {
+            tmr_game.Stop();
+            time = lbl_timer.Text;
+            if (score > highScore)
+            {
+                highScore = score;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
+                highTime = time;
+            }
+            lbl_prima.Visible = true;
+            StopTimer();
+
+
+            Snake.Clear();
+            food = new Circle3 { X = -1, Y = -1 };
+            lbl_gameover.Visible = true;
+            pic_obanai.Visible = true;
         }
     }
 }

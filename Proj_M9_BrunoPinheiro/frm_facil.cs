@@ -59,35 +59,35 @@ namespace Proj_M9_BrunoPinheiro
             {
                 TakeSnapShot();
             }
-            if (e.KeyCode == Keys.Left && Settings1.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings.directions != "right")
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.Right && Settings1.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings.directions != "left")
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.Up && Settings1.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings.directions != "down")
             {
                 goUp = true;
             }
-            if (e.KeyCode == Keys.Down && Settings1.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings.directions != "up")
             {
                 goDown = true;
             }
-            if (e.KeyCode == Keys.A && Settings2.directions != "right")
+            if (e.KeyCode == Keys.A && Settings.directions != "right")
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.D && Settings2.directions != "left")
+            if (e.KeyCode == Keys.D && Settings.directions != "left")
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.W && Settings2.directions != "down")
+            if (e.KeyCode == Keys.W && Settings.directions != "down")
             {
                 goUp = true;
             }
-            if (e.KeyCode == Keys.S && Settings2.directions != "up")
+            if (e.KeyCode == Keys.S && Settings.directions != "up")
             {
                 goDown = true;
             }
@@ -174,6 +174,24 @@ namespace Proj_M9_BrunoPinheiro
             this.Hide();
         }
 
+
+        private void tsmi_dificuldade_Click(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.Black;
+        }
+
+        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_dificuldade.ForeColor = Color.White;
+        }
+
+        private void tsmi_dificil_Click(object sender, EventArgs e)
+        {
+            frm_dificil frm_dificil = new frm_dificil();
+            frm_dificil.Show();
+            this.Hide();
+        }
+
         private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
@@ -208,16 +226,6 @@ namespace Proj_M9_BrunoPinheiro
             ));
         }
 
-        private void tsmi_dificuldade_Click(object sender, EventArgs e)
-        {
-            tsmi_dificuldade.ForeColor = Color.Black;
-        }
-
-        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
-        {
-            tsmi_dificuldade.ForeColor = Color.White;
-        }
-
         private void tsmi_medio_Click(object sender, EventArgs e)
         {
             frm_medio frm_medio = new frm_medio();
@@ -241,7 +249,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "Pontuação de: " + score + " em " + time + " e Maior Pontuação de: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Muito Fácil";
+            caption.Text = "Número de Maçãs Comidas: " + score + " em " + time + " e Maior Número de Maçãs Comidas: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Fácil";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
             caption.ForeColor = Color.White;
             caption.BackColor = Color.Transparent;
@@ -381,9 +389,9 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_win.Visible = false;
                 lbl_gameover.Visible = false;
                 score = 0;
-                lbl_score.Text = "Pontuação: " + score;
+                lbl_score.Text = "Maçãs: " + score;
 
-                Circle head = new Circle { X = 10, Y = 5 };
+                Circle head = new Circle { X = 17, Y = 12 };
                 Snake.Add(head); // adding the head part of the snake to the list
 
                 for (int i = 0; i < 10; i++)
@@ -410,9 +418,9 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_win.Visible = false;
                 lbl_gameover.Visible = false;
                 score = 0;
-                lbl_score.Text = "Pontuação: " + score;
+                lbl_score.Text = "Maçãs: " + score;
                 highScore = 0;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
                 Circle head = new Circle { X = 10, Y = 5 };
                 Snake.Add(head); // adding the head part of the snake to the list
 
@@ -431,7 +439,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             score += 1;
 
-            lbl_score.Text = "Pontuação: " + score;
+            lbl_score.Text = "Maçãs: " + score;
             Circle body = new Circle
             {
                 X = Snake[Snake.Count - 1].X,
@@ -454,7 +462,7 @@ namespace Proj_M9_BrunoPinheiro
             if (score > highScore)
             {
                 highScore = score;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
                 highTime = time;
             }
             Snake.Clear();
@@ -471,7 +479,7 @@ namespace Proj_M9_BrunoPinheiro
             if (score > highScore)
             {
                 highScore = score;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
+                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
                 highTime = time;
             }
             lbl_prima.Visible = true;
