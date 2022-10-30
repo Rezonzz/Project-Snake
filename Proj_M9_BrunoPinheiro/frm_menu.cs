@@ -81,7 +81,7 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_sair_Click(object sender, EventArgs e)
         {
             btn_sair.Size = new Size(145, 40);
-            btn_sair.Location = new Point(93, 285);
+            btn_sair.Location = new Point(93, 325);
             frm_sair frm_sair = new frm_sair();
             frm_sair.Show();
         }
@@ -99,7 +99,7 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_regras_MouseDown(object sender, MouseEventArgs e)
         {
             btn_regras.Size = new Size(145, 40);
-            btn_regras.Location = new Point(93, 208);
+            btn_regras.Location = new Point(93, 259);
         }
 
         private void btn_regras_MouseMove(object sender, MouseEventArgs e)
@@ -116,6 +116,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             btn_jogar.Size = new Size(145, 40);
             btn_jogar.Location = new Point(93, 134);
+            btn_jogar.Font = new Font("Comic Sans MS", 10);
         }
 
         private void btn_jogar_MouseLeave(object sender, EventArgs e)
@@ -139,6 +140,30 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_info frm_info = new frm_info();
             frm_info.Show();
+        }
+
+        private void btn_jogarm_Click(object sender, EventArgs e)
+        {
+            frm_1v1 frm_1v1 = new frm_1v1();
+            frm_1v1.Show();
+            this.Hide();
+        }
+
+        private void btn_jogarm_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_jogarm.BackColor = Color.FromArgb(36, 36, 36);
+        }
+
+        private void btn_jogarm_MouseLeave(object sender, EventArgs e)
+        {
+            btn_jogarm.BackColor = Color.FromArgb(24, 24, 27);
+        }
+
+        private void btn_jogarm_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_jogarm.Size = new Size(145, 40);
+            btn_jogarm.Location = new Point(93, 195);
+            btn_jogarm.Font = new Font("Comic Sans MS", 11);
         }
     }
 }

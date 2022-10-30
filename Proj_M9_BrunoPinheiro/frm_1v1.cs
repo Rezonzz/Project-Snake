@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Proj_M9_BrunoPinheiro
 {
@@ -22,12 +23,12 @@ namespace Proj_M9_BrunoPinheiro
         private Circle4 food = new Circle4();
         private List<Circle5> Snake2 = new List<Circle5>();
         private Circle5 food2 = new Circle5();
-        string time, vitoriaS;
+        string time, vitoriaS, j1="Jogador 1", j2="Jogador 2";
 
         Random rand = new Random();
 
         bool goLeft, goRight, goDown, goUp, goLeft2, goRight2, goDown2, goUp2, gameover, gameover2;
-        int maxWidth, maxHeight, maxWidth2, maxHeight2, score, score2, maxWidthS, maxHeightS, maxWidthS2, maxHeightS2, vitoria = 10, scorej1=0, scorej2=0, numvitorias1=0, numvitorias2=0;
+        int maxWidth, maxHeight, maxWidth2, maxHeight2, score, score2, maxWidthS, maxHeightS, maxWidthS2, maxHeightS2, vitoria = 10, scorej1=0, scorej2=0, numvitorias1=0, numvitorias2=0, ronda=1;
 
         private void StartTimer()
         {
@@ -339,12 +340,23 @@ namespace Proj_M9_BrunoPinheiro
 
                 Snake.Clear();
                 Snake2.Clear();
+                lbl_prima.Visible = false;
+                lbl_gameover.Visible = false;
+                lbl_win.Visible = false;
+                lbl_gameover2.Visible = false;
+                lbl_win2.Visible = false;
+                lbl_empate.Visible = false;
+                lbl_empate2.Visible = false;
+                pic_obanai.Visible = false;
+                pic_obanai2.Visible = false;
                 gameover = false;
                 gameover2 = false;
                 ResetTimer();
                 StartTimer();
                 score = 0;
                 score2 = 0;
+                ronda = 1;
+                lbl_rondas.Text = ronda.ToString();
                 lbl_score.Text = "Maçãs: " + score;
                 lbl_score2.Text = "Maçãs: " + score2;
 
@@ -375,6 +387,7 @@ namespace Proj_M9_BrunoPinheiro
             }
             else
             {
+                
                 maxWidth = pic_canvas.Width / Settings4.Width - 1;
                 maxHeight = pic_canvas.Height / Settings4.Height - 1;
                 maxWidth2 = pic_canvas2.Width / Settings5.Width - 1;
@@ -382,12 +395,22 @@ namespace Proj_M9_BrunoPinheiro
 
                 Snake.Clear();
                 Snake2.Clear();
+                lbl_prima.Visible = false;
+                lbl_gameover.Visible = false;
+                lbl_win.Visible = false;
+                lbl_gameover2.Visible = false;
+                lbl_win2.Visible = false;
+                lbl_empate.Visible = false;
+                lbl_empate2.Visible = false;
+                pic_obanai.Visible = false;
+                pic_obanai2.Visible = false;
                 gameover = false;
                 gameover2 = false;
                 ResetTimer();
                 StartTimer();
                 score = 0;
                 score2 = 0;
+                lbl_rondas.Text = ronda.ToString();
                 lbl_score.Text = "Maçãs: " + score;
                 lbl_score2.Text = "Maçãs: " + score2;
 
@@ -428,6 +451,82 @@ namespace Proj_M9_BrunoPinheiro
             lbl_mudarp.ForeColor = Color.FromArgb(255, 255, 128);
         }
 
+        private void tsmi_modo_Click(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.Black;
+        }
+
+        private void tmr_prima_Tick(object sender, EventArgs e)
+        {
+            lbl_prima.ForeColor = lbl_prima.ForeColor == Color.FromArgb(24, 24, 27) ? Color.White : Color.FromArgb(24, 24, 27);
+        }
+
+        private void lbl_editarj1_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbl_editarj1.ForeColor = Color.Teal;
+        }
+
+        private void lbl_editarj1_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_editarj1.ForeColor = Color.FromArgb(255, 255, 128);
+        }
+
+        private void lbl_editarj2_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbl_editarj2.ForeColor = Color.Teal;
+        }
+
+        private void tsmi_singleplayer_Click(object sender, EventArgs e)
+        {
+            frm_dificuldade frm_dificuldade = new frm_dificuldade();
+            frm_dificuldade.Show();
+            this.Hide();
+        }
+
+        private void tsmi_modo_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.White;
+        }
+
+        private void lbl_editarj2_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_editarj2.ForeColor = Color.FromArgb(255, 255, 128);
+        }
+
+        private void lbl_editarj1_Click(object sender, EventArgs e)
+        {
+            j1 = Interaction.InputBox("Digite o Nome do Jogador 1", "Inserir Nome");
+            if (j1.Length >= 3)
+            {
+                lbl_j1.Text = j1;
+                lbl_gameover.Text = j1 + " Perdeu a Ronda " + ronda + "!";
+                lbl_win.Text = j1 + " Ganhou a Ronda " + ronda + "!";
+            }
+            else
+            {
+                j1 = "Jogador 1";
+                lbl_j1.Text = j1;
+                MessageBox.Show("Erro!");
+            }
+        }
+
+        private void lbl_editarj2_Click(object sender, EventArgs e)
+        {
+            j2 = Interaction.InputBox("Digite o Nome do Jogador 2", "Inserir Nome");
+            if (j2.Length >= 3)
+            {
+                lbl_j2.Text = j2;
+                lbl_gameover2.Text = j2 + " Perdeu a Ronda " + ronda + "!";
+                lbl_win2.Text = j2 + " Ganhou a Ronda " + ronda + "!";
+            }
+            else
+            {
+                j2 = "Jogador 2";
+                lbl_j2.Text = j2;
+                MessageBox.Show("Erro!");
+            }
+        }
+
         private void EatFood()
         {
             score += 1;
@@ -451,17 +550,23 @@ namespace Proj_M9_BrunoPinheiro
             tmr_game2.Stop();
             if(scorej1 >= vitoria)
             {
+                pic_obanai.Visible = true;
+                pic_obanai2.Visible = true;
                 numvitorias1++;
                 lbl_v1.Text = "Vitórias: " + numvitorias1;
             }
             if (scorej2 >= vitoria)
             {
+                pic_obanai.Visible = true;
+                pic_obanai2.Visible = true;
                 numvitorias2++;
                 lbl_v2.Text = "Vitórias: " + numvitorias2;
             }
             time = lbl_timer.Text;
             scorej1 = 0;
             scorej2 = 0;
+            ronda = 0;
+            lbl_rondas.Text = ronda.ToString();
             lbl_j1p.Text = scorej1.ToString();
             lbl_j2p.Text = scorej2.ToString();
             Snake.Clear();
@@ -515,8 +620,10 @@ namespace Proj_M9_BrunoPinheiro
                         time = lbl_timer.Text;
                         scorej1 = 0;
                         scorej2 = 0;
+                        ronda = 0;
                         lbl_j1p.Text = scorej1.ToString();
                         lbl_j2p.Text = scorej2.ToString();
+                        lbl_rondas.Text = ronda.ToString();
                         Snake.Clear();
                         Snake2.Clear();
                         food = new Circle4 { X = 0, Y = 0 };
@@ -548,24 +655,6 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_vitoria.Location = new Point(460, 252);
             }
         }
-
-        /*private void Win()
-        {
-            tmr_game.Stop();
-            time = lbl_timer.Text;
-            if (score > highScore)
-            {
-                highScore = score;
-                lbl_highscore.Text = "Maior Pontuação: " + highScore;
-                highTime = time;
-            }
-            Snake.Clear();
-            food = new Circle { X = 0, Y = 0 };
-            pic_obanai.Visible = true;
-            lbl_prima2.Visible = true;
-            lbl_win.Visible = true;
-            StopTimer();
-        }*/
         private void GameOver()
         {
             gameover = true;
@@ -576,14 +665,36 @@ namespace Proj_M9_BrunoPinheiro
                 StopTimer();
                 if (score > score2)
                 {
+                    lbl_gameover2.Visible = true;
+                    lbl_win.Visible = true;
+                    pic_obanai.Visible = true;
+                    pic_obanai2.Visible = true;
+                    lbl_prima.Visible = true;
                     scorej1++;
                     lbl_j1p.Text = scorej1.ToString();
+                    lbl_gameover2.Text = j2 + " Perdeu a Ronda " + ronda + "!";
+                    lbl_win.Text = j1 + " Ganhou a Ronda " + ronda + "!";
                 }
                 if (score < score2)
                 {
+                    lbl_gameover.Visible = true;
+                    lbl_win2.Visible = true;
+                    pic_obanai.Visible = true;
+                    pic_obanai2.Visible = true;
+                    lbl_prima.Visible = true;
                     scorej2++;
                     lbl_j2p.Text = scorej2.ToString();
+                    lbl_gameover.Text = j1 + " Perdeu a Ronda " + ronda + "!";
+                    lbl_win2.Text = j2 + " Ganhou a Ronda " + ronda + "!";
                 }
+                if (score == score2)
+                {
+                    pic_obanai.Visible = true;
+                    pic_obanai2.Visible = true;
+                    lbl_empate.Visible = true;
+                    lbl_empate2.Visible = true;
+                }
+                ronda++;
             }
             Snake.Clear();
             food = new Circle4 { X = -1, Y = -1 };
@@ -607,14 +718,37 @@ namespace Proj_M9_BrunoPinheiro
                 StopTimer();
                 if (score > score2)
                 {
+                    lbl_gameover2.Visible = true;
+                    lbl_win.Visible = true;
+                    pic_obanai.Visible = true;
+                    pic_obanai2.Visible = true;
+                    lbl_prima.Visible = true;
                     scorej1++;
                     lbl_j1p.Text = scorej1.ToString();
+                    lbl_gameover2.Text = j2 + " Perdeu a Ronda " + ronda + "!";
+                    lbl_win.Text = j1 + " Ganhou a Ronda " + ronda + "!";
                 }
                 if (score < score2)
                 {
+                    lbl_gameover.Visible = true;
+                    lbl_win2.Visible = true;
+                    pic_obanai.Visible = true;
+                    pic_obanai2.Visible = true;
+                    lbl_prima.Visible = true;
                     scorej2++;
                     lbl_j2p.Text = scorej2.ToString();
+                    lbl_gameover.Text = j1 + " Perdeu a Ronda " + ronda + "!";
+                    lbl_win2.Text = j2 + " Ganhou a Ronda " + ronda + "!";
                 }
+                if (score == score2)
+                {
+                    pic_obanai.Visible = true;
+                    pic_obanai2.Visible = true;
+                    lbl_empate.Visible = true;
+                    lbl_empate2.Visible = true;
+                    lbl_prima.Visible = true;
+                }
+                ronda++;
             }
             Snake2.Clear();
             food2 = new Circle5 { X2 = -1, Y2 = -1 };
@@ -772,6 +906,7 @@ namespace Proj_M9_BrunoPinheiro
         private void frm_1v1_Load(object sender, EventArgs e)
         {
             stopWatch = new Stopwatch();
+            tmr_prima.Enabled = true;
         }
     }
 }

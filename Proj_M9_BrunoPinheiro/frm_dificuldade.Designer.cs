@@ -135,6 +135,7 @@
             this.btn_dificil.TabIndex = 76;
             this.btn_dificil.Text = "Dificíl";
             this.btn_dificil.UseVisualStyleBackColor = true;
+            this.btn_dificil.Click += new System.EventHandler(this.btn_dificil_Click);
             this.btn_dificil.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_dificil_MouseDown);
             this.btn_dificil.MouseLeave += new System.EventHandler(this.btn_dificil_MouseLeave);
             this.btn_dificil.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_dificil_MouseMove);

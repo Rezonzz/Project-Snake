@@ -38,6 +38,8 @@
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_medio = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +57,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_gameover = new System.Windows.Forms.Label();
             this.pic_obanai = new System.Windows.Forms.PictureBox();
-            this.modoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.mst_snake.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.panel2.SuspendLayout();
@@ -113,7 +115,7 @@
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
             this.regrasToolStripMenuItem,
-            this.modoToolStripMenuItem,
+            this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
             this.tsmi_sair});
@@ -149,6 +151,27 @@
             this.regrasToolStripMenuItem.Name = "regrasToolStripMenuItem";
             this.regrasToolStripMenuItem.Size = new System.Drawing.Size(84, 30);
             this.regrasToolStripMenuItem.Text = "Regras";
+            // 
+            // tsmi_modo
+            // 
+            this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_multiplayer});
+            this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_modo.Name = "tsmi_modo";
+            this.tsmi_modo.Size = new System.Drawing.Size(72, 30);
+            this.tsmi_modo.Text = "Modo";
+            this.tsmi_modo.Click += new System.EventHandler(this.tsmi_modo_Click);
+            this.tsmi_modo.MouseLeave += new System.EventHandler(this.tsmi_modo_MouseLeave);
+            // 
+            // tsmi_multiplayer
+            // 
+            this.tsmi_multiplayer.BackColor = System.Drawing.Color.Black;
+            this.tsmi_multiplayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_multiplayer.Name = "tsmi_multiplayer";
+            this.tsmi_multiplayer.Size = new System.Drawing.Size(182, 30);
+            this.tsmi_multiplayer.Text = "MultiPlayer";
+            this.tsmi_multiplayer.Click += new System.EventHandler(this.tsmi_multiplayer_Click);
             // 
             // tsmi_dificuldade
             // 
@@ -237,7 +260,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 87);
             this.label1.TabIndex = 92;
-            this.label1.Text = "Objetivo: 10 pontos";
+            this.label1.Text = "Objetivo: 10 maçãs";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -322,13 +345,10 @@
             this.pic_obanai.TabIndex = 97;
             this.pic_obanai.TabStop = false;
             // 
-            // modoToolStripMenuItem
+            // tmr_prima
             // 
-            this.modoToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.modoToolStripMenuItem.Name = "modoToolStripMenuItem";
-            this.modoToolStripMenuItem.Size = new System.Drawing.Size(72, 30);
-            this.modoToolStripMenuItem.Text = "Modo";
+            this.tmr_prima.Interval = 300;
+            this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
             // 
             // frm_mtfacil
             // 
@@ -390,6 +410,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pic_obanai;
         private System.Windows.Forms.Label lbl_gameover;
-        private System.Windows.Forms.ToolStripMenuItem modoToolStripMenuItem;
+        private System.Windows.Forms.Timer tmr_prima;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_modo;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_multiplayer;
     }
 }

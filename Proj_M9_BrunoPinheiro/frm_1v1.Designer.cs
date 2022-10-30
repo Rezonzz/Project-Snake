@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_1v1));
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_gameover = new System.Windows.Forms.Label();
+            this.pic_obanai = new System.Windows.Forms.PictureBox();
+            this.lbl_win = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -44,6 +47,7 @@
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +56,9 @@
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lbl_gameover2 = new System.Windows.Forms.Label();
+            this.pic_obanai2 = new System.Windows.Forms.PictureBox();
+            this.lbl_win2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -64,18 +71,29 @@
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.lbl_vitoria = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_v1 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_v2 = new System.Windows.Forms.Label();
             this.lbl_mudarp = new System.Windows.Forms.Label();
             this.lbl_j1p = new System.Windows.Forms.Label();
             this.lbl_j2p = new System.Windows.Forms.Label();
-            this.lbl_v2 = new System.Windows.Forms.Label();
-            this.lbl_v1 = new System.Windows.Forms.Label();
+            this.lbl_prima = new System.Windows.Forms.Label();
+            this.tmr_prima = new System.Windows.Forms.Timer(this.components);
+            this.lbl_editarj1 = new System.Windows.Forms.Label();
+            this.lbl_editarj2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_rondas = new System.Windows.Forms.Label();
+            this.lbl_j1 = new System.Windows.Forms.Label();
+            this.lbl_j2 = new System.Windows.Forms.Label();
+            this.lbl_empate2 = new System.Windows.Forms.Label();
+            this.lbl_empate = new System.Windows.Forms.Label();
+            this.tsmi_singleplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.mst_snake.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas2)).BeginInit();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -84,15 +102,55 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel6.Controls.Add(this.lbl_empate);
+            this.panel6.Controls.Add(this.pic_obanai);
+            this.panel6.Controls.Add(this.lbl_win);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.lbl_gameover);
             this.panel6.Controls.Add(this.pic_canvas);
             this.panel6.Location = new System.Drawing.Point(12, 56);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(416, 416);
             this.panel6.TabIndex = 112;
+            // 
+            // lbl_gameover
+            // 
+            this.lbl_gameover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_gameover.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_gameover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_gameover.Location = new System.Drawing.Point(17, 80);
+            this.lbl_gameover.Name = "lbl_gameover";
+            this.lbl_gameover.Size = new System.Drawing.Size(382, 93);
+            this.lbl_gameover.TabIndex = 107;
+            this.lbl_gameover.Text = "Jogador 1 Perdeu a Ronda X!";
+            this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_gameover.Visible = false;
+            // 
+            // pic_obanai
+            // 
+            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai.Location = new System.Drawing.Point(72, 207);
+            this.pic_obanai.Name = "pic_obanai";
+            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai.TabIndex = 106;
+            this.pic_obanai.TabStop = false;
+            // 
+            // lbl_win
+            // 
+            this.lbl_win.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_win.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_win.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(137)))));
+            this.lbl_win.Location = new System.Drawing.Point(17, 80);
+            this.lbl_win.Name = "lbl_win";
+            this.lbl_win.Size = new System.Drawing.Size(382, 93);
+            this.lbl_win.TabIndex = 105;
+            this.lbl_win.Text = "Jogador 1 Ganhou a Ronda X!";
+            this.lbl_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_win.Visible = false;
             // 
             // panel3
             // 
@@ -184,6 +242,7 @@
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
             this.regrasToolStripMenuItem,
+            this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
             this.tsmi_sair});
@@ -219,6 +278,18 @@
             this.regrasToolStripMenuItem.Name = "regrasToolStripMenuItem";
             this.regrasToolStripMenuItem.Size = new System.Drawing.Size(84, 30);
             this.regrasToolStripMenuItem.Text = "Regras";
+            // 
+            // tsmi_modo
+            // 
+            this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_singleplayer});
+            this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_modo.Name = "tsmi_modo";
+            this.tsmi_modo.Size = new System.Drawing.Size(72, 30);
+            this.tsmi_modo.Text = "Modo";
+            this.tsmi_modo.Click += new System.EventHandler(this.tsmi_modo_Click);
+            this.tsmi_modo.MouseLeave += new System.EventHandler(this.tsmi_modo_MouseLeave);
             // 
             // tsmi_dificuldade
             // 
@@ -292,15 +363,55 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel7.Controls.Add(this.lbl_empate2);
+            this.panel7.Controls.Add(this.pic_obanai2);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel10);
             this.panel7.Controls.Add(this.panel11);
+            this.panel7.Controls.Add(this.lbl_win2);
+            this.panel7.Controls.Add(this.lbl_gameover2);
             this.panel7.Controls.Add(this.pic_canvas2);
             this.panel7.Location = new System.Drawing.Point(620, 56);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(416, 416);
             this.panel7.TabIndex = 113;
+            // 
+            // lbl_gameover2
+            // 
+            this.lbl_gameover2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_gameover2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_gameover2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_gameover2.Location = new System.Drawing.Point(17, 80);
+            this.lbl_gameover2.Name = "lbl_gameover2";
+            this.lbl_gameover2.Size = new System.Drawing.Size(382, 93);
+            this.lbl_gameover2.TabIndex = 110;
+            this.lbl_gameover2.Text = "Jogador 2 Perdeu a Ronda X!";
+            this.lbl_gameover2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_gameover2.Visible = false;
+            // 
+            // pic_obanai2
+            // 
+            this.pic_obanai2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai2.Location = new System.Drawing.Point(73, 207);
+            this.pic_obanai2.Name = "pic_obanai2";
+            this.pic_obanai2.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai2.TabIndex = 109;
+            this.pic_obanai2.TabStop = false;
+            // 
+            // lbl_win2
+            // 
+            this.lbl_win2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_win2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_win2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(137)))));
+            this.lbl_win2.Location = new System.Drawing.Point(17, 80);
+            this.lbl_win2.Name = "lbl_win2";
+            this.lbl_win2.Size = new System.Drawing.Size(382, 93);
+            this.lbl_win2.TabIndex = 108;
+            this.lbl_win2.Text = "Jogador 2 Ganhou a Ronda X!";
+            this.lbl_win2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_win2.Visible = false;
             // 
             // panel8
             // 
@@ -359,7 +470,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(503, 175);
+            this.label2.Location = new System.Drawing.Point(503, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 49);
             this.label2.TabIndex = 114;
@@ -394,46 +505,48 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel12.Controls.Add(this.lbl_j1);
             this.panel12.Controls.Add(this.lbl_v1);
-            this.panel12.Controls.Add(this.label1);
             this.panel12.Controls.Add(this.lbl_score);
+            this.panel12.Controls.Add(this.lbl_editarj1);
             this.panel12.Location = new System.Drawing.Point(12, 44);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(416, 25);
             this.panel12.TabIndex = 118;
             // 
-            // label1
+            // lbl_v1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(166, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 21);
-            this.label1.TabIndex = 121;
-            this.label1.Text = "Jogador 1";
+            this.lbl_v1.AutoSize = true;
+            this.lbl_v1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_v1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_v1.Location = new System.Drawing.Point(18, 3);
+            this.lbl_v1.Name = "lbl_v1";
+            this.lbl_v1.Size = new System.Drawing.Size(88, 21);
+            this.lbl_v1.TabIndex = 122;
+            this.lbl_v1.Text = "Vitórias: 0";
             // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel13.Controls.Add(this.lbl_j2);
             this.panel13.Controls.Add(this.lbl_v2);
-            this.panel13.Controls.Add(this.label3);
             this.panel13.Controls.Add(this.lbl_score2);
+            this.panel13.Controls.Add(this.lbl_editarj2);
             this.panel13.Location = new System.Drawing.Point(620, 44);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(416, 25);
             this.panel13.TabIndex = 119;
             // 
-            // label3
+            // lbl_v2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(167, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 21);
-            this.label3.TabIndex = 120;
-            this.label3.Text = "Jogador 2";
+            this.lbl_v2.AutoSize = true;
+            this.lbl_v2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_v2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_v2.Location = new System.Drawing.Point(18, 2);
+            this.lbl_v2.Name = "lbl_v2";
+            this.lbl_v2.Size = new System.Drawing.Size(88, 21);
+            this.lbl_v2.TabIndex = 121;
+            this.lbl_v2.Text = "Vitórias: 0";
             // 
             // lbl_mudarp
             // 
@@ -453,7 +566,7 @@
             // 
             this.lbl_j1p.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_j1p.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_j1p.Location = new System.Drawing.Point(443, 178);
+            this.lbl_j1p.Location = new System.Drawing.Point(443, 183);
             this.lbl_j1p.Name = "lbl_j1p";
             this.lbl_j1p.Size = new System.Drawing.Size(61, 49);
             this.lbl_j1p.TabIndex = 121;
@@ -464,34 +577,137 @@
             // 
             this.lbl_j2p.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_j2p.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_j2p.Location = new System.Drawing.Point(546, 178);
+            this.lbl_j2p.Location = new System.Drawing.Point(546, 183);
             this.lbl_j2p.Name = "lbl_j2p";
             this.lbl_j2p.Size = new System.Drawing.Size(61, 49);
             this.lbl_j2p.TabIndex = 122;
             this.lbl_j2p.Text = "0";
             this.lbl_j2p.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_v2
+            // lbl_prima
             // 
-            this.lbl_v2.AutoSize = true;
-            this.lbl_v2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_v2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_v2.Location = new System.Drawing.Point(18, 2);
-            this.lbl_v2.Name = "lbl_v2";
-            this.lbl_v2.Size = new System.Drawing.Size(88, 21);
-            this.lbl_v2.TabIndex = 121;
-            this.lbl_v2.Text = "Vitórias: 0";
+            this.lbl_prima.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_prima.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_prima.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_prima.Location = new System.Drawing.Point(445, 383);
+            this.lbl_prima.Name = "lbl_prima";
+            this.lbl_prima.Size = new System.Drawing.Size(157, 65);
+            this.lbl_prima.TabIndex = 123;
+            this.lbl_prima.Text = "Prima \"Enter\" para começar";
+            this.lbl_prima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_v1
+            // tmr_prima
             // 
-            this.lbl_v1.AutoSize = true;
-            this.lbl_v1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_v1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_v1.Location = new System.Drawing.Point(18, 3);
-            this.lbl_v1.Name = "lbl_v1";
-            this.lbl_v1.Size = new System.Drawing.Size(88, 21);
-            this.lbl_v1.TabIndex = 122;
-            this.lbl_v1.Text = "Vitórias: 0";
+            this.tmr_prima.Interval = 300;
+            this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
+            // 
+            // lbl_editarj1
+            // 
+            this.lbl_editarj1.AutoSize = true;
+            this.lbl_editarj1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_editarj1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_editarj1.Location = new System.Drawing.Point(256, 2);
+            this.lbl_editarj1.Name = "lbl_editarj1";
+            this.lbl_editarj1.Size = new System.Drawing.Size(54, 21);
+            this.lbl_editarj1.TabIndex = 125;
+            this.lbl_editarj1.Text = "Editar";
+            this.lbl_editarj1.Click += new System.EventHandler(this.lbl_editarj1_Click);
+            this.lbl_editarj1.MouseLeave += new System.EventHandler(this.lbl_editarj1_MouseLeave);
+            this.lbl_editarj1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_editarj1_MouseMove);
+            // 
+            // lbl_editarj2
+            // 
+            this.lbl_editarj2.AutoSize = true;
+            this.lbl_editarj2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_editarj2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_editarj2.Location = new System.Drawing.Point(256, 2);
+            this.lbl_editarj2.Name = "lbl_editarj2";
+            this.lbl_editarj2.Size = new System.Drawing.Size(54, 21);
+            this.lbl_editarj2.TabIndex = 126;
+            this.lbl_editarj2.Text = "Editar";
+            this.lbl_editarj2.Click += new System.EventHandler(this.lbl_editarj2_Click);
+            this.lbl_editarj2.MouseLeave += new System.EventHandler(this.lbl_editarj2_MouseLeave);
+            this.lbl_editarj2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_editarj2_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(458, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 36);
+            this.label1.TabIndex = 124;
+            this.label1.Text = "Ronda:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_rondas
+            // 
+            this.lbl_rondas.AutoSize = true;
+            this.lbl_rondas.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rondas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_rondas.Location = new System.Drawing.Point(550, 147);
+            this.lbl_rondas.Name = "lbl_rondas";
+            this.lbl_rondas.Size = new System.Drawing.Size(33, 38);
+            this.lbl_rondas.TabIndex = 125;
+            this.lbl_rondas.Text = "0";
+            this.lbl_rondas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_j1
+            // 
+            this.lbl_j1.AutoSize = true;
+            this.lbl_j1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_j1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_j1.Location = new System.Drawing.Point(164, 2);
+            this.lbl_j1.Name = "lbl_j1";
+            this.lbl_j1.Size = new System.Drawing.Size(84, 21);
+            this.lbl_j1.TabIndex = 126;
+            this.lbl_j1.Text = "Jogador 1";
+            // 
+            // lbl_j2
+            // 
+            this.lbl_j2.AutoSize = true;
+            this.lbl_j2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_j2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_j2.Location = new System.Drawing.Point(166, 2);
+            this.lbl_j2.Name = "lbl_j2";
+            this.lbl_j2.Size = new System.Drawing.Size(84, 21);
+            this.lbl_j2.TabIndex = 127;
+            this.lbl_j2.Text = "Jogador 2";
+            // 
+            // lbl_empate2
+            // 
+            this.lbl_empate2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_empate2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_empate2.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_empate2.Location = new System.Drawing.Point(17, 80);
+            this.lbl_empate2.Name = "lbl_empate2";
+            this.lbl_empate2.Size = new System.Drawing.Size(382, 93);
+            this.lbl_empate2.TabIndex = 126;
+            this.lbl_empate2.Text = "Empate!";
+            this.lbl_empate2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_empate2.Visible = false;
+            // 
+            // lbl_empate
+            // 
+            this.lbl_empate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_empate.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_empate.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_empate.Location = new System.Drawing.Point(17, 80);
+            this.lbl_empate.Name = "lbl_empate";
+            this.lbl_empate.Size = new System.Drawing.Size(382, 93);
+            this.lbl_empate.TabIndex = 127;
+            this.lbl_empate.Text = "Empate!";
+            this.lbl_empate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_empate.Visible = false;
+            // 
+            // tsmi_singleplayer
+            // 
+            this.tsmi_singleplayer.BackColor = System.Drawing.Color.Black;
+            this.tsmi_singleplayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_singleplayer.Name = "tsmi_singleplayer";
+            this.tsmi_singleplayer.Size = new System.Drawing.Size(190, 30);
+            this.tsmi_singleplayer.Text = "SinglePlayer";
+            this.tsmi_singleplayer.Click += new System.EventHandler(this.tsmi_singleplayer_Click);
             // 
             // frm_1v1
             // 
@@ -499,6 +715,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1048, 484);
+            this.Controls.Add(this.lbl_rondas);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_prima);
             this.Controls.Add(this.lbl_j2p);
             this.Controls.Add(this.lbl_j1p);
             this.Controls.Add(this.lbl_mudarp);
@@ -516,15 +735,17 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_1v1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_1v1";
+            this.Text = "Snake - Modo 1v1";
             this.Load += new System.EventHandler(this.frm_1v1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.mst_snake.ResumeLayout(false);
             this.mst_snake.PerformLayout();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas2)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -572,12 +793,28 @@
         private System.Windows.Forms.Label lbl_vitoria;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_mudarp;
         private System.Windows.Forms.Label lbl_j1p;
         private System.Windows.Forms.Label lbl_j2p;
         private System.Windows.Forms.Label lbl_v1;
         private System.Windows.Forms.Label lbl_v2;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_modo;
+        private System.Windows.Forms.Label lbl_prima;
+        private System.Windows.Forms.Timer tmr_prima;
+        private System.Windows.Forms.Label lbl_gameover;
+        private System.Windows.Forms.PictureBox pic_obanai;
+        private System.Windows.Forms.Label lbl_win;
+        private System.Windows.Forms.Label lbl_gameover2;
+        private System.Windows.Forms.PictureBox pic_obanai2;
+        private System.Windows.Forms.Label lbl_win2;
+        private System.Windows.Forms.Label lbl_editarj1;
+        private System.Windows.Forms.Label lbl_editarj2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_rondas;
+        private System.Windows.Forms.Label lbl_j1;
+        private System.Windows.Forms.Label lbl_j2;
+        private System.Windows.Forms.Label lbl_empate;
+        private System.Windows.Forms.Label lbl_empate2;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_singleplayer;
     }
 }

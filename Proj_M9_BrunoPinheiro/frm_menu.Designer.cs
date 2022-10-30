@@ -40,6 +40,7 @@
             this.btn_sair = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.pic_info = new System.Windows.Forms.PictureBox();
+            this.btn_jogarm = new System.Windows.Forms.Button();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
@@ -143,7 +144,7 @@
             this.btn_regras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_regras.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_regras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_regras.Location = new System.Drawing.Point(86, 205);
+            this.btn_regras.Location = new System.Drawing.Point(86, 257);
             this.btn_regras.Name = "btn_regras";
             this.btn_regras.Size = new System.Drawing.Size(160, 43);
             this.btn_regras.TabIndex = 70;
@@ -159,7 +160,7 @@
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sair.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_sair.Location = new System.Drawing.Point(86, 280);
+            this.btn_sair.Location = new System.Drawing.Point(86, 322);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(160, 43);
             this.btn_sair.TabIndex = 71;
@@ -198,12 +199,29 @@
             this.pic_info.TabStop = false;
             this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
             // 
+            // btn_jogarm
+            // 
+            this.btn_jogarm.FlatAppearance.BorderSize = 2;
+            this.btn_jogarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogarm.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_jogarm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_jogarm.Location = new System.Drawing.Point(86, 194);
+            this.btn_jogarm.Name = "btn_jogarm";
+            this.btn_jogarm.Size = new System.Drawing.Size(160, 43);
+            this.btn_jogarm.TabIndex = 76;
+            this.btn_jogarm.Text = "Modo Multiplayer";
+            this.btn_jogarm.UseVisualStyleBackColor = true;
+            this.btn_jogarm.Click += new System.EventHandler(this.btn_jogarm_Click);
+            this.btn_jogarm.MouseLeave += new System.EventHandler(this.btn_jogarm_MouseLeave);
+            this.btn_jogarm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_jogarm_MouseMove);
+            // 
             // frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(337, 514);
+            this.Controls.Add(this.btn_jogarm);
             this.Controls.Add(this.pic_info);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_sair);
@@ -237,5 +255,6 @@
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.PictureBox pic_info;
+        private System.Windows.Forms.Button btn_jogarm;
     }
 }

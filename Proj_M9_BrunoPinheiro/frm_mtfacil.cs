@@ -318,6 +318,29 @@ namespace Proj_M9_BrunoPinheiro
             this.Hide();
         }
 
+        private void tmr_prima_Tick(object sender, EventArgs e)
+        {
+            lbl_prima.ForeColor = lbl_prima.ForeColor == Color.FromArgb(17, 17, 17) ? Color.White : Color.FromArgb(17, 17, 17);
+            lbl_prima2.ForeColor = lbl_prima2.ForeColor == Color.FromArgb(17, 17, 17) ? Color.White : Color.FromArgb(17, 17, 17);
+        }
+
+        private void tsmi_multiplayer_Click(object sender, EventArgs e)
+        {
+            frm_1v1 frm_1v1 = new frm_1v1();
+            frm_1v1.Show();
+            this.Hide();
+        }
+
+        private void tsmi_modo_Click(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.Black;
+        }
+
+        private void tsmi_modo_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.White;
+        }
+
         private void ResetTimer()
         {
             stopWatch.Reset();
@@ -325,6 +348,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void frm_mtfacil_Load(object sender, EventArgs e)
         {
+            tmr_prima.Enabled = true; 
             stopWatch = new Stopwatch();
         }
 

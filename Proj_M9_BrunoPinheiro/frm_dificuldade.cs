@@ -140,5 +140,12 @@ namespace Proj_M9_BrunoPinheiro
             btn_mtfacil.Size = new Size(145, 40);
             btn_mtfacil.Location = new Point(95, 131);
         }
+
+        private void btn_dificil_Click(object sender, EventArgs e)
+        {
+            frm_dificil frm_dificil = new frm_dificil();
+            frm_dificil.Show();
+            this.Hide();
+        }
     }
 }

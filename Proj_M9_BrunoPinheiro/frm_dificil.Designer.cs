@@ -44,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_modo = new System.Windows.Forms.Label();
-            this.lbl_highscore = new System.Windows.Forms.Label();
             this.lbl_score = new System.Windows.Forms.Label();
             this.lbl_timer = new System.Windows.Forms.Label();
             this.mst_snake = new System.Windows.Forms.MenuStrip();
@@ -59,6 +58,10 @@
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
+            this.tmr_prima = new System.Windows.Forms.Timer(this.components);
+            this.lbl_highscore = new System.Windows.Forms.Label();
+            this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -194,7 +197,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 87);
             this.label1.TabIndex = 111;
-            this.label1.Text = "Objetivo: 40 pontos";
+            this.label1.Text = "Objetivo: 40 maçãs";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -216,17 +219,6 @@
             this.lbl_modo.TabIndex = 109;
             this.lbl_modo.Text = "Modo - Difícil";
             // 
-            // lbl_highscore
-            // 
-            this.lbl_highscore.AutoSize = true;
-            this.lbl_highscore.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_highscore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_highscore.Location = new System.Drawing.Point(621, 182);
-            this.lbl_highscore.Name = "lbl_highscore";
-            this.lbl_highscore.Size = new System.Drawing.Size(151, 21);
-            this.lbl_highscore.TabIndex = 108;
-            this.lbl_highscore.Text = "Maior Pontuação: 0";
-            // 
             // lbl_score
             // 
             this.lbl_score.AutoSize = true;
@@ -234,9 +226,9 @@
             this.lbl_score.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_score.Location = new System.Drawing.Point(622, 150);
             this.lbl_score.Name = "lbl_score";
-            this.lbl_score.Size = new System.Drawing.Size(104, 21);
+            this.lbl_score.Size = new System.Drawing.Size(77, 21);
             this.lbl_score.TabIndex = 107;
-            this.lbl_score.Text = "Pontuação: 0";
+            this.lbl_score.Text = "Maçãs: 0";
             // 
             // lbl_timer
             // 
@@ -256,6 +248,7 @@
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
             this.regrasToolStripMenuItem,
+            this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
             this.tsmi_sair});
@@ -361,17 +354,53 @@
             this.tmr_game.Interval = 40;
             this.tmr_game.Tick += new System.EventHandler(this.GameTimerEvent);
             // 
+            // tmr_prima
+            // 
+            this.tmr_prima.Interval = 300;
+            this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
+            // 
+            // lbl_highscore
+            // 
+            this.lbl_highscore.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_highscore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_highscore.Location = new System.Drawing.Point(621, 182);
+            this.lbl_highscore.Name = "lbl_highscore";
+            this.lbl_highscore.Size = new System.Drawing.Size(179, 49);
+            this.lbl_highscore.TabIndex = 103;
+            this.lbl_highscore.Text = "Maior Número de Maçãs Comidas: 0";
+            // 
+            // tsmi_modo
+            // 
+            this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_multiplayer});
+            this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_modo.Name = "tsmi_modo";
+            this.tsmi_modo.Size = new System.Drawing.Size(72, 30);
+            this.tsmi_modo.Text = "Modo";
+            this.tsmi_modo.Click += new System.EventHandler(this.tsmi_modo_Click);
+            this.tsmi_modo.MouseLeave += new System.EventHandler(this.tsmi_modo_MouseLeave);
+            // 
+            // tsmi_multiplayer
+            // 
+            this.tsmi_multiplayer.BackColor = System.Drawing.Color.Black;
+            this.tsmi_multiplayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_multiplayer.Name = "tsmi_multiplayer";
+            this.tsmi_multiplayer.Size = new System.Drawing.Size(182, 30);
+            this.tsmi_multiplayer.Text = "MultiPlayer";
+            this.tsmi_multiplayer.Click += new System.EventHandler(this.tsmi_multiplayer_Click);
+            // 
             // frm_dificil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.lbl_highscore);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_modo);
-            this.Controls.Add(this.lbl_highscore);
             this.Controls.Add(this.lbl_score);
             this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.mst_snake);
@@ -410,7 +439,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_modo;
-        private System.Windows.Forms.Label lbl_highscore;
         private System.Windows.Forms.Label lbl_score;
         private System.Windows.Forms.Label lbl_timer;
         private System.Windows.Forms.MenuStrip mst_snake;
@@ -425,5 +453,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
         private System.Windows.Forms.Timer tmr_temp;
         private System.Windows.Forms.Timer tmr_game;
+        private System.Windows.Forms.Timer tmr_prima;
+        private System.Windows.Forms.Label lbl_highscore;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_modo;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_multiplayer;
     }
 }

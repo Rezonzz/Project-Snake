@@ -34,7 +34,7 @@ namespace Proj_M9_BrunoPinheiro
                 }
             }
             LerLogin.Dispose();*/
-            Application.Run(new frm_1v1());
+            Application.Run(new frm_login());
         }
     }
 }
