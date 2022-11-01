@@ -81,7 +81,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_info1v1_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Page 2";
+            this.Text = "Info Página 2";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -151,26 +151,18 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings4.directions = "left";
-                left.URL = Application.StartupPath + @"\\left.mp3";
-                left.controls.play();
             }
             if (goRight)
             {
                 Settings4.directions = "right";
-                right.URL = Application.StartupPath + @"\\right.mp3";
-                right.controls.play();
             }
             if (goDown)
             {
                 Settings4.directions = "down";
-                down.URL = Application.StartupPath + @"\\down.mp3";
-                down.controls.play();
             }
             if (goUp)
             {
                 Settings4.directions = "up";
-                up.URL = Application.StartupPath + @"\\up.mp3";
-                up.controls.play();
             }
             // end of directions
 
@@ -252,26 +244,18 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft2)
             {
                 Settings5.directions = "left";
-                left.URL = Application.StartupPath + @"\\left.mp3";
-                left.controls.play();
             }
             if (goRight2)
             {
                 Settings5.directions = "right";
-                right.URL = Application.StartupPath + @"\\right.mp3";
-                right.controls.play();
             }
             if (goDown2)
             {
                 Settings5.directions = "down";
-                down.URL = Application.StartupPath + @"\\down.mp3";
-                down.controls.play();
             }
             if (goUp2)
             {
                 Settings5.directions = "up";
-                up.URL = Application.StartupPath + @"\\up.mp3";
-                up.controls.play();
             }
             // end of directions
 
@@ -769,7 +753,7 @@ namespace Proj_M9_BrunoPinheiro
             die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
             time = lbl_timer.Text;
-            pic_obanai.Visible = true;
+            pic_obanai2.Visible = true;
             lbl_morto2.Visible = true;
             if (gameover == true && gameover2 == true)
             {
@@ -902,34 +886,74 @@ namespace Proj_M9_BrunoPinheiro
             if (e.KeyCode == Keys.Left && Settings5.directions != "right")
             {
                 goLeft2 = true;
+                if (gameover2 == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Right && Settings5.directions != "left")
             {
                 goRight2 = true;
+                if (gameover2 == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Up && Settings5.directions != "down")
             {
                 goUp2 = true;
+                if (gameover2 == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Down && Settings5.directions != "up")
             {
                 goDown2 = true;
+                if (gameover2 == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
             if (e.KeyCode == Keys.A && Settings4.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.D && Settings4.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.W && Settings4.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.S && Settings4.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
         }
 

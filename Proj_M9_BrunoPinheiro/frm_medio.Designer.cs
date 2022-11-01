@@ -34,6 +34,8 @@
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +62,6 @@
             this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.lbl_highscore = new System.Windows.Forms.Label();
-            this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_snake.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
@@ -111,6 +111,27 @@
             this.regrasToolStripMenuItem.Name = "regrasToolStripMenuItem";
             this.regrasToolStripMenuItem.Size = new System.Drawing.Size(84, 30);
             this.regrasToolStripMenuItem.Text = "Regras";
+            // 
+            // tsmi_modo
+            // 
+            this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_multiplayer});
+            this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_modo.Name = "tsmi_modo";
+            this.tsmi_modo.Size = new System.Drawing.Size(72, 30);
+            this.tsmi_modo.Text = "Modo";
+            this.tsmi_modo.Click += new System.EventHandler(this.tsmi_modo_Click);
+            this.tsmi_modo.MouseLeave += new System.EventHandler(this.tsmi_modo_MouseLeave);
+            // 
+            // tsmi_multiplayer
+            // 
+            this.tsmi_multiplayer.BackColor = System.Drawing.Color.Black;
+            this.tsmi_multiplayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_multiplayer.Name = "tsmi_multiplayer";
+            this.tsmi_multiplayer.Size = new System.Drawing.Size(182, 30);
+            this.tsmi_multiplayer.Text = "MultiPlayer";
+            this.tsmi_multiplayer.Click += new System.EventHandler(this.tsmi_multiplayer_Click);
             // 
             // tsmi_dificuldade
             // 
@@ -270,12 +291,12 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel2);
-            this.panel6.Controls.Add(this.lbl_gameover);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.pic_obanai);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.lbl_prima);
             this.panel6.Controls.Add(this.lbl_prima2);
+            this.panel6.Controls.Add(this.lbl_gameover);
             this.panel6.Controls.Add(this.lbl_win);
             this.panel6.Controls.Add(this.pic_canvas);
             this.panel6.Location = new System.Drawing.Point(12, 47);
@@ -288,9 +309,9 @@
             this.lbl_gameover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.lbl_gameover.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_gameover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_gameover.Location = new System.Drawing.Point(0, 97);
+            this.lbl_gameover.Location = new System.Drawing.Point(15, 97);
             this.lbl_gameover.Name = "lbl_gameover";
-            this.lbl_gameover.Size = new System.Drawing.Size(580, 59);
+            this.lbl_gameover.Size = new System.Drawing.Size(550, 59);
             this.lbl_gameover.TabIndex = 98;
             this.lbl_gameover.Text = "Tu Falhaste!";
             this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -336,9 +357,9 @@
             this.lbl_win.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.lbl_win.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_win.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(137)))));
-            this.lbl_win.Location = new System.Drawing.Point(0, 97);
+            this.lbl_win.Location = new System.Drawing.Point(15, 97);
             this.lbl_win.Name = "lbl_win";
-            this.lbl_win.Size = new System.Drawing.Size(580, 59);
+            this.lbl_win.Size = new System.Drawing.Size(550, 59);
             this.lbl_win.TabIndex = 96;
             this.lbl_win.Text = "Objetivo Concluído!";
             this.lbl_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,27 +389,6 @@
             this.lbl_highscore.Size = new System.Drawing.Size(179, 49);
             this.lbl_highscore.TabIndex = 103;
             this.lbl_highscore.Text = "Maior Número de Maçãs Comidas: 0";
-            // 
-            // tsmi_modo
-            // 
-            this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_multiplayer});
-            this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_modo.Name = "tsmi_modo";
-            this.tsmi_modo.Size = new System.Drawing.Size(72, 30);
-            this.tsmi_modo.Text = "Modo";
-            this.tsmi_modo.Click += new System.EventHandler(this.tsmi_modo_Click);
-            this.tsmi_modo.MouseLeave += new System.EventHandler(this.tsmi_modo_MouseLeave);
-            // 
-            // tsmi_multiplayer
-            // 
-            this.tsmi_multiplayer.BackColor = System.Drawing.Color.Black;
-            this.tsmi_multiplayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_multiplayer.Name = "tsmi_multiplayer";
-            this.tsmi_multiplayer.Size = new System.Drawing.Size(182, 30);
-            this.tsmi_multiplayer.Text = "MultiPlayer";
-            this.tsmi_multiplayer.Click += new System.EventHandler(this.tsmi_multiplayer_Click);
             // 
             // frm_medio
             // 

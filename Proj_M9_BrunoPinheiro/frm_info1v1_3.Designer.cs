@@ -55,7 +55,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_info1v1_3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_info1v1_3";
+            this.Text = "Info Página 3";
             this.ResumeLayout(false);
 
         }

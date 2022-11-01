@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_1v1));
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_morto = new System.Windows.Forms.Label();
             this.lbl_empate = new System.Windows.Forms.Label();
             this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.lbl_win = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lbl_morto2 = new System.Windows.Forms.Label();
             this.lbl_empate2 = new System.Windows.Forms.Label();
             this.pic_obanai2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -89,8 +91,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_rondas = new System.Windows.Forms.Label();
             this.pic_info1v1 = new System.Windows.Forms.PictureBox();
-            this.lbl_morto = new System.Windows.Forms.Label();
-            this.lbl_morto2 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -120,6 +120,19 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(416, 416);
             this.panel6.TabIndex = 112;
+            // 
+            // lbl_morto
+            // 
+            this.lbl_morto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_morto.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_morto.ForeColor = System.Drawing.Color.Red;
+            this.lbl_morto.Location = new System.Drawing.Point(17, 83);
+            this.lbl_morto.Name = "lbl_morto";
+            this.lbl_morto.Size = new System.Drawing.Size(382, 93);
+            this.lbl_morto.TabIndex = 128;
+            this.lbl_morto.Text = "Morto!";
+            this.lbl_morto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_morto.Visible = false;
             // 
             // lbl_empate
             // 
@@ -404,6 +417,19 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(416, 416);
             this.panel7.TabIndex = 113;
+            // 
+            // lbl_morto2
+            // 
+            this.lbl_morto2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_morto2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_morto2.ForeColor = System.Drawing.Color.Red;
+            this.lbl_morto2.Location = new System.Drawing.Point(17, 80);
+            this.lbl_morto2.Name = "lbl_morto2";
+            this.lbl_morto2.Size = new System.Drawing.Size(382, 93);
+            this.lbl_morto2.TabIndex = 129;
+            this.lbl_morto2.Text = "Morto!";
+            this.lbl_morto2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_morto2.Visible = false;
             // 
             // lbl_empate2
             // 
@@ -725,32 +751,6 @@
             this.pic_info1v1.TabIndex = 126;
             this.pic_info1v1.TabStop = false;
             this.pic_info1v1.Click += new System.EventHandler(this.pic_info1v1_Click);
-            // 
-            // lbl_morto
-            // 
-            this.lbl_morto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.lbl_morto.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_morto.ForeColor = System.Drawing.Color.Red;
-            this.lbl_morto.Location = new System.Drawing.Point(17, 83);
-            this.lbl_morto.Name = "lbl_morto";
-            this.lbl_morto.Size = new System.Drawing.Size(382, 93);
-            this.lbl_morto.TabIndex = 128;
-            this.lbl_morto.Text = "Morto!";
-            this.lbl_morto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_morto.Visible = false;
-            // 
-            // lbl_morto2
-            // 
-            this.lbl_morto2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.lbl_morto2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_morto2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_morto2.Location = new System.Drawing.Point(17, 80);
-            this.lbl_morto2.Name = "lbl_morto2";
-            this.lbl_morto2.Size = new System.Drawing.Size(382, 93);
-            this.lbl_morto2.TabIndex = 129;
-            this.lbl_morto2.Text = "Morto!";
-            this.lbl_morto2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_morto2.Visible = false;
             // 
             // frm_1v1
             // 

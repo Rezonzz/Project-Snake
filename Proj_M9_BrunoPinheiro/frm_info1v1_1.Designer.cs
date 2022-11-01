@@ -173,7 +173,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_info1v1_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Page 1";
+            this.Text = "Info Página 1";
             this.Load += new System.EventHandler(this.frm_info1v1_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -256,12 +256,12 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel2);
-            this.panel6.Controls.Add(this.lbl_gameover);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.pic_obanai);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.lbl_prima);
             this.panel6.Controls.Add(this.lbl_prima2);
+            this.panel6.Controls.Add(this.lbl_gameover);
             this.panel6.Controls.Add(this.lbl_win);
             this.panel6.Controls.Add(this.pic_canvas);
             this.panel6.Location = new System.Drawing.Point(12, 47);
@@ -280,7 +280,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel2.Location = new System.Drawing.Point(563, 1);
+            this.panel2.Location = new System.Drawing.Point(564, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(16, 420);
             this.panel2.TabIndex = 99;
@@ -290,9 +290,9 @@
             this.lbl_gameover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.lbl_gameover.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_gameover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_gameover.Location = new System.Drawing.Point(0, 97);
+            this.lbl_gameover.Location = new System.Drawing.Point(18, 97);
             this.lbl_gameover.Name = "lbl_gameover";
-            this.lbl_gameover.Size = new System.Drawing.Size(580, 59);
+            this.lbl_gameover.Size = new System.Drawing.Size(544, 59);
             this.lbl_gameover.TabIndex = 98;
             this.lbl_gameover.Text = "Tu Falhaste!";
             this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -354,9 +354,9 @@
             this.lbl_win.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.lbl_win.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_win.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(137)))));
-            this.lbl_win.Location = new System.Drawing.Point(0, 97);
+            this.lbl_win.Location = new System.Drawing.Point(18, 97);
             this.lbl_win.Name = "lbl_win";
-            this.lbl_win.Size = new System.Drawing.Size(580, 59);
+            this.lbl_win.Size = new System.Drawing.Size(544, 59);
             this.lbl_win.TabIndex = 96;
             this.lbl_win.Text = "Objetivo Concluído!";
             this.lbl_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

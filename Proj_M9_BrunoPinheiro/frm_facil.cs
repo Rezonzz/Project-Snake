@@ -24,7 +24,7 @@ namespace Proj_M9_BrunoPinheiro
 
         Random rand = new Random();
 
-        bool goLeft, goRight, goDown, goUp;
+        bool goLeft, goRight, goDown, goUp, gameover;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -62,34 +62,74 @@ namespace Proj_M9_BrunoPinheiro
             if (e.KeyCode == Keys.Left && Settings.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Right && Settings.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Up && Settings.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Down && Settings.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
             if (e.KeyCode == Keys.A && Settings.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.D && Settings.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.W && Settings.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.S && Settings.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
         }
         WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
@@ -320,26 +360,18 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings.directions = "left";
-                left.URL = Application.StartupPath + @"\\left.mp3";
-                left.controls.play();
             }
             if (goRight)
             {
                 Settings.directions = "right";
-                right.URL = Application.StartupPath + @"\\right.mp3";
-                right.controls.play();
             }
             if (goDown)
             {
                 Settings.directions = "down";
-                down.URL = Application.StartupPath + @"\\down.mp3";
-                down.controls.play();
             }
             if (goUp)
             {
                 Settings.directions = "up";
-                up.URL = Application.StartupPath + @"\\up.mp3";
-                up.controls.play();
             }
             // end of directions
 
@@ -418,6 +450,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             start.URL = Application.StartupPath + @"\\start.mp3";
             start.controls.play();
+            gameover = false;
             if (score < 20)
             {
                 maxWidth = pic_canvas.Width / Settings.Width - 1;
@@ -523,6 +556,7 @@ namespace Proj_M9_BrunoPinheiro
             tmr_game.Stop();
             die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
+            gameover = true;
             time = lbl_timer.Text;
             if (score > highScore)
             {

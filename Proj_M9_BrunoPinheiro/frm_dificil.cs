@@ -24,7 +24,7 @@ namespace Proj_M9_BrunoPinheiro
 
         Random rand = new Random();
 
-        bool goLeft, goRight, goDown, goUp;
+        bool goLeft, goRight, goDown, goUp, gameover;
 
         WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
@@ -80,34 +80,74 @@ namespace Proj_M9_BrunoPinheiro
             if (e.KeyCode == Keys.Left && Settings3.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Right && Settings3.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Up && Settings3.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Down && Settings3.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
             if (e.KeyCode == Keys.A && Settings3.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.D && Settings3.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.W && Settings3.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.S && Settings3.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
         }
 
@@ -398,7 +438,6 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Controls.Add(lbl_gameover);
             pic_canvas.Controls.Add(lbl_win);
             pic_canvas.Controls.Add(pic_obanai);
-
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.FileName = "Snake Snapshot";
             dialog.DefaultExt = "png";
@@ -420,6 +459,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             start.URL = Application.StartupPath + @"\\start.mp3";
             start.controls.play();
+            gameover = false;
             if (score < 40)
             {
                 maxWidth = pic_canvas.Width / Settings3.Width - 1;
@@ -526,6 +566,7 @@ namespace Proj_M9_BrunoPinheiro
             tmr_game.Stop();
             die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
+            gameover = true;
             time = lbl_timer.Text;
             if (score > highScore)
             {

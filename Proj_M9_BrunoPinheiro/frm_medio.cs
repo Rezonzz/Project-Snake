@@ -25,7 +25,7 @@ namespace Proj_M9_BrunoPinheiro
 
         Random rand = new Random();
 
-        bool goLeft, goRight, goDown, goUp;
+        bool goLeft, goRight, goDown, goUp, gameover;
 
         string time, highTime;
 
@@ -51,34 +51,74 @@ namespace Proj_M9_BrunoPinheiro
             if (e.KeyCode == Keys.Left && Settings2.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Right && Settings2.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Up && Settings2.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.Down && Settings2.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
             if (e.KeyCode == Keys.A && Settings2.directions != "right")
             {
                 goLeft = true;
+                if (gameover == false)
+                {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
+                    left.controls.play();
+                }
             }
             if (e.KeyCode == Keys.D && Settings2.directions != "left")
             {
                 goRight = true;
+                if (gameover == false)
+                {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
+                    right.controls.play();
+                }
             }
             if (e.KeyCode == Keys.W && Settings2.directions != "down")
             {
                 goUp = true;
+                if (gameover == false)
+                {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
+                    up.controls.play();
+                }
             }
             if (e.KeyCode == Keys.S && Settings2.directions != "up")
             {
                 goDown = true;
+                if (gameover == false)
+                {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
+                    down.controls.play();
+                }
             }
         }
 
@@ -125,26 +165,18 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings2.directions = "left";
-                left.URL = Application.StartupPath + @"\\left.mp3";
-                left.controls.play();
             }
             if (goRight)
             {
                 Settings2.directions = "right";
-                right.URL = Application.StartupPath + @"\\right.mp3";
-                right.controls.play();
             }
             if (goDown)
             {
                 Settings2.directions = "down";
-                down.URL = Application.StartupPath + @"\\down.mp3";
-                down.controls.play();
             }
             if (goUp)
             {
                 Settings2.directions = "up";
-                up.URL = Application.StartupPath + @"\\up.mp3";
-                up.controls.play();
             }
             // end of directions
 
@@ -351,6 +383,7 @@ namespace Proj_M9_BrunoPinheiro
             tsmi_modo.ForeColor = Color.Black;
         }
 
+
         private void tsmi_modo_MouseLeave(object sender, EventArgs e)
         {
             tsmi_modo.ForeColor = Color.White;
@@ -382,8 +415,6 @@ namespace Proj_M9_BrunoPinheiro
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
-
         private void Win()
         {
             tmr_game.Stop();
@@ -407,6 +438,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             start.URL = Application.StartupPath + @"\\start.mp3";
             start.controls.play();
+            gameover = false;
             if (score < 30)
             {
                 maxWidth = pic_canvas.Width / Settings2.Width - 1;
@@ -494,6 +526,7 @@ namespace Proj_M9_BrunoPinheiro
             tmr_game.Stop();
             die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
+            gameover = true;
             time = lbl_timer.Text;
             if (score > highScore)
             {
