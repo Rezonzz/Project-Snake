@@ -61,6 +61,12 @@
     <Compile Include="frm_1v1.Designer.cs">
       <DependentUpon>frm_1v1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_info1v1_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_info1v1_1.Designer.cs">
+      <DependentUpon>frm_info1v1_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_dificil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,24 @@
     </Compile>
     <Compile Include="frm_info.Designer.cs">
       <DependentUpon>frm_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_info1v1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_info1v1.Designer.cs">
+      <DependentUpon>frm_info1v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_info1v1_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_info1v1_2.Designer.cs">
+      <DependentUpon>frm_info1v1_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_info1v1_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_info1v1_3.Designer.cs">
+      <DependentUpon>frm_info1v1_3.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
@@ -137,6 +161,9 @@
     <EmbeddedResource Include="frm_1v1.resx">
       <DependentUpon>frm_1v1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_info1v1_1.resx">
+      <DependentUpon>frm_info1v1_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_dificil.resx">
       <DependentUpon>frm_dificil.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +175,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_info.resx">
       <DependentUpon>frm_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_info1v1.resx">
+      <DependentUpon>frm_info1v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_info1v1_2.resx">
+      <DependentUpon>frm_info1v1_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_info1v1_3.resx">
+      <DependentUpon>frm_info1v1_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>

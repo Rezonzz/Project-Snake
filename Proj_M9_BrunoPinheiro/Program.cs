@@ -18,22 +18,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /*StreamReader LerLogin = new StreamReader("Login.txt", Encoding.UTF8);
-            while (!LerLogin.EndOfStream)
-            {
-                String linha = LerLogin.ReadLine();
-                String loginfalse = linha.Substring(0, 5);
-                String logintrue = linha.Substring(5, 4);
-                if (loginfalse == "false")
-                {
-                    Application.Run(new frm_login());
-                }
-                if (logintrue == "true")
-                {
-                    Application.Run(new frm_menu());
-                }
-            }
-            LerLogin.Dispose();*/
             Application.Run(new frm_login());
         }
     }

@@ -355,7 +355,10 @@ namespace Proj_M9_BrunoPinheiro
                 StartTimer();
                 score = 0;
                 score2 = 0;
-                ronda = 1;
+                if(ronda == 0)
+                {
+                    ronda++;
+                }
                 lbl_rondas.Text = ronda.ToString();
                 lbl_score.Text = "Maçãs: " + score;
                 lbl_score2.Text = "Maçãs: " + score2;
@@ -410,6 +413,10 @@ namespace Proj_M9_BrunoPinheiro
                 StartTimer();
                 score = 0;
                 score2 = 0;
+                if (ronda == 0)
+                {
+                    ronda++;
+                }
                 lbl_rondas.Text = ronda.ToString();
                 lbl_score.Text = "Maçãs: " + score;
                 lbl_score2.Text = "Maçãs: " + score2;
@@ -486,6 +493,13 @@ namespace Proj_M9_BrunoPinheiro
         private void tsmi_modo_MouseLeave(object sender, EventArgs e)
         {
             tsmi_modo.ForeColor = Color.White;
+        }
+
+        private void pic_info1v1_Click(object sender, EventArgs e)
+        {
+            frm_info1v1 frm_info1v1 = new frm_info1v1();
+            frm_info1v1.Show();
+            this.Hide();
         }
 
         private void lbl_editarj2_MouseLeave(object sender, EventArgs e)

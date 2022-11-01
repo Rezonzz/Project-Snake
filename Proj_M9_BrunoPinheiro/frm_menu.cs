@@ -32,11 +32,6 @@ namespace Proj_M9_BrunoPinheiro
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            /*StreamWriter Login = new StreamWriter("Login.txt");
-            Login.WriteLine("{0, -5}, {1, -4}",
-            "false", "****"
-                );
-            Login.Dispose();*/
             frm_login frm_login = new frm_login();
             frm_login.Show();
             this.Close();

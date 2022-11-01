@@ -140,11 +140,6 @@ namespace Proj_M9_BrunoPinheiro
             {
                 btn_login.Size = new Size(130, 35);
                 btn_login.Location = new Point(96, 388);
-                /*StreamWriter Login = new StreamWriter("Login.txt");
-                Login.WriteLine("{0, -5}, {1, -4}",
-                "*****", "true"
-                    );
-                Login.Dispose();*/
                 frm_menu frm_menu = new frm_menu();
                 frm_menu.Show();
                 this.Hide();
