@@ -29,6 +29,15 @@ namespace Proj_M9_BrunoPinheiro
 
         string time, highTime;
 
+        WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -116,18 +125,26 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings2.directions = "left";
+                left.URL = Application.StartupPath + @"\\left.mp3";
+                left.controls.play();
             }
             if (goRight)
             {
                 Settings2.directions = "right";
+                right.URL = Application.StartupPath + @"\\right.mp3";
+                right.controls.play();
             }
             if (goDown)
             {
                 Settings2.directions = "down";
+                down.URL = Application.StartupPath + @"\\down.mp3";
+                down.controls.play();
             }
             if (goUp)
             {
                 Settings2.directions = "up";
+                up.URL = Application.StartupPath + @"\\up.mp3";
+                up.controls.play();
             }
             // end of directions
 
@@ -370,6 +387,8 @@ namespace Proj_M9_BrunoPinheiro
         private void Win()
         {
             tmr_game.Stop();
+            win.URL = Application.StartupPath + @"\\win.mp3";
+            win.controls.play();
             time = lbl_timer.Text;
             if (score > highScore)
             {
@@ -386,6 +405,8 @@ namespace Proj_M9_BrunoPinheiro
         }
         private void RestartGame()
         {
+            start.URL = Application.StartupPath + @"\\start.mp3";
+            start.controls.play();
             if (score < 30)
             {
                 maxWidth = pic_canvas.Width / Settings2.Width - 1;
@@ -449,6 +470,8 @@ namespace Proj_M9_BrunoPinheiro
         private void EatFood()
         {
             score += 1;
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
+            eat.controls.play();
 
             lbl_score.Text = "Maçãs: " + score;
             Circle2 body = new Circle2
@@ -469,6 +492,8 @@ namespace Proj_M9_BrunoPinheiro
         private void GameOver()
         {
             tmr_game.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
+            die.controls.play();
             time = lbl_timer.Text;
             if (score > highScore)
             {
@@ -502,7 +527,8 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Controls.Add(lbl_gameover);
             pic_canvas.Controls.Add(lbl_win);
             pic_canvas.Controls.Add(pic_obanai);
-
+            takeshot.URL = Application.StartupPath + @"\\takeshot.mp3";
+            takeshot.controls.play();
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.FileName = "Snake Snapshot";
             dialog.DefaultExt = "png";

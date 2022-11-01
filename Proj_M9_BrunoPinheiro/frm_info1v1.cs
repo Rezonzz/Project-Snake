@@ -68,16 +68,34 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_page1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_info1v1_1());
+            btn_page1.BackColor = Color.FromArgb(192, 192, 0);
+            btn_page1.ForeColor = Color.Black;
+            btn_page2.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page2.ForeColor = Color.White;
+            btn_page3.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page3.ForeColor = Color.White;
         }
 
         private void btn_page2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_info1v1_2());
+            btn_page2.BackColor = Color.FromArgb(192, 192, 0);
+            btn_page2.ForeColor = Color.Black;
+            btn_page1.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page1.ForeColor = Color.White;
+            btn_page3.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page3.ForeColor = Color.White;
         }
 
         private void btn_page3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_info1v1_3());
+            btn_page3.BackColor = Color.FromArgb(192, 192, 0);
+            btn_page3.ForeColor = Color.Black;
+            btn_page1.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page1.ForeColor = Color.White;
+            btn_page2.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page2.ForeColor = Color.White;
         }
     }
 }

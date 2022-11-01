@@ -143,7 +143,7 @@ namespace Proj_M9_BrunoPinheiro
             Settings5.Width, Settings5.Height
             ));
         }
-
+        
         private void GameTimerEvent(object sender, EventArgs e)
         {
             // setting the directions
@@ -151,18 +151,26 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings4.directions = "left";
+                left.URL = Application.StartupPath + @"\\left.mp3";
+                left.controls.play();
             }
             if (goRight)
             {
                 Settings4.directions = "right";
+                right.URL = Application.StartupPath + @"\\right.mp3";
+                right.controls.play();
             }
             if (goDown)
             {
                 Settings4.directions = "down";
+                down.URL = Application.StartupPath + @"\\down.mp3";
+                down.controls.play();
             }
             if (goUp)
             {
                 Settings4.directions = "up";
+                up.URL = Application.StartupPath + @"\\up.mp3";
+                up.controls.play();
             }
             // end of directions
 
@@ -240,22 +248,30 @@ namespace Proj_M9_BrunoPinheiro
         private void GameTimerEvent2(object sender, EventArgs e)
         {
             // setting the directions
-
+            
             if (goLeft2)
             {
                 Settings5.directions = "left";
+                left.URL = Application.StartupPath + @"\\left.mp3";
+                left.controls.play();
             }
             if (goRight2)
             {
                 Settings5.directions = "right";
+                right.URL = Application.StartupPath + @"\\right.mp3";
+                right.controls.play();
             }
             if (goDown2)
             {
                 Settings5.directions = "down";
+                down.URL = Application.StartupPath + @"\\down.mp3";
+                down.controls.play();
             }
             if (goUp2)
             {
                 Settings5.directions = "up";
+                up.URL = Application.StartupPath + @"\\up.mp3";
+                up.controls.play();
             }
             // end of directions
 
@@ -331,6 +347,8 @@ namespace Proj_M9_BrunoPinheiro
 
         private void RestartGame()
         {
+            start.URL = Application.StartupPath + @"\\start.mp3";
+            start.controls.play();
             if (score >= vitoria)
             {
                 maxWidth = pic_canvas.Width / Settings4.Width - 1;
@@ -347,6 +365,8 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_win2.Visible = false;
                 lbl_empate.Visible = false;
                 lbl_empate2.Visible = false;
+                lbl_morto.Visible = false;
+                lbl_morto2.Visible = false;
                 pic_obanai.Visible = false;
                 pic_obanai2.Visible = false;
                 gameover = false;
@@ -363,7 +383,7 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_score.Text = "Maçãs: " + score;
                 lbl_score2.Text = "Maçãs: " + score2;
 
-                Circle4 head = new Circle4 { X = 17, Y = 12 };
+                Circle4 head = new Circle4 { X = 12, Y = 12 };
                 Snake.Add(head); // adding the head part of the snake to the list
 
                 for (int i = 0; i < 10; i++)
@@ -374,7 +394,7 @@ namespace Proj_M9_BrunoPinheiro
 
                 food = new Circle4 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
 
-                Circle5 head2 = new Circle5 { X2 = 17, Y2 = 12 };
+                Circle5 head2 = new Circle5 { X2 = 12, Y2 = 12 };
                 Snake2.Add(head2); // adding the head part of the snake to the list
 
                 for (int i = 0; i < 10; i++)
@@ -405,6 +425,8 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_win2.Visible = false;
                 lbl_empate.Visible = false;
                 lbl_empate2.Visible = false;
+                lbl_morto.Visible = false;
+                lbl_morto2.Visible = false;
                 pic_obanai.Visible = false;
                 pic_obanai2.Visible = false;
                 gameover = false;
@@ -421,7 +443,7 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_score.Text = "Maçãs: " + score;
                 lbl_score2.Text = "Maçãs: " + score2;
 
-                Circle4 head = new Circle4 { X = 17, Y = 12 };
+                Circle4 head = new Circle4 { X = 12, Y = 12 };
                 Snake.Add(head); // adding the head part of the snake to the list
 
                 for (int i = 0; i < 10; i++)
@@ -432,7 +454,7 @@ namespace Proj_M9_BrunoPinheiro
 
                 food = new Circle4 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
 
-                Circle5 head2 = new Circle5 { X2 = 17, Y2 = 12 };
+                Circle5 head2 = new Circle5 { X2 = 12, Y2 = 12 };
                 Snake2.Add(head2); // adding the head part of the snake to the list
 
                 for (int i = 0; i < 10; i++)
@@ -499,7 +521,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_info1v1 frm_info1v1 = new frm_info1v1();
             frm_info1v1.Show();
-            this.Hide();
         }
 
         private void lbl_editarj2_MouseLeave(object sender, EventArgs e)
@@ -543,6 +564,8 @@ namespace Proj_M9_BrunoPinheiro
 
         private void EatFood()
         {
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
+            eat.controls.play();
             score += 1;
 
             lbl_score.Text = "Maçãs: " + score;
@@ -555,15 +578,18 @@ namespace Proj_M9_BrunoPinheiro
             Snake.Add(body);
 
             food = new Circle4 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            
         }
 
         private void Win()
         {
             tmr_game.Stop();
             tmr_game2.Stop();
-            if(scorej1 >= vitoria)
+            win.URL = Application.StartupPath + @"\\win.mp3";
+            win.controls.play();
+            if (scorej1 >= vitoria)
             {
+                lbl_morto.Visible = false;
+                lbl_morto2.Visible = false;
                 pic_obanai.Visible = true;
                 pic_obanai2.Visible = true;
                 numvitorias1++;
@@ -571,6 +597,8 @@ namespace Proj_M9_BrunoPinheiro
             }
             if (scorej2 >= vitoria)
             {
+                lbl_morto.Visible = false;
+                lbl_morto2.Visible = false;
                 pic_obanai.Visible = true;
                 pic_obanai2.Visible = true;
                 numvitorias2++;
@@ -592,6 +620,8 @@ namespace Proj_M9_BrunoPinheiro
 
         private void EatFood2()
         {
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
+            eat.controls.play();
             score2 += 1;
 
             lbl_score2.Text = "Maçãs: " + score2;
@@ -673,12 +703,18 @@ namespace Proj_M9_BrunoPinheiro
         {
             gameover = true;
             tmr_game.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
+            die.controls.play();
             time = lbl_timer.Text;
+            pic_obanai.Visible = true;
+            lbl_morto.Visible = true;
             if (gameover == true && gameover2 == true)
             {
                 StopTimer();
                 if (score > score2)
                 {
+                    lbl_morto.Visible = false;
+                    lbl_morto2.Visible = false;
                     lbl_gameover2.Visible = true;
                     lbl_win.Visible = true;
                     pic_obanai.Visible = true;
@@ -691,6 +727,8 @@ namespace Proj_M9_BrunoPinheiro
                 }
                 if (score < score2)
                 {
+                    lbl_morto.Visible = false;
+                    lbl_morto2.Visible = false;
                     lbl_gameover.Visible = true;
                     lbl_win2.Visible = true;
                     pic_obanai.Visible = true;
@@ -703,6 +741,8 @@ namespace Proj_M9_BrunoPinheiro
                 }
                 if (score == score2)
                 {
+                    lbl_morto.Visible = false;
+                    lbl_morto2.Visible = false;
                     pic_obanai.Visible = true;
                     pic_obanai2.Visible = true;
                     lbl_empate.Visible = true;
@@ -726,12 +766,18 @@ namespace Proj_M9_BrunoPinheiro
         {
             gameover2 = true;
             tmr_game2.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
+            die.controls.play();
             time = lbl_timer.Text;
+            pic_obanai.Visible = true;
+            lbl_morto2.Visible = true;
             if (gameover == true && gameover2 == true)
             {
                 StopTimer();
                 if (score > score2)
                 {
+                    lbl_morto.Visible = false;
+                    lbl_morto2.Visible = false;
                     lbl_gameover2.Visible = true;
                     lbl_win.Visible = true;
                     pic_obanai.Visible = true;
@@ -744,6 +790,8 @@ namespace Proj_M9_BrunoPinheiro
                 }
                 if (score < score2)
                 {
+                    lbl_morto.Visible = false;
+                    lbl_morto2.Visible = false;
                     lbl_gameover.Visible = true;
                     lbl_win2.Visible = true;
                     pic_obanai.Visible = true;
@@ -756,6 +804,8 @@ namespace Proj_M9_BrunoPinheiro
                 }
                 if (score == score2)
                 {
+                    lbl_morto.Visible = false;
+                    lbl_morto2.Visible = false;
                     pic_obanai.Visible = true;
                     pic_obanai2.Visible = true;
                     lbl_empate.Visible = true;
@@ -849,10 +899,6 @@ namespace Proj_M9_BrunoPinheiro
             {
                 RestartGame();
             }
-            if (e.KeyCode == Keys.T)
-            {
-                //TakeSnapShot();
-            }
             if (e.KeyCode == Keys.Left && Settings5.directions != "right")
             {
                 goLeft2 = true;
@@ -917,6 +963,14 @@ namespace Proj_M9_BrunoPinheiro
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
         }
 
+        WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
         private void frm_1v1_Load(object sender, EventArgs e)
         {
             stopWatch = new Stopwatch();

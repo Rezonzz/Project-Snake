@@ -92,7 +92,15 @@ namespace Proj_M9_BrunoPinheiro
                 goDown = true;
             }
         }
-
+        WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
         private void frm_facil_Load(object sender, EventArgs e)
         {
             tmr_prima.Enabled = true; 
@@ -285,7 +293,8 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Controls.Add(lbl_gameover);
             pic_canvas.Controls.Add(lbl_win);
             pic_canvas.Controls.Add(pic_obanai);
-
+            takeshot.URL = Application.StartupPath + @"\\takeshot.mp3";
+            takeshot.controls.play();
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.FileName = "Snake Snapshot";
             dialog.DefaultExt = "png";
@@ -311,18 +320,26 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings.directions = "left";
+                left.URL = Application.StartupPath + @"\\left.mp3";
+                left.controls.play();
             }
             if (goRight)
             {
                 Settings.directions = "right";
+                right.URL = Application.StartupPath + @"\\right.mp3";
+                right.controls.play();
             }
             if (goDown)
             {
                 Settings.directions = "down";
+                down.URL = Application.StartupPath + @"\\down.mp3";
+                down.controls.play();
             }
             if (goUp)
             {
                 Settings.directions = "up";
+                up.URL = Application.StartupPath + @"\\up.mp3";
+                up.controls.play();
             }
             // end of directions
 
@@ -399,6 +416,8 @@ namespace Proj_M9_BrunoPinheiro
 
         private void RestartGame()
         {
+            start.URL = Application.StartupPath + @"\\start.mp3";
+            start.controls.play();
             if (score < 20)
             {
                 maxWidth = pic_canvas.Width / Settings.Width - 1;
@@ -462,7 +481,8 @@ namespace Proj_M9_BrunoPinheiro
         private void EatFood()
         {
             score += 1;
-
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
+            eat.controls.play();
             lbl_score.Text = "Maçãs: " + score;
             Circle body = new Circle
             {
@@ -482,6 +502,8 @@ namespace Proj_M9_BrunoPinheiro
         private void Win()
         {
             tmr_game.Stop();
+            win.URL = Application.StartupPath + @"\\win.mp3";
+            win.controls.play();
             time = lbl_timer.Text;
             if (score > highScore)
             {
@@ -499,6 +521,8 @@ namespace Proj_M9_BrunoPinheiro
         private void GameOver()
         {
             tmr_game.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
+            die.controls.play();
             time = lbl_timer.Text;
             if (score > highScore)
             {

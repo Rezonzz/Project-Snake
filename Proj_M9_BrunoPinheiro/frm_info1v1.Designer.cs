@@ -30,18 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_info1v1));
             this.pnl_top = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_minimize = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_background = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_page3 = new System.Windows.Forms.Button();
             this.btn_page2 = new System.Windows.Forms.Button();
             this.btn_page1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_minimize = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_vitoria = new System.Windows.Forms.Label();
             this.pnl_top.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnl_background.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_top
@@ -58,6 +72,44 @@
             this.pnl_top.TabIndex = 45;
             this.pnl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_top_MouseDown);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_minimize
+            // 
+            this.btn_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimize.FlatAppearance.BorderSize = 0;
+            this.btn_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimize.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.minus__3___1_;
+            this.btn_minimize.Location = new System.Drawing.Point(278, 0);
+            this.btn_minimize.Name = "btn_minimize";
+            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
+            this.btn_minimize.TabIndex = 8;
+            this.btn_minimize.UseVisualStyleBackColor = true;
+            this.btn_minimize.Click += new System.EventHandler(this.btn_minimize_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.close__1___1_;
+            this.btn_close.Location = new System.Drawing.Point(306, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(31, 28);
+            this.btn_close.TabIndex = 7;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -72,6 +124,16 @@
             // 
             // pnl_background
             // 
+            this.pnl_background.Controls.Add(this.label6);
+            this.pnl_background.Controls.Add(this.pictureBox3);
+            this.pnl_background.Controls.Add(this.label5);
+            this.pnl_background.Controls.Add(this.label4);
+            this.pnl_background.Controls.Add(this.pictureBox1);
+            this.pnl_background.Controls.Add(this.pictureBox4);
+            this.pnl_background.Controls.Add(this.label3);
+            this.pnl_background.Controls.Add(this.label2);
+            this.pnl_background.Controls.Add(this.label7);
+            this.pnl_background.Controls.Add(this.lbl_vitoria);
             this.pnl_background.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_background.Location = new System.Drawing.Point(0, 28);
             this.pnl_background.Name = "pnl_background";
@@ -132,43 +194,112 @@
             this.btn_page1.UseVisualStyleBackColor = false;
             this.btn_page1.Click += new System.EventHandler(this.btn_page1_Click);
             // 
-            // pictureBox2
+            // label6
             // 
-            this.pictureBox2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(100, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 38);
+            this.label6.TabIndex = 136;
+            this.label6.Text = "Controlos";
             // 
-            // btn_minimize
+            // pictureBox3
             // 
-            this.btn_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimize.FlatAppearance.BorderSize = 0;
-            this.btn_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimize.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.minus__3___1_;
-            this.btn_minimize.Location = new System.Drawing.Point(278, 0);
-            this.btn_minimize.Name = "btn_minimize";
-            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
-            this.btn_minimize.TabIndex = 8;
-            this.btn_minimize.UseVisualStyleBackColor = true;
-            this.btn_minimize.Click += new System.EventHandler(this.btn_minimize_Click);
+            this.pictureBox3.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.enter;
+            this.pictureBox3.Location = new System.Drawing.Point(261, 193);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(47, 39);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 135;
+            this.pictureBox3.TabStop = false;
             // 
-            // btn_close
+            // label5
             // 
-            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.close__1___1_;
-            this.btn_close.Location = new System.Drawing.Point(306, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(31, 28);
-            this.btn_close.TabIndex = 7;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(42, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(215, 23);
+            this.label5.TabIndex = 134;
+            this.label5.Text = "Começar/Recomeçar Jogo - ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(29, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 26);
+            this.label4.TabIndex = 133;
+            this.label4.Text = "No Jogo";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.arrows;
+            this.pictureBox1.Location = new System.Drawing.Point(182, 355);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(87, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 132;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.keyboard_button;
+            this.pictureBox4.Location = new System.Drawing.Point(182, 279);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(87, 67);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 131;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(62, 375);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 26);
+            this.label3.TabIndex = 130;
+            this.label3.Text = "Jogador 2 -";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(62, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 26);
+            this.label2.TabIndex = 129;
+            this.label2.Text = "Jogador 1 -";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(29, 250);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 26);
+            this.label7.TabIndex = 128;
+            this.label7.Text = "Movimentação";
+            // 
+            // lbl_vitoria
+            // 
+            this.lbl_vitoria.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vitoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_vitoria.Location = new System.Drawing.Point(104, 26);
+            this.lbl_vitoria.Name = "lbl_vitoria";
+            this.lbl_vitoria.Size = new System.Drawing.Size(131, 70);
+            this.lbl_vitoria.TabIndex = 127;
+            this.lbl_vitoria.Text = "Info";
+            this.lbl_vitoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frm_info1v1
             // 
@@ -187,8 +318,13 @@
             this.Text = "Info - 1v1";
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnl_background.ResumeLayout(false);
+            this.pnl_background.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +341,15 @@
         private System.Windows.Forms.Button btn_page3;
         private System.Windows.Forms.Button btn_page2;
         private System.Windows.Forms.Button btn_page1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_vitoria;
     }
 }

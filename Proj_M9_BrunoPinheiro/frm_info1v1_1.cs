@@ -16,5 +16,15 @@ namespace Proj_M9_BrunoPinheiro
         {
             InitializeComponent();
         }
+
+        private void frm_info1v1_1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

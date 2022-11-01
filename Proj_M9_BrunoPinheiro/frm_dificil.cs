@@ -26,6 +26,16 @@ namespace Proj_M9_BrunoPinheiro
 
         bool goLeft, goRight, goDown, goUp;
 
+        WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -194,18 +204,26 @@ namespace Proj_M9_BrunoPinheiro
             if (goLeft)
             {
                 Settings3.directions = "left";
+                left.URL = Application.StartupPath + @"\\left.mp3";
+                left.controls.play();
             }
             if (goRight)
             {
                 Settings3.directions = "right";
+                right.URL = Application.StartupPath + @"\\right.mp3";
+                right.controls.play();
             }
             if (goDown)
             {
                 Settings3.directions = "down";
+                down.URL = Application.StartupPath + @"\\down.mp3";
+                down.controls.play();
             }
             if (goUp)
             {
                 Settings3.directions = "up";
+                up.URL = Application.StartupPath + @"\\up.mp3";
+                up.controls.play();
             }
             // end of directions
 
@@ -374,6 +392,8 @@ namespace Proj_M9_BrunoPinheiro
             caption.Width = pic_canvas.Width;
             caption.Height = 60;
             caption.TextAlign = ContentAlignment.MiddleCenter;
+            takeshot.URL = Application.StartupPath + @"\\takeshot.mp3";
+            takeshot.controls.play();
             pic_canvas.Controls.Add(caption);
             pic_canvas.Controls.Add(lbl_gameover);
             pic_canvas.Controls.Add(lbl_win);
@@ -398,6 +418,8 @@ namespace Proj_M9_BrunoPinheiro
         }
         private void RestartGame()
         {
+            start.URL = Application.StartupPath + @"\\start.mp3";
+            start.controls.play();
             if (score < 40)
             {
                 maxWidth = pic_canvas.Width / Settings3.Width - 1;
@@ -461,6 +483,8 @@ namespace Proj_M9_BrunoPinheiro
         private void EatFood()
         {
             score += 1;
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
+            eat.controls.play();
 
             lbl_score.Text = "Maçãs: " + score;
             Circle3 body = new Circle3
@@ -481,6 +505,8 @@ namespace Proj_M9_BrunoPinheiro
         private void Win()
         {
             tmr_game.Stop();
+            win.URL = Application.StartupPath + @"\\win.mp3";
+            win.controls.play();
             time = lbl_timer.Text;
             if (score > highScore)
             {
@@ -498,6 +524,8 @@ namespace Proj_M9_BrunoPinheiro
         private void GameOver()
         {
             tmr_game.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
+            die.controls.play();
             time = lbl_timer.Text;
             if (score > highScore)
             {

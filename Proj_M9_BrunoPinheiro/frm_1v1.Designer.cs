@@ -32,17 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_1v1));
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbl_empate = new System.Windows.Forms.Label();
+            this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.lbl_win = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_gameover = new System.Windows.Forms.Label();
+            this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.lbl_score = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_modo = new System.Windows.Forms.Label();
             this.lbl_timer = new System.Windows.Forms.Label();
             this.mst_snake = new System.Windows.Forms.MenuStrip();
+            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,12 +59,14 @@
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lbl_empate2 = new System.Windows.Forms.Label();
+            this.pic_obanai2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.lbl_win2 = new System.Windows.Forms.Label();
             this.lbl_gameover2 = new System.Windows.Forms.Label();
+            this.pic_canvas2 = new System.Windows.Forms.PictureBox();
             this.lbl_score2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
@@ -84,26 +89,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_rondas = new System.Windows.Forms.Label();
             this.pic_info1v1 = new System.Windows.Forms.PictureBox();
-            this.pic_obanai2 = new System.Windows.Forms.PictureBox();
-            this.pic_canvas2 = new System.Windows.Forms.PictureBox();
-            this.pic_obanai = new System.Windows.Forms.PictureBox();
-            this.pic_canvas = new System.Windows.Forms.PictureBox();
-            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_morto = new System.Windows.Forms.Label();
+            this.lbl_morto2 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.mst_snake.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas2)).BeginInit();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_info1v1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel6.Controls.Add(this.lbl_morto);
             this.panel6.Controls.Add(this.lbl_empate);
             this.panel6.Controls.Add(this.pic_obanai);
             this.panel6.Controls.Add(this.lbl_win);
@@ -130,6 +133,16 @@
             this.lbl_empate.Text = "Empate!";
             this.lbl_empate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_empate.Visible = false;
+            // 
+            // pic_obanai
+            // 
+            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai.Location = new System.Drawing.Point(72, 207);
+            this.pic_obanai.Name = "pic_obanai";
+            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai.TabIndex = 106;
+            this.pic_obanai.TabStop = false;
             // 
             // lbl_win
             // 
@@ -189,6 +202,16 @@
             this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_gameover.Visible = false;
             // 
+            // pic_canvas
+            // 
+            this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pic_canvas.Location = new System.Drawing.Point(0, 0);
+            this.pic_canvas.Name = "pic_canvas";
+            this.pic_canvas.Size = new System.Drawing.Size(416, 416);
+            this.pic_canvas.TabIndex = 86;
+            this.pic_canvas.TabStop = false;
+            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
+            // 
             // lbl_score
             // 
             this.lbl_score.AutoSize = true;
@@ -247,6 +270,15 @@
             this.mst_snake.TabIndex = 105;
             this.mst_snake.Text = "mst_top";
             this.mst_snake.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mst_snake_MouseDown);
+            // 
+            // snakeToolStripMenuItem
+            // 
+            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
+            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
+            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
+            this.snakeToolStripMenuItem.Text = "Snake";
             // 
             // tsmi_menu
             // 
@@ -358,6 +390,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel7.Controls.Add(this.lbl_morto2);
             this.panel7.Controls.Add(this.lbl_empate2);
             this.panel7.Controls.Add(this.pic_obanai2);
             this.panel7.Controls.Add(this.panel8);
@@ -384,6 +417,16 @@
             this.lbl_empate2.Text = "Empate!";
             this.lbl_empate2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_empate2.Visible = false;
+            // 
+            // pic_obanai2
+            // 
+            this.pic_obanai2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai2.Location = new System.Drawing.Point(73, 207);
+            this.pic_obanai2.Name = "pic_obanai2";
+            this.pic_obanai2.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai2.TabIndex = 109;
+            this.pic_obanai2.TabStop = false;
             // 
             // panel8
             // 
@@ -442,6 +485,16 @@
             this.lbl_gameover2.Text = "Jogador 2 Perdeu a Ronda X!";
             this.lbl_gameover2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_gameover2.Visible = false;
+            // 
+            // pic_canvas2
+            // 
+            this.pic_canvas2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pic_canvas2.Location = new System.Drawing.Point(0, 0);
+            this.pic_canvas2.Name = "pic_canvas2";
+            this.pic_canvas2.Size = new System.Drawing.Size(416, 416);
+            this.pic_canvas2.TabIndex = 86;
+            this.pic_canvas2.TabStop = false;
+            this.pic_canvas2.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics2);
             // 
             // lbl_score2
             // 
@@ -673,54 +726,31 @@
             this.pic_info1v1.TabStop = false;
             this.pic_info1v1.Click += new System.EventHandler(this.pic_info1v1_Click);
             // 
-            // pic_obanai2
+            // lbl_morto
             // 
-            this.pic_obanai2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
-            this.pic_obanai2.Location = new System.Drawing.Point(73, 207);
-            this.pic_obanai2.Name = "pic_obanai2";
-            this.pic_obanai2.Size = new System.Drawing.Size(270, 149);
-            this.pic_obanai2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_obanai2.TabIndex = 109;
-            this.pic_obanai2.TabStop = false;
+            this.lbl_morto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_morto.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_morto.ForeColor = System.Drawing.Color.Red;
+            this.lbl_morto.Location = new System.Drawing.Point(17, 83);
+            this.lbl_morto.Name = "lbl_morto";
+            this.lbl_morto.Size = new System.Drawing.Size(382, 93);
+            this.lbl_morto.TabIndex = 128;
+            this.lbl_morto.Text = "Morto!";
+            this.lbl_morto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_morto.Visible = false;
             // 
-            // pic_canvas2
+            // lbl_morto2
             // 
-            this.pic_canvas2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pic_canvas2.Location = new System.Drawing.Point(0, 0);
-            this.pic_canvas2.Name = "pic_canvas2";
-            this.pic_canvas2.Size = new System.Drawing.Size(416, 416);
-            this.pic_canvas2.TabIndex = 86;
-            this.pic_canvas2.TabStop = false;
-            this.pic_canvas2.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics2);
-            // 
-            // pic_obanai
-            // 
-            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
-            this.pic_obanai.Location = new System.Drawing.Point(72, 207);
-            this.pic_obanai.Name = "pic_obanai";
-            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
-            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_obanai.TabIndex = 106;
-            this.pic_obanai.TabStop = false;
-            // 
-            // pic_canvas
-            // 
-            this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pic_canvas.Location = new System.Drawing.Point(0, 0);
-            this.pic_canvas.Name = "pic_canvas";
-            this.pic_canvas.Size = new System.Drawing.Size(416, 416);
-            this.pic_canvas.TabIndex = 86;
-            this.pic_canvas.TabStop = false;
-            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
-            // 
-            // snakeToolStripMenuItem
-            // 
-            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
-            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
-            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
-            this.snakeToolStripMenuItem.Text = "Snake";
+            this.lbl_morto2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_morto2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_morto2.ForeColor = System.Drawing.Color.Red;
+            this.lbl_morto2.Location = new System.Drawing.Point(17, 80);
+            this.lbl_morto2.Name = "lbl_morto2";
+            this.lbl_morto2.Size = new System.Drawing.Size(382, 93);
+            this.lbl_morto2.TabIndex = 129;
+            this.lbl_morto2.Text = "Morto!";
+            this.lbl_morto2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_morto2.Visible = false;
             // 
             // frm_1v1
             // 
@@ -754,18 +784,18 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.mst_snake.ResumeLayout(false);
             this.mst_snake.PerformLayout();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas2)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_info1v1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -832,5 +862,7 @@
         private System.Windows.Forms.Label lbl_empate2;
         private System.Windows.Forms.ToolStripMenuItem tsmi_singleplayer;
         private System.Windows.Forms.PictureBox pic_info1v1;
+        private System.Windows.Forms.Label lbl_morto;
+        private System.Windows.Forms.Label lbl_morto2;
     }
 }
