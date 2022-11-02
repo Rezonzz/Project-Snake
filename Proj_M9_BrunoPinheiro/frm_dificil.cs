@@ -379,12 +379,19 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_1v1 frm_1v1 = new frm_1v1();
             frm_1v1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_modo_Click(object sender, EventArgs e)
         {
             tsmi_modo.ForeColor = Color.Black;
+        }
+
+        private void tsmi_dificil_Click(object sender, EventArgs e)
+        {
+            frm_dificil frm_dificil = new frm_dificil();
+            frm_dificil.Show();
+            this.Close();
         }
 
         private void tsmi_modo_MouseLeave(object sender, EventArgs e)
@@ -396,28 +403,28 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_menu frm_menu = new frm_menu();
             frm_menu.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_mtfacil_Click(object sender, EventArgs e)
         {
             frm_mtfacil frm_mtfacil = new frm_mtfacil();
             frm_mtfacil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_facil_Click(object sender, EventArgs e)
         {
             frm_facil frm_facil = new frm_facil();
             frm_facil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_medio_Click(object sender, EventArgs e)
         {
             frm_medio frm_medio = new frm_medio();
             frm_medio.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void TakeSnapShot()

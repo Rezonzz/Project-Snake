@@ -47,9 +47,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -189,7 +189,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(17, 319);
+            this.label8.Location = new System.Drawing.Point(17, 281);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 20);
             this.label8.TabIndex = 75;
@@ -199,7 +199,7 @@
             // 
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(54, 349);
+            this.label9.Location = new System.Drawing.Point(54, 311);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(245, 42);
             this.label9.TabIndex = 76;
@@ -221,7 +221,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(54, 391);
+            this.label11.Location = new System.Drawing.Point(54, 353);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 18);
             this.label11.TabIndex = 78;
@@ -243,7 +243,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(17, 440);
+            this.label13.Location = new System.Drawing.Point(17, 449);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 20);
             this.label13.TabIndex = 80;
@@ -254,28 +254,18 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(54, 469);
+            this.label14.Location = new System.Drawing.Point(54, 478);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(134, 18);
             this.label14.TabIndex = 81;
             this.label14.Text = "• Regras adicionadas";
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label15.Location = new System.Drawing.Point(54, 272);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(245, 43);
-            this.label15.TabIndex = 82;
-            this.label15.Text = "• Modo contra ao tempo (Minimo de \r\n  Pontos em Certo Tempo)";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label16.Location = new System.Drawing.Point(54, 495);
+            this.label16.Location = new System.Drawing.Point(54, 504);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(150, 18);
             this.label16.TabIndex = 83;
@@ -286,11 +276,21 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(54, 415);
+            this.label17.Location = new System.Drawing.Point(54, 377);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(227, 18);
             this.label17.TabIndex = 84;
             this.label17.Text = "• Possibilidade de Jogar com WASD";
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Location = new System.Drawing.Point(54, 402);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(245, 43);
+            this.label15.TabIndex = 85;
+            this.label15.Text = "• Label de vitoria no modo 1v1\r\n  adicionado";
             // 
             // frm_info
             // 
@@ -298,9 +298,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(337, 593);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -349,8 +349,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label15;
     }
 }

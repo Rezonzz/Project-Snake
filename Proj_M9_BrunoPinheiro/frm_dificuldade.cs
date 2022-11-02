@@ -69,7 +69,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_facil frm_facil = new frm_facil();
             frm_facil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btn_medio_MouseMove(object sender, MouseEventArgs e)
@@ -92,7 +92,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_medio frm_medio = new frm_medio();
             frm_medio.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btn_dificil_MouseDown(object sender, MouseEventArgs e)
@@ -132,7 +132,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_mtfacil frm_mtfacil = new frm_mtfacil();
             frm_mtfacil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btn_mtfacil_MouseDown(object sender, MouseEventArgs e)
@@ -145,7 +145,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_dificil frm_dificil = new frm_dificil();
             frm_dificil.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_jogar = new System.Windows.Forms.Button();
-            this.btn_regras = new System.Windows.Forms.Button();
+            this.btn_jogars = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.pic_info = new System.Windows.Forms.PictureBox();
@@ -138,21 +138,22 @@
             this.btn_jogar.MouseLeave += new System.EventHandler(this.btn_jogar_MouseLeave);
             this.btn_jogar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_jogar_MouseMove);
             // 
-            // btn_regras
+            // btn_jogars
             // 
-            this.btn_regras.FlatAppearance.BorderSize = 2;
-            this.btn_regras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_regras.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_regras.Location = new System.Drawing.Point(86, 257);
-            this.btn_regras.Name = "btn_regras";
-            this.btn_regras.Size = new System.Drawing.Size(160, 43);
-            this.btn_regras.TabIndex = 70;
-            this.btn_regras.Text = "Regras";
-            this.btn_regras.UseVisualStyleBackColor = true;
-            this.btn_regras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_regras_MouseDown);
-            this.btn_regras.MouseLeave += new System.EventHandler(this.btn_regras_MouseLeave);
-            this.btn_regras.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_regras_MouseMove);
+            this.btn_jogars.FlatAppearance.BorderSize = 2;
+            this.btn_jogars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogars.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_jogars.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_jogars.Location = new System.Drawing.Point(86, 257);
+            this.btn_jogars.Name = "btn_jogars";
+            this.btn_jogars.Size = new System.Drawing.Size(160, 43);
+            this.btn_jogars.TabIndex = 70;
+            this.btn_jogars.Text = "Modo Sem Limites";
+            this.btn_jogars.UseVisualStyleBackColor = true;
+            this.btn_jogars.Click += new System.EventHandler(this.btn_jogars_Click);
+            this.btn_jogars.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_jogars_MouseDown);
+            this.btn_jogars.MouseLeave += new System.EventHandler(this.btn_jogars_MouseLeave);
+            this.btn_jogars.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_jogars_MouseMove);
             // 
             // btn_sair
             // 
@@ -225,7 +226,7 @@
             this.Controls.Add(this.pic_info);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_sair);
-            this.Controls.Add(this.btn_regras);
+            this.Controls.Add(this.btn_jogars);
             this.Controls.Add(this.btn_jogar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnl_top);
@@ -251,7 +252,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_jogar;
-        private System.Windows.Forms.Button btn_regras;
+        private System.Windows.Forms.Button btn_jogars;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.PictureBox pic_info;

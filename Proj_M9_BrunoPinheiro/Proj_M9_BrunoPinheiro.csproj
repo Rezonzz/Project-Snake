@@ -55,6 +55,7 @@
     <Compile Include="Circle3.cs" />
     <Compile Include="Circle4.cs" />
     <Compile Include="Circle5.cs" />
+    <Compile Include="Circle6.cs" />
     <Compile Include="frm_1v1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +140,12 @@
     <Compile Include="frm_sair.Designer.cs">
       <DependentUpon>frm_sair.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_semlimites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_semlimites.Designer.cs">
+      <DependentUpon>frm_semlimites.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_signin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +160,7 @@
     <Compile Include="Settings3.cs" />
     <Compile Include="Settings4.cs" />
     <Compile Include="Settings5.cs" />
+    <Compile Include="Settings6.cs" />
     <Compile Include="UsersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_sair.resx">
       <DependentUpon>frm_sair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_semlimites.resx">
+      <DependentUpon>frm_semlimites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_signin.resx">
       <DependentUpon>frm_signin.cs</DependentUpon>
@@ -279,11 +290,37 @@
     <None Include="Resources\keyboard-button.png" />
     <None Include="Resources\arrows.png" />
     <None Include="Resources\enter.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 130316.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 130744.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 130847.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 131132.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 132202.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 132135.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 132534.png" />
+    <None Include="Resources\Captura de ecrã 2022-11-02 132516.png" />
     <Content Include="Users.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>

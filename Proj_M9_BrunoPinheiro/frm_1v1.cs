@@ -331,7 +331,6 @@ namespace Proj_M9_BrunoPinheiro
 
         private void RestartGame()
         {
-            start.URL = Application.StartupPath + @"\\start.mp3";
             start.controls.play();
             if (score >= vitoria)
             {
@@ -493,7 +492,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_dificuldade frm_dificuldade = new frm_dificuldade();
             frm_dificuldade.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_modo_MouseLeave(object sender, EventArgs e)
@@ -548,7 +547,6 @@ namespace Proj_M9_BrunoPinheiro
 
         private void EatFood()
         {
-            eat.URL = Application.StartupPath + @"\\eat.mp3";
             eat.controls.play();
             score += 1;
 
@@ -568,7 +566,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             tmr_game.Stop();
             tmr_game2.Stop();
-            win.URL = Application.StartupPath + @"\\win.mp3";
             win.controls.play();
             if (scorej1 >= vitoria)
             {
@@ -604,7 +601,6 @@ namespace Proj_M9_BrunoPinheiro
 
         private void EatFood2()
         {
-            eat.URL = Application.StartupPath + @"\\eat.mp3";
             eat.controls.play();
             score2 += 1;
 
@@ -687,7 +683,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             gameover = true;
             tmr_game.Stop();
-            die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
             time = lbl_timer.Text;
             pic_obanai.Visible = true;
@@ -750,7 +745,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             gameover2 = true;
             tmr_game2.Stop();
-            die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
             time = lbl_timer.Text;
             pic_obanai2.Visible = true;
@@ -836,35 +830,35 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_mtfacil frm_mtfacil = new frm_mtfacil();
             frm_mtfacil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_facil_Click(object sender, EventArgs e)
         {
             frm_facil frm_facil = new frm_facil();
             frm_facil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_medio_Click(object sender, EventArgs e)
         {
             frm_medio frm_medio = new frm_medio();
             frm_medio.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_dificil_Click(object sender, EventArgs e)
         {
             frm_dificil frm_dificil = new frm_dificil();
             frm_dificil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_menu_Click(object sender, EventArgs e)
         {
             frm_menu frm_menu = new frm_menu();
             frm_menu.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_dificuldade_Click(object sender, EventArgs e)
@@ -888,7 +882,6 @@ namespace Proj_M9_BrunoPinheiro
                 goLeft2 = true;
                 if (gameover2 == false)
                 {
-                    left.URL = Application.StartupPath + @"\\left.mp3";
                     left.controls.play();
                 }
             }
@@ -897,7 +890,6 @@ namespace Proj_M9_BrunoPinheiro
                 goRight2 = true;
                 if (gameover2 == false)
                 {
-                    right.URL = Application.StartupPath + @"\\right.mp3";
                     right.controls.play();
                 }
             }
@@ -906,7 +898,6 @@ namespace Proj_M9_BrunoPinheiro
                 goUp2 = true;
                 if (gameover2 == false)
                 {
-                    up.URL = Application.StartupPath + @"\\up.mp3";
                     up.controls.play();
                 }
             }
@@ -915,7 +906,6 @@ namespace Proj_M9_BrunoPinheiro
                 goDown2 = true;
                 if (gameover2 == false)
                 {
-                    down.URL = Application.StartupPath + @"\\down.mp3";
                     down.controls.play();
                 }
             }
@@ -924,7 +914,6 @@ namespace Proj_M9_BrunoPinheiro
                 goLeft = true;
                 if (gameover == false)
                 {
-                    left.URL = Application.StartupPath + @"\\left.mp3";
                     left.controls.play();
                 }
             }
@@ -933,7 +922,6 @@ namespace Proj_M9_BrunoPinheiro
                 goRight = true;
                 if (gameover == false)
                 {
-                    right.URL = Application.StartupPath + @"\\right.mp3";
                     right.controls.play();
                 }
             }
@@ -942,7 +930,6 @@ namespace Proj_M9_BrunoPinheiro
                 goUp = true;
                 if (gameover == false)
                 {
-                    up.URL = Application.StartupPath + @"\\up.mp3";
                     up.controls.play();
                 }
             }
@@ -951,7 +938,6 @@ namespace Proj_M9_BrunoPinheiro
                 goDown = true;
                 if (gameover == false)
                 {
-                    down.URL = Application.StartupPath + @"\\down.mp3";
                     down.controls.play();
                 }
             }
@@ -999,6 +985,22 @@ namespace Proj_M9_BrunoPinheiro
         {
             stopWatch = new Stopwatch();
             tmr_prima.Enabled = true;
+            left.URL = Application.StartupPath + @"\\left.mp3";
+            right.URL = Application.StartupPath + @"\\right.mp3";
+            up.URL = Application.StartupPath + @"\\up.mp3";
+            down.URL = Application.StartupPath + @"\\down.mp3";
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
+            die.URL = Application.StartupPath + @"\\die.mp3";
+            win.URL = Application.StartupPath + @"\\win.mp3";
+            start.URL = Application.StartupPath + @"\\start.mp3";
+            left.controls.stop();
+            right.controls.stop();
+            up.controls.stop();
+            down.controls.stop();
+            eat.controls.stop();
+            die.controls.stop();
+            win.controls.stop();
+            start.controls.stop();
         }
     }
 }

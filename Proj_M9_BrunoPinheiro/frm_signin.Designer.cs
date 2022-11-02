@@ -95,6 +95,7 @@
             this.txt_confirm.Text = "Confirmar Password";
             this.txt_confirm.UseSystemPasswordChar = true;
             this.txt_confirm.Click += new System.EventHandler(this.txt_confirm_Click);
+            this.txt_confirm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_confirm_KeyDown);
             // 
             // panel3
             // 
@@ -204,6 +205,7 @@
             this.txt_password.Text = "Password";
             this.txt_password.UseSystemPasswordChar = true;
             this.txt_password.Click += new System.EventHandler(this.txt_password_Click);
+            this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
             // pnl_2
             // 
@@ -299,6 +301,7 @@
             this.txt_username.TabIndex = 51;
             this.txt_username.Text = "Username";
             this.txt_username.Click += new System.EventHandler(this.txt_username_Click);
+            this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
             // pictureBox4
             // 

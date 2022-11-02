@@ -35,10 +35,6 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_background = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_page3 = new System.Windows.Forms.Button();
-            this.btn_page2 = new System.Windows.Forms.Button();
-            this.btn_page1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,13 +45,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_vitoria = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_page3 = new System.Windows.Forms.Button();
+            this.btn_page2 = new System.Windows.Forms.Button();
+            this.btn_page1 = new System.Windows.Forms.Button();
+            this.btn_sair = new System.Windows.Forms.Button();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_background.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_top
@@ -139,60 +140,6 @@
             this.pnl_background.Name = "pnl_background";
             this.pnl_background.Size = new System.Drawing.Size(337, 520);
             this.pnl_background.TabIndex = 46;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btn_page3);
-            this.panel2.Controls.Add(this.btn_page2);
-            this.panel2.Controls.Add(this.btn_page1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 548);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(337, 45);
-            this.panel2.TabIndex = 47;
-            // 
-            // btn_page3
-            // 
-            this.btn_page3.FlatAppearance.BorderSize = 2;
-            this.btn_page3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_page3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_page3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_page3.Location = new System.Drawing.Point(187, 5);
-            this.btn_page3.Name = "btn_page3";
-            this.btn_page3.Size = new System.Drawing.Size(36, 36);
-            this.btn_page3.TabIndex = 81;
-            this.btn_page3.Text = "3";
-            this.btn_page3.UseVisualStyleBackColor = true;
-            this.btn_page3.Click += new System.EventHandler(this.btn_page3_Click);
-            // 
-            // btn_page2
-            // 
-            this.btn_page2.FlatAppearance.BorderSize = 2;
-            this.btn_page2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_page2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_page2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_page2.Location = new System.Drawing.Point(145, 5);
-            this.btn_page2.Name = "btn_page2";
-            this.btn_page2.Size = new System.Drawing.Size(36, 36);
-            this.btn_page2.TabIndex = 80;
-            this.btn_page2.Text = "2";
-            this.btn_page2.UseVisualStyleBackColor = true;
-            this.btn_page2.Click += new System.EventHandler(this.btn_page2_Click);
-            // 
-            // btn_page1
-            // 
-            this.btn_page1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_page1.FlatAppearance.BorderSize = 2;
-            this.btn_page1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_page1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_page1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_page1.Location = new System.Drawing.Point(103, 5);
-            this.btn_page1.Name = "btn_page1";
-            this.btn_page1.Size = new System.Drawing.Size(36, 36);
-            this.btn_page1.TabIndex = 79;
-            this.btn_page1.Text = "1";
-            this.btn_page1.UseVisualStyleBackColor = false;
-            this.btn_page1.Click += new System.EventHandler(this.btn_page1_Click);
             // 
             // label6
             // 
@@ -301,6 +248,77 @@
             this.lbl_vitoria.Text = "Info";
             this.lbl_vitoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_sair);
+            this.panel2.Controls.Add(this.btn_page3);
+            this.panel2.Controls.Add(this.btn_page2);
+            this.panel2.Controls.Add(this.btn_page1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 548);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(337, 45);
+            this.panel2.TabIndex = 47;
+            // 
+            // btn_page3
+            // 
+            this.btn_page3.FlatAppearance.BorderSize = 2;
+            this.btn_page3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_page3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_page3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_page3.Location = new System.Drawing.Point(187, 1);
+            this.btn_page3.Name = "btn_page3";
+            this.btn_page3.Size = new System.Drawing.Size(36, 36);
+            this.btn_page3.TabIndex = 81;
+            this.btn_page3.Text = "3";
+            this.btn_page3.UseVisualStyleBackColor = true;
+            this.btn_page3.Click += new System.EventHandler(this.btn_page3_Click);
+            // 
+            // btn_page2
+            // 
+            this.btn_page2.FlatAppearance.BorderSize = 2;
+            this.btn_page2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_page2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_page2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_page2.Location = new System.Drawing.Point(145, 1);
+            this.btn_page2.Name = "btn_page2";
+            this.btn_page2.Size = new System.Drawing.Size(36, 36);
+            this.btn_page2.TabIndex = 80;
+            this.btn_page2.Text = "2";
+            this.btn_page2.UseVisualStyleBackColor = true;
+            this.btn_page2.Click += new System.EventHandler(this.btn_page2_Click);
+            // 
+            // btn_page1
+            // 
+            this.btn_page1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_page1.FlatAppearance.BorderSize = 2;
+            this.btn_page1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_page1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_page1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_page1.Location = new System.Drawing.Point(103, 1);
+            this.btn_page1.Name = "btn_page1";
+            this.btn_page1.Size = new System.Drawing.Size(36, 36);
+            this.btn_page1.TabIndex = 79;
+            this.btn_page1.Text = "1";
+            this.btn_page1.UseVisualStyleBackColor = false;
+            this.btn_page1.Click += new System.EventHandler(this.btn_page1_Click);
+            // 
+            // btn_sair
+            // 
+            this.btn_sair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btn_sair.FlatAppearance.BorderSize = 2;
+            this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sair.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_sair.Location = new System.Drawing.Point(245, 1);
+            this.btn_sair.Name = "btn_sair";
+            this.btn_sair.Size = new System.Drawing.Size(80, 36);
+            this.btn_sair.TabIndex = 82;
+            this.btn_sair.Text = "Fechar";
+            this.btn_sair.UseVisualStyleBackColor = false;
+            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            this.btn_sair.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_sair_MouseMove);
+            // 
             // frm_info1v1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,10 +339,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_background.ResumeLayout(false);
             this.pnl_background.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,5 +369,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_vitoria;
+        private System.Windows.Forms.Button btn_sair;
     }
 }

@@ -91,22 +91,6 @@ namespace Proj_M9_BrunoPinheiro
             btn_sair.BackColor = Color.FromArgb(24, 24, 27);
         }
 
-        private void btn_regras_MouseDown(object sender, MouseEventArgs e)
-        {
-            btn_regras.Size = new Size(145, 40);
-            btn_regras.Location = new Point(93, 259);
-        }
-
-        private void btn_regras_MouseMove(object sender, MouseEventArgs e)
-        {
-            btn_regras.BackColor = Color.FromArgb(36, 36, 36);
-        }
-
-        private void btn_regras_MouseLeave(object sender, EventArgs e)
-        {
-            btn_regras.BackColor = Color.FromArgb(24, 24, 27);
-        }
-
         private void btn_jogar_MouseDown(object sender, MouseEventArgs e)
         {
             btn_jogar.Size = new Size(145, 40);
@@ -128,7 +112,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_dificuldade frm_dificuldade = new frm_dificuldade();
             frm_dificuldade.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void pic_info_Click(object sender, EventArgs e)
@@ -141,7 +125,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_1v1 frm_1v1 = new frm_1v1();
             frm_1v1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btn_jogarm_MouseMove(object sender, MouseEventArgs e)
@@ -159,6 +143,27 @@ namespace Proj_M9_BrunoPinheiro
             btn_jogarm.Size = new Size(145, 40);
             btn_jogarm.Location = new Point(93, 195);
             btn_jogarm.Font = new Font("Comic Sans MS", 11);
+        }
+
+        private void btn_jogars_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_jogars_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_jogars.Size = new Size(145, 40);
+            btn_jogars.Location = new Point(93, 259);
+        }
+
+        private void btn_jogars_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_jogars.BackColor = Color.FromArgb(36, 36, 36);
+        }
+
+        private void btn_jogars_MouseLeave(object sender, EventArgs e)
+        {
+            btn_jogars.BackColor = Color.FromArgb(24, 24, 27);
         }
     }
 }

@@ -299,7 +299,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_menu frm_menu = new frm_menu();
             frm_menu.Show();
-            this.Hide();
+            this.Close();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -326,14 +326,14 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_facil frm_facil = new frm_facil();
             frm_facil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_medio_Click(object sender, EventArgs e)
         {
             frm_medio frm_medio = new frm_medio();
             frm_medio.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void StopTimer()
@@ -355,7 +355,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_dificil frm_dificil = new frm_dificil();
             frm_dificil.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tmr_prima_Tick(object sender, EventArgs e)
@@ -368,7 +368,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_1v1 frm_1v1 = new frm_1v1();
             frm_1v1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void tsmi_modo_Click(object sender, EventArgs e)

@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
-using System.Diagnostics;
 
 namespace Proj_M9_BrunoPinheiro
 {
-    public partial class frm_facil : Form
+    public partial class frm_semlimites : Form
     {
         Stopwatch stopWatch;
-        private List<Circle> Snake = new List<Circle>();
-        private Circle food = new Circle();
+        private List<Circle6> Snake = new List<Circle6>();
+        private Circle6 food = new Circle6();
 
         int maxWidth, maxHeight, score, highScore, maxWidthS, maxHeightS;
         string time, highTime;
@@ -36,18 +36,97 @@ namespace Proj_M9_BrunoPinheiro
            int nWidthEllipse,
            int nHeightEllipse
        );
-        public frm_facil()
+        public frm_semlimites()
         {
             InitializeComponent();
-            new Settings();
+            new Settings6();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
+        }
+
+        private void tsmi_sair_Click(object sender, EventArgs e)
+        {
+            frm_sair frm_sair = new frm_sair();
+            frm_sair.Show();
+        }
+
+        private void tsmi_logout_Click(object sender, EventArgs e)
+        {
+            frm_login frm_login = new frm_login();
+            frm_login.Show();
+            this.Close();
+        }
+
+        private void tsmi_dificuldade_Click(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.Black;
+        }
+
+        private void tsmi_modo_Click(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.Black;
+        }
+
+        private void tsmi_menu_Click(object sender, EventArgs e)
+        {
+            frm_menu frm_menu = new frm_menu();
+            frm_menu.Show();
+            this.Close();
+        }
+
+        private void tsmi_multiplayer_Click(object sender, EventArgs e)
+        {
+            frm_1v1 frm_1v1 = new frm_1v1();
+            frm_1v1.Show();
+            this.Close();
+        }
+
+        private void tsmi_mtfacil_Click(object sender, EventArgs e)
+        {
+            frm_mtfacil frm_mtfacil = new frm_mtfacil();
+            frm_mtfacil.Show();
+            this.Close();
+        }
+
+        private void tsmi_facil_Click(object sender, EventArgs e)
+        {
+            frm_facil frm_facil = new frm_facil();
+            frm_facil.Show();
+            this.Close();
+        }
+
+        private void tsmi_medio_Click(object sender, EventArgs e)
+        {
+            frm_medio frm_medio = new frm_medio();
+            frm_medio.Show();
+            this.Close();
+        }
+
+        private void tsmi_dificil_Click(object sender, EventArgs e)
+        {
+            frm_dificil frm_dificil = new frm_dificil();
+            frm_dificil.Show();
+            this.Close();
+        }
+
+        private void tsmi_modo_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.White;
+        }
+
+        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
+        {
+            tsmi_modo.ForeColor = Color.White;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        private void mst_snake_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
@@ -59,7 +138,7 @@ namespace Proj_M9_BrunoPinheiro
             {
                 TakeSnapShot();
             }
-            if (e.KeyCode == Keys.Left && Settings.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings6.directions != "right")
             {
                 goLeft = true;
                 if (gameover == false)
@@ -68,7 +147,7 @@ namespace Proj_M9_BrunoPinheiro
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Right && Settings.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings6.directions != "left")
             {
                 goRight = true;
                 if (gameover == false)
@@ -77,7 +156,7 @@ namespace Proj_M9_BrunoPinheiro
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Up && Settings.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings6.directions != "down")
             {
                 goUp = true;
                 if (gameover == false)
@@ -86,7 +165,7 @@ namespace Proj_M9_BrunoPinheiro
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Down && Settings.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings6.directions != "up")
             {
                 goDown = true;
                 if (gameover == false)
@@ -95,7 +174,7 @@ namespace Proj_M9_BrunoPinheiro
                     down.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.A && Settings.directions != "right")
+            if (e.KeyCode == Keys.A && Settings6.directions != "right")
             {
                 goLeft = true;
                 if (gameover == false)
@@ -104,7 +183,7 @@ namespace Proj_M9_BrunoPinheiro
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.D && Settings.directions != "left")
+            if (e.KeyCode == Keys.D && Settings6.directions != "left")
             {
                 goRight = true;
                 if (gameover == false)
@@ -113,7 +192,7 @@ namespace Proj_M9_BrunoPinheiro
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.W && Settings.directions != "down")
+            if (e.KeyCode == Keys.W && Settings6.directions != "down")
             {
                 goUp = true;
                 if (gameover == false)
@@ -122,7 +201,7 @@ namespace Proj_M9_BrunoPinheiro
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.S && Settings.directions != "up")
+            if (e.KeyCode == Keys.S && Settings6.directions != "up")
             {
                 goDown = true;
                 if (gameover == false)
@@ -131,20 +210,6 @@ namespace Proj_M9_BrunoPinheiro
                     down.controls.play();
                 }
             }
-        }
-        WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
-        private void frm_facil_Load(object sender, EventArgs e)
-        {
-            tmr_prima.Enabled = true; 
-            stopWatch = new Stopwatch();
         }
 
         private void StartTimer()
@@ -160,11 +225,6 @@ namespace Proj_M9_BrunoPinheiro
         private void ResetTimer()
         {
             stopWatch.Reset();
-        }
-
-        private void tmr_temp_Tick(object sender, EventArgs e)
-        {
-            lbl_timer.Text = String.Format("{0:mm\\:ss\\.ff}", stopWatch.Elapsed);
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
@@ -203,44 +263,6 @@ namespace Proj_M9_BrunoPinheiro
             }
         }
 
-        private void tsmi_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
-        private void mst_snake_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void tsmi_mtfacil_Click(object sender, EventArgs e)
-        {
-            frm_mtfacil frm_mtfacil = new frm_mtfacil();
-            frm_mtfacil.Show();
-            this.Close();
-        }
-
-
-        private void tsmi_dificuldade_Click(object sender, EventArgs e)
-        {
-            tsmi_dificuldade.ForeColor = Color.Black;
-        }
-
-        private void tsmi_dificuldade_MouseLeave(object sender, EventArgs e)
-        {
-            tsmi_dificuldade.ForeColor = Color.White;
-        }
-
-        private void tsmi_dificil_Click(object sender, EventArgs e)
-        {
-            frm_dificil frm_dificil = new frm_dificil();
-            frm_dificil.Show();
-            this.Close();
-        }
-
         private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
@@ -260,18 +282,18 @@ namespace Proj_M9_BrunoPinheiro
 
                 canvas.FillEllipse(snakeColour, new Rectangle
                     (
-                    Snake[i].X * Settings.Width,
-                    Snake[i].Y * Settings.Height,
-                    Settings.Width, Settings.Height
+                    Snake[i].X * Settings6.Width,
+                    Snake[i].Y * Settings6.Height,
+                    Settings6.Width, Settings6.Height
                     ));
             }
 
 
             canvas.FillEllipse(Brushes.DarkRed, new Rectangle
             (
-            food.X * Settings.Width,
-            food.Y * Settings.Height,
-            Settings.Width, Settings.Height
+            food.X * Settings6.Width,
+            food.Y * Settings6.Height,
+            Settings6.Width, Settings6.Height
             ));
         }
 
@@ -281,42 +303,6 @@ namespace Proj_M9_BrunoPinheiro
             lbl_prima2.ForeColor = lbl_prima2.ForeColor == Color.FromArgb(17, 17, 17) ? Color.White : Color.FromArgb(17, 17, 17);
         }
 
-        private void tsmi_multiplayer_Click(object sender, EventArgs e)
-        {
-            frm_1v1 frm_1v1 = new frm_1v1();
-            frm_1v1.Show();
-            this.Close();
-        }
-
-        private void tsmi_modo_Click(object sender, EventArgs e)
-        {
-            tsmi_modo.ForeColor = Color.Black;
-        }
-
-        private void tsmi_modo_MouseLeave(object sender, EventArgs e)
-        {
-            tsmi_modo.ForeColor = Color.White;
-        }
-
-        private void tsmi_medio_Click(object sender, EventArgs e)
-        {
-            frm_medio frm_medio = new frm_medio();
-            frm_medio.Show();
-            this.Close();
-        }
-
-        private void tsmi_menu_Click(object sender, EventArgs e)
-        {
-            frm_menu frm_menu = new frm_menu();
-            frm_menu.Show();
-            this.Close();
-        }
-
-        private void tsmi_sair_Click(object sender, EventArgs e)
-        {
-            frm_sair frm_sair = new frm_sair();
-            frm_sair.Show();
-        }
         private void TakeSnapShot()
         {
             Label caption = new Label();
@@ -359,19 +345,19 @@ namespace Proj_M9_BrunoPinheiro
 
             if (goLeft)
             {
-                Settings.directions = "left";
+                Settings6.directions = "left";
             }
             if (goRight)
             {
-                Settings.directions = "right";
+                Settings6.directions = "right";
             }
             if (goDown)
             {
-                Settings.directions = "down";
+                Settings6.directions = "down";
             }
             if (goUp)
             {
-                Settings.directions = "up";
+                Settings6.directions = "up";
             }
             // end of directions
 
@@ -380,7 +366,7 @@ namespace Proj_M9_BrunoPinheiro
                 if (i == 0)
                 {
 
-                    switch (Settings.directions)
+                    switch (Settings6.directions)
                     {
                         case "left":
                             Snake[i].X--;
@@ -419,8 +405,8 @@ namespace Proj_M9_BrunoPinheiro
                     }
 
                     // restrict the snake from leaving the canvas
-                    maxWidthS = pic_canvas.Size.Width / Settings.Width - 1;
-                    maxHeightS = pic_canvas.Size.Height / Settings.Height - 1;
+                    maxWidthS = pic_canvas.Size.Width / Settings6.Width - 1;
+                    maxHeightS = pic_canvas.Size.Height / Settings6.Height - 1;
 
                     for (int j = 1; j < Snake.Count; j++)
                     {
@@ -446,70 +432,52 @@ namespace Proj_M9_BrunoPinheiro
             pic_canvas.Invalidate();
         }
 
+        WMPLib.WindowsMediaPlayer up = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
+        private void frm_semlimites_Load(object sender, EventArgs e)
+        {
+            tmr_prima.Enabled = true;
+            stopWatch = new Stopwatch();
+        }
+
         private void RestartGame()
         {
             start.URL = Application.StartupPath + @"\\start.mp3";
             start.controls.play();
             gameover = false;
-            if (score < 20)
+            maxWidth = pic_canvas.Width / Settings6.Width - 1;
+            maxHeight = pic_canvas.Height / Settings6.Height - 1;
+
+            Snake.Clear();
+            ResetTimer();
+            StartTimer();
+            lbl_prima.Visible = false;
+            lbl_prima2.Visible = false;
+            pic_obanai.Visible = false;
+            lbl_win.Visible = false;
+            lbl_gameover.Visible = false;
+            score = 0;
+            lbl_score.Text = "Maçãs: " + score;
+
+            Circle6 head = new Circle6 { X = 17, Y = 12 };
+            Snake.Add(head); // adding the head part of the snake to the list
+
+            for (int i = 0; i < 10; i++)
             {
-                maxWidth = pic_canvas.Width / Settings.Width - 1;
-                maxHeight = pic_canvas.Height / Settings.Height - 1;
-
-                Snake.Clear();
-                ResetTimer();
-                StartTimer();
-                lbl_prima.Visible = false;
-                lbl_prima2.Visible = false;
-                pic_obanai.Visible = false;
-                lbl_win.Visible = false;
-                lbl_gameover.Visible = false;
-                score = 0;
-                lbl_score.Text = "Maçãs: " + score;
-
-                Circle head = new Circle { X = 17, Y = 12 };
-                Snake.Add(head); // adding the head part of the snake to the list
-
-                for (int i = 0; i < 10; i++)
-                {
-                    Circle body = new Circle();
-                    Snake.Add(body);
-                }
-
-                food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-
-                tmr_game.Start();
+                Circle6 body = new Circle6();
+                Snake.Add(body);
             }
-            else
-            {
-                maxWidth = pic_canvas.Width / Settings.Width - 1;
-                maxHeight = pic_canvas.Height / Settings.Height - 1;
 
-                Snake.Clear();
-                ResetTimer();
-                StartTimer();
-                lbl_prima.Visible = false;
-                lbl_prima2.Visible = false;
-                pic_obanai.Visible = false;
-                lbl_win.Visible = false;
-                lbl_gameover.Visible = false;
-                score = 0;
-                lbl_score.Text = "Maçãs: " + score;
-                highScore = 0;
-                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
-                Circle head = new Circle { X = 10, Y = 5 };
-                Snake.Add(head); // adding the head part of the snake to the list
+            food = new Circle6 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
 
-                for (int i = 0; i < 10; i++)
-                {
-                    Circle body = new Circle();
-                    Snake.Add(body);
-                }
-
-                food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-
-                tmr_game.Start();
-            }
+            tmr_game.Start();
         }
         private void EatFood()
         {
@@ -517,7 +485,7 @@ namespace Proj_M9_BrunoPinheiro
             eat.URL = Application.StartupPath + @"\\eat.mp3";
             eat.controls.play();
             lbl_score.Text = "Maçãs: " + score;
-            Circle body = new Circle
+            Circle6 body = new Circle6
             {
                 X = Snake[Snake.Count - 1].X,
                 Y = Snake[Snake.Count - 1].Y
@@ -525,7 +493,7 @@ namespace Proj_M9_BrunoPinheiro
 
             Snake.Add(body);
 
-            food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            food = new Circle6 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
             if (score >= 15)
             {
                 Win();
@@ -545,7 +513,7 @@ namespace Proj_M9_BrunoPinheiro
                 highTime = time;
             }
             Snake.Clear();
-            food = new Circle { X = 0, Y = 0 };
+            food = new Circle6 { X = 0, Y = 0 };
             pic_obanai.Visible = true;
             lbl_prima2.Visible = true;
             lbl_win.Visible = true;
@@ -569,7 +537,7 @@ namespace Proj_M9_BrunoPinheiro
 
 
             Snake.Clear();
-            food = new Circle { X = -1, Y = -1 };
+            food = new Circle6 { X = -1, Y = -1 };
             lbl_gameover.Visible = true;
             pic_obanai.Visible = true;
         }

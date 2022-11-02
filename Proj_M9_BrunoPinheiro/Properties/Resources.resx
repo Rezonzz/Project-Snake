@@ -124,6 +124,9 @@
   <data name="tumblr_4984bf8c11bd97a4f9d19bc8c8cc5f49_afb93d89_540" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tumblr_4984bf8c11bd97a4f9d19bc8c8cc5f49_afb93d89_540.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Captura de ecrã 2022-11-02 132135" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 132135.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,19 +157,40 @@
   <data name="arrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Captura de ecrã 2022-11-02 132202" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 132202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="snake" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\snake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close (1) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close (1) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Captura de ecrã 2022-11-02 130744" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 130744.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de ecrã 2022-11-02 130847" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 130847.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Captura de ecrã 2022-11-02 130316" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 130316.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de ecrã 2022-11-02 131132" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 131132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="keyboard-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close (1) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close (1) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de ecrã 2022-11-02 132534" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 132534.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de ecrã 2022-11-02 132516" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de ecrã 2022-11-02 132516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -97,5 +97,15 @@ namespace Proj_M9_BrunoPinheiro
             btn_page2.BackColor = Color.FromArgb(24, 24, 27);
             btn_page2.ForeColor = Color.White;
         }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_sair_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_sair.BackColor = Color.Red;
+        }
     }
 }

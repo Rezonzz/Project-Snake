@@ -98,6 +98,7 @@
             this.txt_password.UseSystemPasswordChar = true;
             this.txt_password.Click += new System.EventHandler(this.txt_password_Click);
             this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
+            this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
             // txt_username
             // 
@@ -113,6 +114,7 @@
             this.txt_username.Text = "Username";
             this.txt_username.Click += new System.EventHandler(this.txt_username_Click);
             this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
+            this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
             // lbl_limpar
             // 
