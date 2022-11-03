@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +95,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.Captura_de_ecrã_2022_11_02_130847;
+            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.ezgif_com_gif_maker__1_;
             this.pictureBox1.Location = new System.Drawing.Point(12, 233);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 207);
@@ -104,25 +103,12 @@
             this.pictureBox1.TabIndex = 138;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Navy;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(35, 317);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 41);
-            this.label4.TabIndex = 151;
-            this.label4.Text = "GIF";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // frm_info1v1_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(337, 520);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -150,6 +136,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
     }
 }

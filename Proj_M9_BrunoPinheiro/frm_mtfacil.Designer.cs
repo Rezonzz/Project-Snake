@@ -37,7 +37,6 @@
             this.mst_snake = new System.Windows.Forms.MenuStrip();
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +113,6 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
-            this.regrasToolStripMenuItem,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -143,14 +141,6 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
-            // 
-            // regrasToolStripMenuItem
-            // 
-            this.regrasToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regrasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.regrasToolStripMenuItem.Name = "regrasToolStripMenuItem";
-            this.regrasToolStripMenuItem.Size = new System.Drawing.Size(84, 30);
-            this.regrasToolStripMenuItem.Text = "Regras";
             // 
             // tsmi_modo
             // 
@@ -392,7 +382,6 @@
         private System.Windows.Forms.MenuStrip mst_snake;
         private System.Windows.Forms.ToolStripMenuItem snakeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_menu;
-        private System.Windows.Forms.ToolStripMenuItem regrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificuldade;
         private System.Windows.Forms.ToolStripMenuItem tsmi_facil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_medio;

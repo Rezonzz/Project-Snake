@@ -49,20 +49,19 @@
             this.mst_snake = new System.Windows.Forms.MenuStrip();
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_medio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dificil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.lbl_highscore = new System.Windows.Forms.Label();
-            this.tsmi_dificil = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -248,7 +247,6 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
-            this.regrasToolStripMenuItem,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -277,14 +275,6 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
-            // 
-            // regrasToolStripMenuItem
-            // 
-            this.regrasToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regrasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.regrasToolStripMenuItem.Name = "regrasToolStripMenuItem";
-            this.regrasToolStripMenuItem.Size = new System.Drawing.Size(84, 30);
-            this.regrasToolStripMenuItem.Text = "Regras";
             // 
             // tsmi_modo
             // 
@@ -349,6 +339,15 @@
             this.tsmi_medio.Text = "Médio";
             this.tsmi_medio.Click += new System.EventHandler(this.tsmi_medio_Click);
             // 
+            // tsmi_dificil
+            // 
+            this.tsmi_dificil.BackColor = System.Drawing.Color.Black;
+            this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_dificil.Name = "tsmi_dificil";
+            this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_dificil.Text = "Díficil";
+            this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
+            // 
             // tsmi_logout
             // 
             this.tsmi_logout.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,15 +390,6 @@
             this.lbl_highscore.Size = new System.Drawing.Size(179, 49);
             this.lbl_highscore.TabIndex = 103;
             this.lbl_highscore.Text = "Maior Número de Maçãs Comidas: 0";
-            // 
-            // tsmi_dificil
-            // 
-            this.tsmi_dificil.BackColor = System.Drawing.Color.Black;
-            this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_dificil.Name = "tsmi_dificil";
-            this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
-            this.tsmi_dificil.Text = "Díficil";
-            this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
             // 
             // frm_dificil
             // 
@@ -455,7 +445,6 @@
         private System.Windows.Forms.MenuStrip mst_snake;
         private System.Windows.Forms.ToolStripMenuItem snakeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_menu;
-        private System.Windows.Forms.ToolStripMenuItem regrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificuldade;
         private System.Windows.Forms.ToolStripMenuItem tsmi_mtfacil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_medio;

@@ -34,7 +34,6 @@
             this.mst_snake = new System.Windows.Forms.MenuStrip();
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.regrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,12 +51,12 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_gameover = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_prima = new System.Windows.Forms.Label();
             this.lbl_prima2 = new System.Windows.Forms.Label();
+            this.lbl_gameover = new System.Windows.Forms.Label();
             this.lbl_win = new System.Windows.Forms.Label();
             this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
@@ -79,7 +78,6 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
-            this.regrasToolStripMenuItem,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -108,14 +106,6 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
-            // 
-            // regrasToolStripMenuItem
-            // 
-            this.regrasToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regrasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.regrasToolStripMenuItem.Name = "regrasToolStripMenuItem";
-            this.regrasToolStripMenuItem.Size = new System.Drawing.Size(84, 30);
-            this.regrasToolStripMenuItem.Text = "Regras";
             // 
             // tsmi_modo
             // 
@@ -285,19 +275,6 @@
             this.panel2.Size = new System.Drawing.Size(16, 420);
             this.panel2.TabIndex = 99;
             // 
-            // lbl_gameover
-            // 
-            this.lbl_gameover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.lbl_gameover.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_gameover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_gameover.Location = new System.Drawing.Point(18, 97);
-            this.lbl_gameover.Name = "lbl_gameover";
-            this.lbl_gameover.Size = new System.Drawing.Size(544, 59);
-            this.lbl_gameover.TabIndex = 98;
-            this.lbl_gameover.Text = "Tu Falhaste!";
-            this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_gameover.Visible = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -348,6 +325,19 @@
             this.lbl_prima2.Text = "Prima \"Enter\" para recomeçar / Prima \"T\" para tirar um Screenshot";
             this.lbl_prima2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_prima2.Visible = false;
+            // 
+            // lbl_gameover
+            // 
+            this.lbl_gameover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lbl_gameover.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_gameover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_gameover.Location = new System.Drawing.Point(18, 97);
+            this.lbl_gameover.Name = "lbl_gameover";
+            this.lbl_gameover.Size = new System.Drawing.Size(544, 59);
+            this.lbl_gameover.TabIndex = 98;
+            this.lbl_gameover.Text = "Tu Falhaste!";
+            this.lbl_gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_gameover.Visible = false;
             // 
             // lbl_win
             // 
@@ -425,7 +415,6 @@
         private System.Windows.Forms.MenuStrip mst_snake;
         private System.Windows.Forms.ToolStripMenuItem snakeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_menu;
-        private System.Windows.Forms.ToolStripMenuItem regrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificuldade;
         private System.Windows.Forms.ToolStripMenuItem tsmi_medio;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificil;

@@ -298,6 +298,11 @@
     <None Include="Resources\Captura de ecrã 2022-11-02 132135.png" />
     <None Include="Resources\Captura de ecrã 2022-11-02 132534.png" />
     <None Include="Resources\Captura de ecrã 2022-11-02 132516.png" />
+    <None Include="Resources\ezgif.com-gif-maker %281%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %282%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %283%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %284%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %285%29.gif" />
     <Content Include="Users.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
