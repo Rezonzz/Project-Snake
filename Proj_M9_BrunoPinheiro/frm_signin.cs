@@ -204,11 +204,10 @@ namespace Proj_M9_BrunoPinheiro
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txt_password.Focus();
                 if (txt_password.Text == "Password")
                 {
+                    txt_password.UseSystemPasswordChar = false;
                     txt_password.ResetText();
-                    txt_password.UseSystemPasswordChar = true;
                     txt_password.Focus();
                 }
                 e.SuppressKeyPress = true;
@@ -219,11 +218,10 @@ namespace Proj_M9_BrunoPinheiro
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txt_confirm.Focus();
                 if (txt_confirm.Text == "Confirmar Password")
                 {
+                    txt_confirm.UseSystemPasswordChar = false;
                     txt_confirm.ResetText();
-                    txt_confirm.UseSystemPasswordChar = true;
                     txt_confirm.Focus();
                 }
                 e.SuppressKeyPress = true;
@@ -237,6 +235,11 @@ namespace Proj_M9_BrunoPinheiro
                 btn_signin.PerformClick();
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void txt_username_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

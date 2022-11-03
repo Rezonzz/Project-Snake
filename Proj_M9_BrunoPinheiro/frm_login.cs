@@ -194,12 +194,12 @@ namespace Proj_M9_BrunoPinheiro
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txt_password.Focus();
                 if (txt_password.Text == "Password")
                 {
+                    txt_password.UseSystemPasswordChar = false;
                     txt_password.ResetText();
-                    txt_password.UseSystemPasswordChar = true;
                     txt_password.Focus();
+
                 }
                 e.SuppressKeyPress = true;
             }

@@ -301,6 +301,7 @@
             this.txt_username.TabIndex = 51;
             this.txt_username.Text = "Username";
             this.txt_username.Click += new System.EventHandler(this.txt_username_Click);
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
             // pictureBox4

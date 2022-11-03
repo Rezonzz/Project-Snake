@@ -539,7 +539,7 @@ namespace Proj_M9_BrunoPinheiro
             caption.BackColor = Color.Transparent;
             caption.AutoSize = false;
             caption.Width = pic_canvas.Width;
-            caption.Height = 60;
+            caption.Height = 100;
             caption.TextAlign = ContentAlignment.MiddleCenter;
             pic_canvas.Controls.Add(caption);
             pic_canvas.Controls.Add(lbl_gameover);

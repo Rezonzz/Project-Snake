@@ -147,7 +147,10 @@ namespace Proj_M9_BrunoPinheiro
 
         private void btn_jogars_Click(object sender, EventArgs e)
         {
-
+            btn_jogars.Font = new Font("Comic Sans MS", 10);
+            frm_semlimites frm_semlimites = new frm_semlimites();
+            frm_semlimites.Show();
+            this.Close();
         }
 
         private void btn_jogars_MouseDown(object sender, MouseEventArgs e)
