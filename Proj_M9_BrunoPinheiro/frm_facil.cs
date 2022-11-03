@@ -293,6 +293,13 @@ namespace Proj_M9_BrunoPinheiro
             tsmi_modo.ForeColor = Color.Black;
         }
 
+        private void tsmi_semlimites_Click(object sender, EventArgs e)
+        {
+            frm_semlimites frm_semlimites = new frm_semlimites();
+            frm_semlimites.Show();
+            this.Close();
+        }
+
         private void tsmi_modo_MouseLeave(object sender, EventArgs e)
         {
             tsmi_modo.ForeColor = Color.White;

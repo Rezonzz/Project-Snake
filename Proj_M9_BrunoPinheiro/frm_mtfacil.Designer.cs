@@ -57,6 +57,7 @@
             this.lbl_gameover = new System.Windows.Forms.Label();
             this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
+            this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_snake.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.panel2.SuspendLayout();
@@ -145,7 +146,8 @@
             // tsmi_modo
             // 
             this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_multiplayer});
+            this.tsmi_multiplayer,
+            this.tsmi_semlimites});
             this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_modo.Name = "tsmi_modo";
@@ -159,7 +161,7 @@
             this.tsmi_multiplayer.BackColor = System.Drawing.Color.Black;
             this.tsmi_multiplayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_multiplayer.Name = "tsmi_multiplayer";
-            this.tsmi_multiplayer.Size = new System.Drawing.Size(182, 30);
+            this.tsmi_multiplayer.Size = new System.Drawing.Size(188, 30);
             this.tsmi_multiplayer.Text = "MultiPlayer";
             this.tsmi_multiplayer.Click += new System.EventHandler(this.tsmi_multiplayer_Click);
             // 
@@ -182,7 +184,7 @@
             this.tsmi_facil.BackColor = System.Drawing.Color.Black;
             this.tsmi_facil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_facil.Name = "tsmi_facil";
-            this.tsmi_facil.Size = new System.Drawing.Size(136, 30);
+            this.tsmi_facil.Size = new System.Drawing.Size(180, 30);
             this.tsmi_facil.Text = "Fácil";
             this.tsmi_facil.Click += new System.EventHandler(this.tsmi_facil_Click);
             // 
@@ -191,7 +193,7 @@
             this.tsmi_medio.BackColor = System.Drawing.Color.Black;
             this.tsmi_medio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_medio.Name = "tsmi_medio";
-            this.tsmi_medio.Size = new System.Drawing.Size(136, 30);
+            this.tsmi_medio.Size = new System.Drawing.Size(180, 30);
             this.tsmi_medio.Text = "Médio";
             this.tsmi_medio.Click += new System.EventHandler(this.tsmi_medio_Click);
             // 
@@ -200,7 +202,7 @@
             this.tsmi_dificil.BackColor = System.Drawing.Color.Black;
             this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificil.Name = "tsmi_dificil";
-            this.tsmi_dificil.Size = new System.Drawing.Size(136, 30);
+            this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
             this.tsmi_dificil.Text = "Difícil";
             this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
             // 
@@ -340,6 +342,15 @@
             this.tmr_prima.Interval = 300;
             this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
             // 
+            // tsmi_semlimites
+            // 
+            this.tsmi_semlimites.BackColor = System.Drawing.Color.Black;
+            this.tsmi_semlimites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_semlimites.Name = "tsmi_semlimites";
+            this.tsmi_semlimites.Size = new System.Drawing.Size(188, 30);
+            this.tsmi_semlimites.Text = "Sem Limites";
+            this.tsmi_semlimites.Click += new System.EventHandler(this.tsmi_semlimites_Click);
+            // 
             // frm_mtfacil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,5 +413,6 @@
         private System.Windows.Forms.Timer tmr_prima;
         private System.Windows.Forms.ToolStripMenuItem tsmi_modo;
         private System.Windows.Forms.ToolStripMenuItem tsmi_multiplayer;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_semlimites;
     }
 }

@@ -90,6 +90,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_rondas = new System.Windows.Forms.Label();
             this.pic_info1v1 = new System.Windows.Forms.PictureBox();
+            this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -303,7 +304,8 @@
             // tsmi_modo
             // 
             this.tsmi_modo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_singleplayer});
+            this.tsmi_singleplayer,
+            this.tsmi_semlimites});
             this.tsmi_modo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmi_modo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_modo.Name = "tsmi_modo";
@@ -742,6 +744,15 @@
             this.pic_info1v1.TabStop = false;
             this.pic_info1v1.Click += new System.EventHandler(this.pic_info1v1_Click);
             // 
+            // tsmi_semlimites
+            // 
+            this.tsmi_semlimites.BackColor = System.Drawing.Color.Black;
+            this.tsmi_semlimites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_semlimites.Name = "tsmi_semlimites";
+            this.tsmi_semlimites.Size = new System.Drawing.Size(190, 30);
+            this.tsmi_semlimites.Text = "Sem Limites";
+            this.tsmi_semlimites.Click += new System.EventHandler(this.tsmi_semlimites_Click);
+            // 
             // frm_1v1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -853,5 +864,6 @@
         private System.Windows.Forms.PictureBox pic_info1v1;
         private System.Windows.Forms.Label lbl_morto;
         private System.Windows.Forms.Label lbl_morto2;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_semlimites;
     }
 }

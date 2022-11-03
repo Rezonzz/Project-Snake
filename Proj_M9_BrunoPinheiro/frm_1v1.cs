@@ -741,6 +741,13 @@ namespace Proj_M9_BrunoPinheiro
             }
         }
 
+        private void tsmi_semlimites_Click(object sender, EventArgs e)
+        {
+            frm_semlimites frm_semlimites = new frm_semlimites();
+            frm_semlimites.Show();
+            this.Close();
+        }
+
         private void GameOver2()
         {
             gameover2 = true;

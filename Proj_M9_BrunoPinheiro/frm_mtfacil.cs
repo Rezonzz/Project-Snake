@@ -393,6 +393,14 @@ namespace Proj_M9_BrunoPinheiro
         WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
+
+        private void tsmi_semlimites_Click(object sender, EventArgs e)
+        {
+            frm_semlimites frm_semlimites = new frm_semlimites();
+            frm_semlimites.Show();
+            this.Close();
+        }
+
         WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
         private void frm_mtfacil_Load(object sender, EventArgs e)
