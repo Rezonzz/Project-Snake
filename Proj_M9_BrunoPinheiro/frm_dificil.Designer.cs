@@ -51,6 +51,7 @@
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,11 +63,13 @@
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.lbl_highscore = new System.Windows.Forms.Label();
-            this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
+            this.pic_info = new System.Windows.Forms.PictureBox();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.mst_snake.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -248,6 +251,7 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
+            this.tsmi_creditos,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -298,6 +302,15 @@
             this.tsmi_multiplayer.Size = new System.Drawing.Size(188, 30);
             this.tsmi_multiplayer.Text = "MultiPlayer";
             this.tsmi_multiplayer.Click += new System.EventHandler(this.tsmi_multiplayer_Click);
+            // 
+            // tsmi_semlimites
+            // 
+            this.tsmi_semlimites.BackColor = System.Drawing.Color.Black;
+            this.tsmi_semlimites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_semlimites.Name = "tsmi_semlimites";
+            this.tsmi_semlimites.Size = new System.Drawing.Size(188, 30);
+            this.tsmi_semlimites.Text = "Sem Limites";
+            this.tsmi_semlimites.Click += new System.EventHandler(this.tsmi_semlimites_Click);
             // 
             // tsmi_dificuldade
             // 
@@ -393,14 +406,25 @@
             this.lbl_highscore.TabIndex = 103;
             this.lbl_highscore.Text = "Maior Número de Maçãs Comidas: 0";
             // 
-            // tsmi_semlimites
+            // pic_info
             // 
-            this.tsmi_semlimites.BackColor = System.Drawing.Color.Black;
-            this.tsmi_semlimites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_semlimites.Name = "tsmi_semlimites";
-            this.tsmi_semlimites.Size = new System.Drawing.Size(188, 30);
-            this.tsmi_semlimites.Text = "Sem Limites";
-            this.tsmi_semlimites.Click += new System.EventHandler(this.tsmi_semlimites_Click);
+            this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
+            this.pic_info.Location = new System.Drawing.Point(665, 357);
+            this.pic_info.Name = "pic_info";
+            this.pic_info.Size = new System.Drawing.Size(45, 45);
+            this.pic_info.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_info.TabIndex = 130;
+            this.pic_info.TabStop = false;
+            this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
+            // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // frm_dificil
             // 
@@ -408,6 +432,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.pic_info);
             this.Controls.Add(this.lbl_highscore);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label1);
@@ -430,6 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.mst_snake.ResumeLayout(false);
             this.mst_snake.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +496,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_multiplayer;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_semlimites;
+        private System.Windows.Forms.PictureBox pic_info;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_creditos;
     }
 }

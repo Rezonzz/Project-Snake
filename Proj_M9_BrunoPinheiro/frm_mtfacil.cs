@@ -401,10 +401,16 @@ namespace Proj_M9_BrunoPinheiro
             this.Close();
         }
 
-        private void pic_infomtfacil_Click(object sender, EventArgs e)
+        private void pic_info_Click(object sender, EventArgs e)
         {
             frm_infojogo frm_infojogo = new frm_infojogo();
             frm_infojogo.Show();
+        }
+
+        private void tsmi_creditos_Click(object sender, EventArgs e)
+        {
+            frm_creditos frm_creditos = new frm_creditos();
+            frm_creditos.Show();
         }
 
         WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();

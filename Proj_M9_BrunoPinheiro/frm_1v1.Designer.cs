@@ -50,6 +50,7 @@
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_singleplayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificuldade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_mtfacil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +91,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_rondas = new System.Windows.Forms.Label();
             this.pic_info1v1 = new System.Windows.Forms.PictureBox();
-            this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -272,6 +273,7 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
+            this.tsmi_creditos,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -322,6 +324,15 @@
             this.tsmi_singleplayer.Size = new System.Drawing.Size(190, 30);
             this.tsmi_singleplayer.Text = "SinglePlayer";
             this.tsmi_singleplayer.Click += new System.EventHandler(this.tsmi_singleplayer_Click);
+            // 
+            // tsmi_semlimites
+            // 
+            this.tsmi_semlimites.BackColor = System.Drawing.Color.Black;
+            this.tsmi_semlimites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_semlimites.Name = "tsmi_semlimites";
+            this.tsmi_semlimites.Size = new System.Drawing.Size(190, 30);
+            this.tsmi_semlimites.Text = "Sem Limites";
+            this.tsmi_semlimites.Click += new System.EventHandler(this.tsmi_semlimites_Click);
             // 
             // tsmi_dificuldade
             // 
@@ -744,14 +755,14 @@
             this.pic_info1v1.TabStop = false;
             this.pic_info1v1.Click += new System.EventHandler(this.pic_info1v1_Click);
             // 
-            // tsmi_semlimites
+            // tsmi_creditos
             // 
-            this.tsmi_semlimites.BackColor = System.Drawing.Color.Black;
-            this.tsmi_semlimites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_semlimites.Name = "tsmi_semlimites";
-            this.tsmi_semlimites.Size = new System.Drawing.Size(190, 30);
-            this.tsmi_semlimites.Text = "Sem Limites";
-            this.tsmi_semlimites.Click += new System.EventHandler(this.tsmi_semlimites_Click);
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // frm_1v1
             // 
@@ -865,5 +876,6 @@
         private System.Windows.Forms.Label lbl_morto;
         private System.Windows.Forms.Label lbl_morto2;
         private System.Windows.Forms.ToolStripMenuItem tsmi_semlimites;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_creditos;
     }
 }

@@ -62,6 +62,7 @@
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -247,6 +248,7 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
+            this.tsmi_creditos,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -388,6 +390,15 @@
             this.tmr_prima.Interval = 300;
             this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
             // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
+            // 
             // frm_semlimites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,5 +465,6 @@
         private System.Windows.Forms.Timer tmr_game;
         private System.Windows.Forms.Timer tmr_temp;
         private System.Windows.Forms.Timer tmr_prima;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_creditos;
     }
 }

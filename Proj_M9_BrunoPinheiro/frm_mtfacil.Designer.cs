@@ -58,12 +58,13 @@
             this.lbl_gameover = new System.Windows.Forms.Label();
             this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
-            this.pic_infomtfacil = new System.Windows.Forms.PictureBox();
+            this.pic_info = new System.Windows.Forms.PictureBox();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_snake.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_infomtfacil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_score
@@ -116,6 +117,7 @@
             this.mst_snake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.snakeToolStripMenuItem,
             this.tsmi_menu,
+            this.tsmi_creditos,
             this.tsmi_modo,
             this.tsmi_dificuldade,
             this.tsmi_logout,
@@ -353,16 +355,25 @@
             this.tmr_prima.Interval = 300;
             this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
             // 
-            // pic_infomtfacil
+            // pic_info
             // 
-            this.pic_infomtfacil.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
-            this.pic_infomtfacil.Location = new System.Drawing.Point(665, 357);
-            this.pic_infomtfacil.Name = "pic_infomtfacil";
-            this.pic_infomtfacil.Size = new System.Drawing.Size(45, 45);
-            this.pic_infomtfacil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_infomtfacil.TabIndex = 127;
-            this.pic_infomtfacil.TabStop = false;
-            this.pic_infomtfacil.Click += new System.EventHandler(this.pic_infomtfacil_Click);
+            this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
+            this.pic_info.Location = new System.Drawing.Point(665, 357);
+            this.pic_info.Name = "pic_info";
+            this.pic_info.Size = new System.Drawing.Size(45, 45);
+            this.pic_info.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_info.TabIndex = 127;
+            this.pic_info.TabStop = false;
+            this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
+            // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // frm_mtfacil
             // 
@@ -370,7 +381,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 484);
-            this.Controls.Add(this.pic_infomtfacil);
+            this.Controls.Add(this.pic_info);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_modo);
@@ -393,7 +404,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_infomtfacil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,6 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_modo;
         private System.Windows.Forms.ToolStripMenuItem tsmi_multiplayer;
         private System.Windows.Forms.ToolStripMenuItem tsmi_semlimites;
-        private System.Windows.Forms.PictureBox pic_infomtfacil;
+        private System.Windows.Forms.PictureBox pic_info;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_creditos;
     }
 }

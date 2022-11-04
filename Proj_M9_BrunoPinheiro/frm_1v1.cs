@@ -748,6 +748,12 @@ namespace Proj_M9_BrunoPinheiro
             this.Close();
         }
 
+        private void tsmi_creditos_Click(object sender, EventArgs e)
+        {
+            frm_creditos frm_creditos = new frm_creditos();
+            frm_creditos.Show();
+        }
+
         private void GameOver2()
         {
             gameover2 = true;

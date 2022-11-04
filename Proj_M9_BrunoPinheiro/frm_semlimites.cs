@@ -436,6 +436,13 @@ namespace Proj_M9_BrunoPinheiro
         WMPLib.WindowsMediaPlayer down = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer left = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer right = new WMPLib.WindowsMediaPlayer();
+
+        private void tsmi_creditos_Click(object sender, EventArgs e)
+        {
+            frm_creditos frm_creditos = new frm_creditos();
+            frm_creditos.Show();
+        }
+
         WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
