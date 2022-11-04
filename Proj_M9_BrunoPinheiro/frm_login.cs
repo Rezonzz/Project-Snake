@@ -167,6 +167,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void txt_username_TextChanged(object sender, EventArgs e)
         {
+            txt_username.MaxLength = 10;
             if(txt_username.Text != "" && txt_username.Text != "Username")
             {
                 lbl_limpar.Visible = true;
@@ -176,6 +177,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void txt_password_TextChanged(object sender, EventArgs e)
         {
+            txt_password.MaxLength = 12;
             if (txt_password.Text != "" && txt_password.Text != "Password")
             {
                 lbl_limpar.Visible = true;

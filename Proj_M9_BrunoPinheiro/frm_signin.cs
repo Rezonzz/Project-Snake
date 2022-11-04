@@ -126,7 +126,7 @@ namespace Proj_M9_BrunoPinheiro
             txt_username.Focus();
             txt_password.Text = "Password";
             txt_password.UseSystemPasswordChar = true;
-            txt_confirm.Text = "Password";
+            txt_confirm.Text = "Confirmar Password";
             txt_confirm.UseSystemPasswordChar = true;
             pic_ocultado.Enabled = false;
             pic_ocultado.Visible = false;
@@ -239,7 +239,32 @@ namespace Proj_M9_BrunoPinheiro
 
         private void txt_username_TextChanged(object sender, EventArgs e)
         {
+            txt_username.MaxLength = 10;
+            if (txt_username.Text != "" && txt_username.Text != "Username")
+            {
+                lbl_limpar.Visible = true;
+                lbl_limpar.Enabled = true;
+            }
+        }
 
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+            txt_password.MaxLength = 12;
+            if (txt_password.Text != "" && txt_password.Text != "Password")
+            {
+                lbl_limpar.Visible = true;
+                lbl_limpar.Enabled = true;
+            }
+        }
+
+        private void txt_confirm_TextChanged(object sender, EventArgs e)
+        {
+            txt_confirm.MaxLength = 12;
+            if (txt_confirm.Text != "" && txt_confirm.Text != "Password")
+            {
+                lbl_limpar.Visible = true;
+                lbl_limpar.Enabled = true;
+            }
         }
     }
 }

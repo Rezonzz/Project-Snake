@@ -79,6 +79,8 @@ namespace Proj_M9_BrunoPinheiro
             btn_sair.Location = new Point(93, 325);
             frm_sair frm_sair = new frm_sair();
             frm_sair.Show();
+            btn_sair.Size = new Size(160, 43);
+            btn_sair.Location = new Point(86, 322);
         }
 
         private void btn_sair_MouseMove(object sender, MouseEventArgs e)
@@ -167,6 +169,31 @@ namespace Proj_M9_BrunoPinheiro
         private void btn_jogars_MouseLeave(object sender, EventArgs e)
         {
             btn_jogars.BackColor = Color.FromArgb(24, 24, 27);
+        }
+
+        private void btn_creditos_Click(object sender, EventArgs e)
+        {
+            btn_creditos.Size = new Size(147, 32);
+            btn_creditos.Location = new Point(92, 470);
+            frm_creditos frm_creditos = new frm_creditos();
+            frm_creditos.Show();
+            btn_creditos.Size = new Size(160, 35);
+            btn_creditos.Location = new Point(86, 470);
+        }
+
+        private void frm_menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_creditos_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_creditos.BackColor = Color.FromArgb(36, 36, 36);
+        }
+
+        private void btn_creditos_MouseLeave(object sender, EventArgs e)
+        {
+            btn_creditos.BackColor = Color.FromArgb(24, 24, 27);
         }
     }
 }

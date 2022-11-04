@@ -39,8 +39,9 @@
             this.btn_jogars = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.pic_info = new System.Windows.Forms.PictureBox();
             this.btn_jogarm = new System.Windows.Forms.Button();
+            this.btn_creditos = new System.Windows.Forms.Button();
+            this.pic_info = new System.Windows.Forms.PictureBox();
             this.pnl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
@@ -189,17 +190,6 @@
             this.btn_logout.MouseLeave += new System.EventHandler(this.btn_logout_MouseLeave);
             this.btn_logout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_logout_MouseMove);
             // 
-            // pic_info
-            // 
-            this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
-            this.pic_info.Location = new System.Drawing.Point(290, 467);
-            this.pic_info.Name = "pic_info";
-            this.pic_info.Size = new System.Drawing.Size(35, 35);
-            this.pic_info.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_info.TabIndex = 75;
-            this.pic_info.TabStop = false;
-            this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
-            // 
             // btn_jogarm
             // 
             this.btn_jogarm.FlatAppearance.BorderSize = 2;
@@ -216,12 +206,40 @@
             this.btn_jogarm.MouseLeave += new System.EventHandler(this.btn_jogarm_MouseLeave);
             this.btn_jogarm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_jogarm_MouseMove);
             // 
+            // btn_creditos
+            // 
+            this.btn_creditos.FlatAppearance.BorderSize = 2;
+            this.btn_creditos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_creditos.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_creditos.Location = new System.Drawing.Point(86, 470);
+            this.btn_creditos.Name = "btn_creditos";
+            this.btn_creditos.Size = new System.Drawing.Size(160, 35);
+            this.btn_creditos.TabIndex = 77;
+            this.btn_creditos.Text = "Créditos";
+            this.btn_creditos.UseVisualStyleBackColor = true;
+            this.btn_creditos.Click += new System.EventHandler(this.btn_creditos_Click);
+            this.btn_creditos.MouseLeave += new System.EventHandler(this.btn_creditos_MouseLeave);
+            this.btn_creditos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_creditos_MouseMove);
+            // 
+            // pic_info
+            // 
+            this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
+            this.pic_info.Location = new System.Drawing.Point(290, 467);
+            this.pic_info.Name = "pic_info";
+            this.pic_info.Size = new System.Drawing.Size(35, 35);
+            this.pic_info.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_info.TabIndex = 75;
+            this.pic_info.TabStop = false;
+            this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
+            // 
             // frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(337, 514);
+            this.Controls.Add(this.btn_creditos);
             this.Controls.Add(this.btn_jogarm);
             this.Controls.Add(this.pic_info);
             this.Controls.Add(this.btn_logout);
@@ -234,6 +252,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frm_menu_Load);
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -257,5 +276,6 @@
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.PictureBox pic_info;
         private System.Windows.Forms.Button btn_jogarm;
+        private System.Windows.Forms.Button btn_creditos;
     }
 }

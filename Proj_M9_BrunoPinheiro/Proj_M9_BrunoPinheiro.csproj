@@ -62,6 +62,12 @@
     <Compile Include="frm_1v1.Designer.cs">
       <DependentUpon>frm_1v1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_creditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_creditos.Designer.cs">
+      <DependentUpon>frm_creditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_info1v1_1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,18 @@
     </Compile>
     <Compile Include="frm_info1v1_3.Designer.cs">
       <DependentUpon>frm_info1v1_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_infojogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infojogo.Designer.cs">
+      <DependentUpon>frm_infojogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_infojogo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infojogo1.Designer.cs">
+      <DependentUpon>frm_infojogo1.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
@@ -169,6 +187,9 @@
     <EmbeddedResource Include="frm_1v1.resx">
       <DependentUpon>frm_1v1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_creditos.resx">
+      <DependentUpon>frm_creditos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_info1v1_1.resx">
       <DependentUpon>frm_info1v1_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_info1v1_3.resx">
       <DependentUpon>frm_info1v1_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infojogo.resx">
+      <DependentUpon>frm_infojogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infojogo1.resx">
+      <DependentUpon>frm_infojogo1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
@@ -303,6 +330,9 @@
     <None Include="Resources\ezgif.com-gif-maker %283%29.gif" />
     <None Include="Resources\ezgif.com-gif-maker %284%29.gif" />
     <None Include="Resources\ezgif.com-gif-maker %285%29.gif" />
+    <None Include="Resources\keyboard-key-t.png" />
+    <None Include="Resources\White_full.png" />
+    <None Include="Resources\White_full__1_-removebg-preview.png" />
     <Content Include="Users.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

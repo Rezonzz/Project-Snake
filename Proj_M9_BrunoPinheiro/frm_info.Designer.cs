@@ -47,7 +47,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.pnl_top.SuspendLayout();
@@ -245,31 +244,19 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label13.Location = new System.Drawing.Point(17, 449);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 20);
+            this.label13.Size = new System.Drawing.Size(49, 20);
             this.label13.TabIndex = 80;
-            this.label13.Text = "Menu";
+            this.label13.Text = "Extra";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label14.Location = new System.Drawing.Point(54, 478);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 18);
+            this.label14.Size = new System.Drawing.Size(245, 42);
             this.label14.TabIndex = 81;
-            this.label14.Text = "• Regras adicionadas";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label16.Location = new System.Drawing.Point(54, 504);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(150, 18);
-            this.label16.TabIndex = 83;
-            this.label16.Text = "• Controlos adicionadas";
+            this.label14.Text = "• Regras/Controlos/Funcionalidades \r\n  adicionadas";
             // 
             // label17
             // 
@@ -290,7 +277,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(245, 43);
             this.label15.TabIndex = 85;
-            this.label15.Text = "• Label de vitoria no modo 1v1\r\n  adicionado";
+            this.label15.Text = "• Texto de vitoria no modo 1v1\r\n  adicionado";
             // 
             // frm_info
             // 
@@ -300,7 +287,6 @@
             this.ClientSize = new System.Drawing.Size(337, 593);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -349,7 +335,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
     }
