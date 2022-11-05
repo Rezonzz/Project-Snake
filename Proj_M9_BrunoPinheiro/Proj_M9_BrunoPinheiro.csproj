@@ -128,6 +128,36 @@
     <Compile Include="frm_infojogo1.Designer.cs">
       <DependentUpon>frm_infojogo1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_infojogo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infojogo2.Designer.cs">
+      <DependentUpon>frm_infojogo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_infojogo3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infojogo3.Designer.cs">
+      <DependentUpon>frm_infojogo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_infosl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infosl.Designer.cs">
+      <DependentUpon>frm_infosl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_infosl1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infosl1.Designer.cs">
+      <DependentUpon>frm_infosl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_infosl2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_infosl2.Designer.cs">
+      <DependentUpon>frm_infosl2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +249,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_infojogo1.resx">
       <DependentUpon>frm_infojogo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infojogo2.resx">
+      <DependentUpon>frm_infojogo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infojogo3.resx">
+      <DependentUpon>frm_infojogo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infosl.resx">
+      <DependentUpon>frm_infosl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infosl1.resx">
+      <DependentUpon>frm_infosl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_infosl2.resx">
+      <DependentUpon>frm_infosl2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
@@ -333,6 +378,12 @@
     <None Include="Resources\keyboard-key-t.png" />
     <None Include="Resources\White_full.png" />
     <None Include="Resources\White_full__1_-removebg-preview.png" />
+    <None Include="Resources\ezgif.com-gif-maker %286%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %287%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %288%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %289%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %2810%29.gif" />
+    <None Include="Resources\ezgif.com-gif-maker %2811%29.gif" />
     <Content Include="Users.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

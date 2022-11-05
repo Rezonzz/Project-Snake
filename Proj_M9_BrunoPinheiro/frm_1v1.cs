@@ -331,6 +331,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void RestartGame()
         {
+            start.URL = Application.StartupPath + @"\\start.mp3";
             start.controls.play();
             if (score >= vitoria)
             {
@@ -547,6 +548,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void EatFood()
         {
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
             eat.controls.play();
             score += 1;
 
@@ -566,6 +568,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             tmr_game.Stop();
             tmr_game2.Stop();
+            win.URL = Application.StartupPath + @"\\win.mp3";
             win.controls.play();
             if (scorej1 >= vitoria)
             {
@@ -601,6 +604,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void EatFood2()
         {
+            eat.URL = Application.StartupPath + @"\\eat.mp3";
             eat.controls.play();
             score2 += 1;
 
@@ -683,6 +687,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             gameover = true;
             tmr_game.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
             time = lbl_timer.Text;
             pic_obanai.Visible = true;
@@ -758,6 +763,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             gameover2 = true;
             tmr_game2.Stop();
+            die.URL = Application.StartupPath + @"\\die.mp3";
             die.controls.play();
             time = lbl_timer.Text;
             pic_obanai2.Visible = true;
@@ -890,67 +896,75 @@ namespace Proj_M9_BrunoPinheiro
             {
                 RestartGame();
             }
-            if (e.KeyCode == Keys.Left && Settings5.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings5.directions != "right" && Settings5.directions != "left")
             {
                 goLeft2 = true;
                 if (gameover2 == false)
                 {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Right && Settings5.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings5.directions != "left" && Settings5.directions != "right")
             {
                 goRight2 = true;
                 if (gameover2 == false)
                 {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Up && Settings5.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings5.directions != "down" && Settings5.directions != "up")
             {
                 goUp2 = true;
                 if (gameover2 == false)
                 {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Down && Settings5.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings5.directions != "up" && Settings5.directions != "down")
             {
                 goDown2 = true;
                 if (gameover2 == false)
                 {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
                     down.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.A && Settings4.directions != "right")
+            if (e.KeyCode == Keys.A && Settings4.directions != "right" && Settings4.directions != "left")
             {
                 goLeft = true;
                 if (gameover == false)
                 {
+                    left.URL = Application.StartupPath + @"\\left.mp3";
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.D && Settings4.directions != "left")
+            if (e.KeyCode == Keys.D && Settings4.directions != "left" && Settings4.directions != "right")
             {
                 goRight = true;
                 if (gameover == false)
                 {
+                    right.URL = Application.StartupPath + @"\\right.mp3";
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.W && Settings4.directions != "down")
+            if (e.KeyCode == Keys.W && Settings4.directions != "down" && Settings4.directions != "up")
             {
                 goUp = true;
                 if (gameover == false)
                 {
+                    up.URL = Application.StartupPath + @"\\up.mp3";
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.S && Settings4.directions != "up")
+            if (e.KeyCode == Keys.S && Settings4.directions != "up" && Settings4.directions != "down")
             {
                 goDown = true;
                 if (gameover == false)
                 {
+                    down.URL = Application.StartupPath + @"\\down.mp3";
                     down.controls.play();
                 }
             }
@@ -998,22 +1012,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             stopWatch = new Stopwatch();
             tmr_prima.Enabled = true;
-            left.URL = Application.StartupPath + @"\\left.mp3";
-            right.URL = Application.StartupPath + @"\\right.mp3";
-            up.URL = Application.StartupPath + @"\\up.mp3";
-            down.URL = Application.StartupPath + @"\\down.mp3";
-            eat.URL = Application.StartupPath + @"\\eat.mp3";
-            die.URL = Application.StartupPath + @"\\die.mp3";
-            win.URL = Application.StartupPath + @"\\win.mp3";
-            start.URL = Application.StartupPath + @"\\start.mp3";
-            left.controls.stop();
-            right.controls.stop();
-            up.controls.stop();
-            down.controls.stop();
-            eat.controls.stop();
-            die.controls.stop();
-            win.controls.stop();
-            start.controls.stop();
         }
     }
 }

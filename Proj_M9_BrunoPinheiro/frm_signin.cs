@@ -148,6 +148,17 @@ namespace Proj_M9_BrunoPinheiro
                 btn_signin.Location = new Point(95, 440);
                 lbl_invalido.Visible = false;
                 lbl_vazio.Visible = true;
+                txt_username.Clear();
+                txt_password.Clear();
+                txt_confirm.Clear();
+                txt_username.ResetText();
+                txt_password.ResetText();
+                txt_confirm.ResetText();
+                txt_username.Focus();
+                txt_password.Text = "Password";
+                txt_password.UseSystemPasswordChar = true;
+                txt_confirm.Text = "Confirmar Password";
+                txt_confirm.UseSystemPasswordChar = true;
             }
             else if (txt_password.Text == txt_confirm.Text)
             {
@@ -161,12 +172,10 @@ namespace Proj_M9_BrunoPinheiro
                 frm_login frm_login = new frm_login();
                 frm_login.Show();
                 this.Close();
-                MessageBox.Show("Registro concluido com sucesso! Agora faça log in.", "Sig in");
+                MessageBox.Show("Registro concluido com sucesso! Agora faça log in.", "Sign in");
             }
             else
             {
-                lbl_invalido.Visible = true;
-                lbl_vazio.Visible = false;
                 txt_username.Clear();
                 txt_password.Clear();
                 txt_confirm.Clear();
@@ -174,6 +183,12 @@ namespace Proj_M9_BrunoPinheiro
                 txt_password.ResetText();
                 txt_confirm.ResetText();
                 txt_username.Focus();
+                txt_password.Text = "Password";
+                txt_password.UseSystemPasswordChar = true;
+                txt_confirm.Text = "Confirmar Password";
+                txt_confirm.UseSystemPasswordChar = true;
+                lbl_invalido.Visible = true;
+                lbl_vazio.Visible = false;
             }
             btn_signin.Size = new Size(140, 37);
             btn_signin.Location = new Point(89, 440);

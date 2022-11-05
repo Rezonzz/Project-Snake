@@ -220,7 +220,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_dificuldade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_dificuldade";
+            this.Text = "Snake - Dificuldade";
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -252,6 +252,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Snake - Menu";
             this.Load += new System.EventHandler(this.frm_menu_Load);
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Proj_M9_BrunoPinheiro
 {
-    public partial class frm_infojogo : Form
+    public partial class frm_infosl : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -23,11 +23,12 @@ namespace Proj_M9_BrunoPinheiro
            int nWidthEllipse,
            int nHeightEllipse
        );
-        public frm_infojogo()
+        public frm_infosl()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
         }
+
         private Form currentChildForm;
         private void OpenChildForm(Form childForm)
         {
@@ -44,45 +45,13 @@ namespace Proj_M9_BrunoPinheiro
             childForm.BringToFront();
             childForm.Show();
         }
-        private void btn_page1_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_infojogo1());
-            btn_page1.BackColor = Color.FromArgb(192, 192, 0);
-            btn_page1.ForeColor = Color.Black;
-            btn_page2.BackColor = Color.FromArgb(24, 24, 27);
-            btn_page2.ForeColor = Color.White;
-            btn_page3.BackColor = Color.FromArgb(24, 24, 27);
-            btn_page3.ForeColor = Color.White;
-        }
 
-        private void btn_page2_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_infojogo2());
-            btn_page2.BackColor = Color.FromArgb(192, 192, 0);
-            btn_page2.ForeColor = Color.Black;
-            btn_page1.BackColor = Color.FromArgb(24, 24, 27);
-            btn_page1.ForeColor = Color.White;
-            btn_page3.BackColor = Color.FromArgb(24, 24, 27);
-            btn_page3.ForeColor = Color.White;
-        }
-
-        private void btn_page3_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_infojogo3());
-            btn_page3.BackColor = Color.FromArgb(192, 192, 0);
-            btn_page3.ForeColor = Color.Black;
-            btn_page1.BackColor = Color.FromArgb(24, 24, 27);
-            btn_page1.ForeColor = Color.White;
-            btn_page2.BackColor = Color.FromArgb(24, 24, 27);
-            btn_page2.ForeColor = Color.White;
-        }
-
-        private void btn_sair_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
+        private void btn_sair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -100,6 +69,24 @@ namespace Proj_M9_BrunoPinheiro
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btn_page1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_infosl1());
+            btn_page1.BackColor = Color.FromArgb(192, 192, 0);
+            btn_page1.ForeColor = Color.Black;
+            btn_page2.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page2.ForeColor = Color.White;
+        }
+
+        private void btn_page2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_infosl2());
+            btn_page2.BackColor = Color.FromArgb(192, 192, 0);
+            btn_page2.ForeColor = Color.Black;
+            btn_page1.BackColor = Color.FromArgb(24, 24, 27);
+            btn_page1.ForeColor = Color.White;
         }
     }
 }

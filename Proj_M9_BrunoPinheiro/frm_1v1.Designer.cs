@@ -48,6 +48,7 @@
             this.mst_snake = new System.Windows.Forms.MenuStrip();
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_singleplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +92,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_rondas = new System.Windows.Forms.Label();
             this.pic_info1v1 = new System.Windows.Forms.PictureBox();
-            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -302,6 +302,15 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
+            // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // tsmi_modo
             // 
@@ -686,9 +695,9 @@
             // 
             this.lbl_j1p.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_j1p.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_j1p.Location = new System.Drawing.Point(443, 183);
+            this.lbl_j1p.Location = new System.Drawing.Point(436, 183);
             this.lbl_j1p.Name = "lbl_j1p";
-            this.lbl_j1p.Size = new System.Drawing.Size(61, 49);
+            this.lbl_j1p.Size = new System.Drawing.Size(89, 49);
             this.lbl_j1p.TabIndex = 121;
             this.lbl_j1p.Text = "0";
             this.lbl_j1p.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -697,9 +706,9 @@
             // 
             this.lbl_j2p.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_j2p.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_j2p.Location = new System.Drawing.Point(546, 183);
+            this.lbl_j2p.Location = new System.Drawing.Point(525, 183);
             this.lbl_j2p.Name = "lbl_j2p";
-            this.lbl_j2p.Size = new System.Drawing.Size(61, 49);
+            this.lbl_j2p.Size = new System.Drawing.Size(89, 49);
             this.lbl_j2p.TabIndex = 122;
             this.lbl_j2p.Text = "0";
             this.lbl_j2p.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -755,15 +764,6 @@
             this.pic_info1v1.TabStop = false;
             this.pic_info1v1.Click += new System.EventHandler(this.pic_info1v1_Click);
             // 
-            // tsmi_creditos
-            // 
-            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_creditos.Name = "tsmi_creditos";
-            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
-            this.tsmi_creditos.Text = "Créditos";
-            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
-            // 
             // frm_1v1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -774,8 +774,6 @@
             this.Controls.Add(this.lbl_rondas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_prima);
-            this.Controls.Add(this.lbl_j2p);
-            this.Controls.Add(this.lbl_j1p);
             this.Controls.Add(this.lbl_mudarp);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
@@ -787,6 +785,8 @@
             this.Controls.Add(this.lbl_modo);
             this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.mst_snake);
+            this.Controls.Add(this.lbl_j1p);
+            this.Controls.Add(this.lbl_j2p);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_1v1";

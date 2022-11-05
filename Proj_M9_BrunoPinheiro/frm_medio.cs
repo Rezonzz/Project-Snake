@@ -48,7 +48,7 @@ namespace Proj_M9_BrunoPinheiro
             {
                 TakeSnapShot();
             }
-            if (e.KeyCode == Keys.Left && Settings2.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings2.directions != "right" && Settings2.directions != "left")
             {
                 goLeft = true;
                 if (gameover == false)
@@ -57,7 +57,7 @@ namespace Proj_M9_BrunoPinheiro
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Right && Settings2.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings2.directions != "left" && Settings2.directions != "right")
             {
                 goRight = true;
                 if (gameover == false)
@@ -66,7 +66,7 @@ namespace Proj_M9_BrunoPinheiro
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Up && Settings2.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings2.directions != "down" && Settings2.directions != "up")
             {
                 goUp = true;
                 if (gameover == false)
@@ -75,7 +75,7 @@ namespace Proj_M9_BrunoPinheiro
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Down && Settings2.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings2.directions != "up" && Settings2.directions != "down")
             {
                 goDown = true;
                 if (gameover == false)
@@ -84,7 +84,7 @@ namespace Proj_M9_BrunoPinheiro
                     down.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.A && Settings2.directions != "right")
+            if (e.KeyCode == Keys.A && Settings2.directions != "right" && Settings2.directions != "left")
             {
                 goLeft = true;
                 if (gameover == false)
@@ -93,7 +93,7 @@ namespace Proj_M9_BrunoPinheiro
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.D && Settings2.directions != "left")
+            if (e.KeyCode == Keys.D && Settings2.directions != "left" && Settings2.directions != "right")
             {
                 goRight = true;
                 if (gameover == false)
@@ -102,7 +102,7 @@ namespace Proj_M9_BrunoPinheiro
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.W && Settings2.directions != "down")
+            if (e.KeyCode == Keys.W && Settings2.directions != "down" && Settings2.directions != "up")
             {
                 goUp = true;
                 if (gameover == false)
@@ -111,7 +111,7 @@ namespace Proj_M9_BrunoPinheiro
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.S && Settings2.directions != "up")
+            if (e.KeyCode == Keys.S && Settings2.directions != "up" && Settings2.directions != "down")
             {
                 goDown = true;
                 if (gameover == false)

@@ -1,6 +1,6 @@
 ﻿namespace Proj_M9_BrunoPinheiro
 {
-    partial class frm_infojogo1
+    partial class frm_infosl1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_infojogo1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_infosl1));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.label3.Location = new System.Drawing.Point(100, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 23);
-            this.label3.TabIndex = 150;
+            this.label3.TabIndex = 161;
             this.label3.Text = "Tirar Screenshot - ";
             // 
             // label2
@@ -65,7 +65,7 @@
             this.label2.Location = new System.Drawing.Point(120, 323);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 45);
-            this.label2.TabIndex = 148;
+            this.label2.TabIndex = 159;
             this.label2.Text = "/";
             // 
             // label6
@@ -76,7 +76,7 @@
             this.label6.Location = new System.Drawing.Point(97, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 38);
-            this.label6.TabIndex = 147;
+            this.label6.TabIndex = 158;
             this.label6.Text = "Controlos";
             // 
             // label5
@@ -87,7 +87,7 @@
             this.label5.Location = new System.Drawing.Point(39, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(215, 23);
-            this.label5.TabIndex = 145;
+            this.label5.TabIndex = 156;
             this.label5.Text = "Começar/Recomeçar Jogo - ";
             // 
             // label4
@@ -98,7 +98,7 @@
             this.label4.Location = new System.Drawing.Point(26, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 26);
-            this.label4.TabIndex = 144;
+            this.label4.TabIndex = 155;
             this.label4.Text = "No Jogo";
             // 
             // label7
@@ -109,7 +109,7 @@
             this.label7.Location = new System.Drawing.Point(26, 272);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 26);
-            this.label7.TabIndex = 141;
+            this.label7.TabIndex = 152;
             this.label7.Text = "Movimentação:";
             // 
             // lbl_vitoria
@@ -119,7 +119,7 @@
             this.lbl_vitoria.Location = new System.Drawing.Point(104, 9);
             this.lbl_vitoria.Name = "lbl_vitoria";
             this.lbl_vitoria.Size = new System.Drawing.Size(131, 70);
-            this.lbl_vitoria.TabIndex = 140;
+            this.lbl_vitoria.TabIndex = 151;
             this.lbl_vitoria.Text = "Info";
             this.lbl_vitoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -130,7 +130,7 @@
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(80, 60);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 149;
+            this.pictureBox5.TabIndex = 160;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox3
@@ -140,7 +140,7 @@
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(47, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 146;
+            this.pictureBox3.TabIndex = 157;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
@@ -150,7 +150,7 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(87, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 143;
+            this.pictureBox1.TabIndex = 154;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox4
@@ -160,10 +160,10 @@
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(87, 67);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 142;
+            this.pictureBox4.TabIndex = 153;
             this.pictureBox4.TabStop = false;
             // 
-            // frm_infojogo1
+            // frm_infosl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,9 +183,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frm_infojogo1";
+            this.Name = "frm_infosl1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Snake - Info Page 1";
+            this.Text = "frm_infosl1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -152,7 +152,11 @@ namespace Proj_M9_BrunoPinheiro
                 lbl_invalido.Visible = true;
                 txt_username.Clear();
                 txt_password.Clear();
+                txt_username.ResetText();
+                txt_password.ResetText();
                 txt_username.Focus();
+                txt_password.Text = "Password";
+                txt_password.UseSystemPasswordChar = true;
             }
             connection.Close();
             btn_login.Size = new Size(140, 37);

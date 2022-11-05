@@ -138,7 +138,7 @@ namespace Proj_M9_BrunoPinheiro
             {
                 TakeSnapShot();
             }
-            if (e.KeyCode == Keys.Left && Settings6.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings6.directions != "right" && Settings6.directions != "left")
             {
                 goLeft = true;
                 if (gameover == false)
@@ -147,7 +147,7 @@ namespace Proj_M9_BrunoPinheiro
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Right && Settings6.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings6.directions != "left" && Settings6.directions != "right")
             {
                 goRight = true;
                 if (gameover == false)
@@ -156,7 +156,7 @@ namespace Proj_M9_BrunoPinheiro
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Up && Settings6.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings6.directions != "down" && Settings6.directions != "up")
             {
                 goUp = true;
                 if (gameover == false)
@@ -165,7 +165,7 @@ namespace Proj_M9_BrunoPinheiro
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.Down && Settings6.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings6.directions != "up" && Settings6.directions != "down")
             {
                 goDown = true;
                 if (gameover == false)
@@ -174,7 +174,7 @@ namespace Proj_M9_BrunoPinheiro
                     down.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.A && Settings6.directions != "right")
+            if (e.KeyCode == Keys.A && Settings6.directions != "right" && Settings6.directions != "left")
             {
                 goLeft = true;
                 if (gameover == false)
@@ -183,7 +183,7 @@ namespace Proj_M9_BrunoPinheiro
                     left.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.D && Settings6.directions != "left")
+            if (e.KeyCode == Keys.D && Settings6.directions != "left" && Settings6.directions != "right")
             {
                 goRight = true;
                 if (gameover == false)
@@ -192,7 +192,7 @@ namespace Proj_M9_BrunoPinheiro
                     right.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.W && Settings6.directions != "down")
+            if (e.KeyCode == Keys.W && Settings6.directions != "down" && Settings6.directions != "up")
             {
                 goUp = true;
                 if (gameover == false)
@@ -201,7 +201,7 @@ namespace Proj_M9_BrunoPinheiro
                     up.controls.play();
                 }
             }
-            if (e.KeyCode == Keys.S && Settings6.directions != "up")
+            if (e.KeyCode == Keys.S && Settings6.directions != "up" && Settings6.directions != "down")
             {
                 goDown = true;
                 if (gameover == false)
@@ -307,7 +307,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             Label caption = new Label();
             caption.Visible = true;
-            caption.Text = "Número de Maçãs Comidas: " + score + " em " + time + " e Maior Número de Maçãs Comidas: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Fácil";
+            caption.Text = "Número de Maçãs Comidas: " + score + " em " + time + " e Maior Número de Maçãs Comidas: " + highScore + " em " + highTime + " no Jogo do Snake - Modo Sem Limites";
             caption.Font = new Font("Comic sans MS", 14, FontStyle.Bold);
             caption.ForeColor = Color.White;
             caption.BackColor = Color.Transparent;
@@ -316,8 +316,6 @@ namespace Proj_M9_BrunoPinheiro
             caption.Height = 100;
             caption.TextAlign = ContentAlignment.MiddleCenter;
             pic_canvas.Controls.Add(caption);
-            pic_canvas.Controls.Add(lbl_gameover);
-            pic_canvas.Controls.Add(lbl_win);
             pic_canvas.Controls.Add(pic_obanai);
             takeshot.URL = Application.StartupPath + @"\\takeshot.mp3";
             takeshot.controls.play();
@@ -443,9 +441,19 @@ namespace Proj_M9_BrunoPinheiro
             frm_creditos.Show();
         }
 
+        private void pic_info_Click(object sender, EventArgs e)
+        {
+            frm_infosl frm_infosl = new frm_infosl();
+            frm_infosl.Show();
+        }
+
+        private void tmr_temp_Tick(object sender, EventArgs e)
+        {
+            lbl_timer.Text = String.Format("{0:mm\\:ss\\.ff}", stopWatch.Elapsed);
+        }
+
         WMPLib.WindowsMediaPlayer die = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer win = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer start = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer takeshot = new WMPLib.WindowsMediaPlayer();
         private void frm_semlimites_Load(object sender, EventArgs e)
@@ -468,7 +476,6 @@ namespace Proj_M9_BrunoPinheiro
             lbl_prima.Visible = false;
             lbl_prima2.Visible = false;
             pic_obanai.Visible = false;
-            lbl_win.Visible = false;
             lbl_gameover.Visible = false;
             score = 0;
             lbl_score.Text = "Maçãs: " + score;
@@ -501,31 +508,8 @@ namespace Proj_M9_BrunoPinheiro
             Snake.Add(body);
 
             food = new Circle6 { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            if (score >= 15)
-            {
-                Win();
-            }
         }
 
-        private void Win()
-        {
-            tmr_game.Stop();
-            win.URL = Application.StartupPath + @"\\win.mp3";
-            win.controls.play();
-            time = lbl_timer.Text;
-            if (score > highScore)
-            {
-                highScore = score;
-                lbl_highscore.Text = "Maior Número de Maçãs Comidas: " + highScore;
-                highTime = time;
-            }
-            Snake.Clear();
-            food = new Circle6 { X = 0, Y = 0 };
-            pic_obanai.Visible = true;
-            lbl_prima2.Visible = true;
-            lbl_win.Visible = true;
-            StopTimer();
-        }
         private void GameOver()
         {
             tmr_game.Stop();

@@ -1,6 +1,6 @@
 ﻿namespace Proj_M9_BrunoPinheiro
 {
-    partial class frm_infojogo
+    partial class frm_infosl
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_infojogo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_infosl));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_sair = new System.Windows.Forms.Button();
-            this.btn_page3 = new System.Windows.Forms.Button();
             this.btn_page2 = new System.Windows.Forms.Button();
             this.btn_page1 = new System.Windows.Forms.Button();
             this.pnl_background = new System.Windows.Forms.Panel();
@@ -64,14 +63,13 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btn_sair);
-            this.panel2.Controls.Add(this.btn_page3);
             this.panel2.Controls.Add(this.btn_page2);
             this.panel2.Controls.Add(this.btn_page1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 548);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(337, 45);
-            this.panel2.TabIndex = 50;
+            this.panel2.TabIndex = 53;
             // 
             // btn_sair
             // 
@@ -88,27 +86,13 @@
             this.btn_sair.UseVisualStyleBackColor = false;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
-            // btn_page3
-            // 
-            this.btn_page3.FlatAppearance.BorderSize = 2;
-            this.btn_page3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_page3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_page3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_page3.Location = new System.Drawing.Point(187, 1);
-            this.btn_page3.Name = "btn_page3";
-            this.btn_page3.Size = new System.Drawing.Size(36, 36);
-            this.btn_page3.TabIndex = 81;
-            this.btn_page3.Text = "3";
-            this.btn_page3.UseVisualStyleBackColor = true;
-            this.btn_page3.Click += new System.EventHandler(this.btn_page3_Click);
-            // 
             // btn_page2
             // 
             this.btn_page2.FlatAppearance.BorderSize = 2;
             this.btn_page2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_page2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_page2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_page2.Location = new System.Drawing.Point(145, 1);
+            this.btn_page2.Location = new System.Drawing.Point(166, 1);
             this.btn_page2.Name = "btn_page2";
             this.btn_page2.Size = new System.Drawing.Size(36, 36);
             this.btn_page2.TabIndex = 80;
@@ -123,7 +107,7 @@
             this.btn_page1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_page1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_page1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_page1.Location = new System.Drawing.Point(103, 1);
+            this.btn_page1.Location = new System.Drawing.Point(124, 1);
             this.btn_page1.Name = "btn_page1";
             this.btn_page1.Size = new System.Drawing.Size(36, 36);
             this.btn_page1.TabIndex = 79;
@@ -148,7 +132,7 @@
             this.pnl_background.Location = new System.Drawing.Point(0, 28);
             this.pnl_background.Name = "pnl_background";
             this.pnl_background.Size = new System.Drawing.Size(337, 520);
-            this.pnl_background.TabIndex = 49;
+            this.pnl_background.TabIndex = 52;
             // 
             // label3
             // 
@@ -238,7 +222,7 @@
             this.pnl_top.Location = new System.Drawing.Point(0, 0);
             this.pnl_top.Name = "pnl_top";
             this.pnl_top.Size = new System.Drawing.Size(337, 28);
-            this.pnl_top.TabIndex = 48;
+            this.pnl_top.TabIndex = 51;
             this.pnl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_top_MouseDown);
             // 
             // label1
@@ -331,7 +315,7 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // frm_infojogo
+            // frm_infosl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,9 +327,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frm_infojogo";
+            this.Name = "frm_infosl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Info - Modo SinglePlayer";
+            this.Text = "Info - Modo Sem Limites";
             this.panel2.ResumeLayout(false);
             this.pnl_background.ResumeLayout(false);
             this.pnl_background.PerformLayout();
@@ -364,10 +348,12 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_sair;
-        private System.Windows.Forms.Button btn_page3;
         private System.Windows.Forms.Button btn_page2;
         private System.Windows.Forms.Button btn_page1;
         private System.Windows.Forms.Panel pnl_background;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
@@ -381,8 +367,5 @@
         private System.Windows.Forms.Button btn_minimize;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label3;
     }
 }

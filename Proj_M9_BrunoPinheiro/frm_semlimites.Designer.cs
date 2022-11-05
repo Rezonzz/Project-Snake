@@ -35,20 +35,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_prima = new System.Windows.Forms.Label();
             this.lbl_prima2 = new System.Windows.Forms.Label();
             this.lbl_gameover = new System.Windows.Forms.Label();
             this.lbl_win = new System.Windows.Forms.Label();
-            this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_modo = new System.Windows.Forms.Label();
             this.lbl_score = new System.Windows.Forms.Label();
             this.lbl_timer = new System.Windows.Forms.Label();
             this.mst_snake = new System.Windows.Forms.MenuStrip();
-            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_singleplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,11 +60,15 @@
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
-            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
+            this.pic_info = new System.Windows.Forms.PictureBox();
+            this.pic_obanai = new System.Windows.Forms.PictureBox();
+            this.pic_canvas = new System.Windows.Forms.PictureBox();
+            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
+            this.mst_snake.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
-            this.mst_snake.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_highscore
@@ -120,16 +122,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(578, 16);
             this.panel5.TabIndex = 102;
-            // 
-            // pic_obanai
-            // 
-            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
-            this.pic_obanai.Location = new System.Drawing.Point(154, 244);
-            this.pic_obanai.Name = "pic_obanai";
-            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
-            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_obanai.TabIndex = 97;
-            this.pic_obanai.TabStop = false;
             // 
             // panel4
             // 
@@ -189,16 +181,6 @@
             this.lbl_win.Text = "Objetivo Concluído!";
             this.lbl_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_win.Visible = false;
-            // 
-            // pic_canvas
-            // 
-            this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pic_canvas.Location = new System.Drawing.Point(0, 0);
-            this.pic_canvas.Name = "pic_canvas";
-            this.pic_canvas.Size = new System.Drawing.Size(580, 416);
-            this.pic_canvas.TabIndex = 86;
-            this.pic_canvas.TabStop = false;
-            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             // 
             // panel1
             // 
@@ -260,15 +242,6 @@
             this.mst_snake.Text = "mst_top";
             this.mst_snake.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mst_snake_MouseDown);
             // 
-            // snakeToolStripMenuItem
-            // 
-            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
-            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
-            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
-            this.snakeToolStripMenuItem.Text = "Snake";
-            // 
             // tsmi_menu
             // 
             this.tsmi_menu.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,6 +250,15 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
+            // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // tsmi_modo
             // 
@@ -384,20 +366,52 @@
             // tmr_temp
             // 
             this.tmr_temp.Enabled = true;
+            this.tmr_temp.Tick += new System.EventHandler(this.tmr_temp_Tick);
             // 
             // tmr_prima
             // 
             this.tmr_prima.Interval = 300;
             this.tmr_prima.Tick += new System.EventHandler(this.tmr_prima_Tick);
             // 
-            // tsmi_creditos
+            // pic_info
             // 
-            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_creditos.Name = "tsmi_creditos";
-            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
-            this.tsmi_creditos.Text = "Créditos";
-            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
+            this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
+            this.pic_info.Location = new System.Drawing.Point(674, 357);
+            this.pic_info.Name = "pic_info";
+            this.pic_info.Size = new System.Drawing.Size(45, 45);
+            this.pic_info.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_info.TabIndex = 129;
+            this.pic_info.TabStop = false;
+            this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
+            // 
+            // pic_obanai
+            // 
+            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai.Location = new System.Drawing.Point(154, 244);
+            this.pic_obanai.Name = "pic_obanai";
+            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai.TabIndex = 97;
+            this.pic_obanai.TabStop = false;
+            // 
+            // pic_canvas
+            // 
+            this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pic_canvas.Location = new System.Drawing.Point(0, 0);
+            this.pic_canvas.Name = "pic_canvas";
+            this.pic_canvas.Size = new System.Drawing.Size(580, 416);
+            this.pic_canvas.TabIndex = 86;
+            this.pic_canvas.TabStop = false;
+            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
+            // 
+            // snakeToolStripMenuItem
+            // 
+            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
+            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
+            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
+            this.snakeToolStripMenuItem.Text = "Snake";
             // 
             // frm_semlimites
             // 
@@ -405,6 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.pic_info);
             this.Controls.Add(this.lbl_highscore);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
@@ -422,10 +437,11 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.mst_snake.ResumeLayout(false);
             this.mst_snake.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +482,6 @@
         private System.Windows.Forms.Timer tmr_temp;
         private System.Windows.Forms.Timer tmr_prima;
         private System.Windows.Forms.ToolStripMenuItem tsmi_creditos;
+        private System.Windows.Forms.PictureBox pic_info;
     }
 }

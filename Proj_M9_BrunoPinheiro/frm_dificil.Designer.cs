@@ -49,6 +49,7 @@
             this.mst_snake = new System.Windows.Forms.MenuStrip();
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.lbl_highscore = new System.Windows.Forms.Label();
             this.pic_info = new System.Windows.Forms.PictureBox();
-            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
@@ -221,7 +221,7 @@
             this.lbl_modo.Name = "lbl_modo";
             this.lbl_modo.Size = new System.Drawing.Size(171, 32);
             this.lbl_modo.TabIndex = 109;
-            this.lbl_modo.Text = "Modo - Difícil";
+            this.lbl_modo.Text = "Modo - Díficil";
             // 
             // lbl_score
             // 
@@ -280,6 +280,15 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
+            // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // tsmi_modo
             // 
@@ -417,15 +426,6 @@
             this.pic_info.TabStop = false;
             this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
             // 
-            // tsmi_creditos
-            // 
-            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_creditos.Name = "tsmi_creditos";
-            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
-            this.tsmi_creditos.Text = "Créditos";
-            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
-            // 
             // frm_dificil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +446,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_dificil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_dificil";
+            this.Text = "Snake - Modo Díficil";
             this.Load += new System.EventHandler(this.frm_dificil_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
