@@ -35,16 +35,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pic_obanai = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_prima = new System.Windows.Forms.Label();
             this.lbl_prima2 = new System.Windows.Forms.Label();
             this.lbl_gameover = new System.Windows.Forms.Label();
             this.lbl_win = new System.Windows.Forms.Label();
+            this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_modo = new System.Windows.Forms.Label();
             this.lbl_score = new System.Windows.Forms.Label();
             this.lbl_timer = new System.Windows.Forms.Label();
             this.mst_snake = new System.Windows.Forms.MenuStrip();
+            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,14 +64,11 @@
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.pic_info = new System.Windows.Forms.PictureBox();
-            this.pic_obanai = new System.Windows.Forms.PictureBox();
-            this.pic_canvas = new System.Windows.Forms.PictureBox();
-            this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6.SuspendLayout();
-            this.mst_snake.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).BeginInit();
+            this.mst_snake.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_highscore
@@ -122,6 +122,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(578, 16);
             this.panel5.TabIndex = 102;
+            // 
+            // pic_obanai
+            // 
+            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
+            this.pic_obanai.Location = new System.Drawing.Point(154, 244);
+            this.pic_obanai.Name = "pic_obanai";
+            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
+            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_obanai.TabIndex = 97;
+            this.pic_obanai.TabStop = false;
             // 
             // panel4
             // 
@@ -182,6 +192,16 @@
             this.lbl_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_win.Visible = false;
             // 
+            // pic_canvas
+            // 
+            this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pic_canvas.Location = new System.Drawing.Point(0, 0);
+            this.pic_canvas.Name = "pic_canvas";
+            this.pic_canvas.Size = new System.Drawing.Size(580, 416);
+            this.pic_canvas.TabIndex = 86;
+            this.pic_canvas.TabStop = false;
+            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -241,6 +261,15 @@
             this.mst_snake.TabIndex = 105;
             this.mst_snake.Text = "mst_top";
             this.mst_snake.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mst_snake_MouseDown);
+            // 
+            // snakeToolStripMenuItem
+            // 
+            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
+            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
+            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
+            this.snakeToolStripMenuItem.Text = "Snake";
             // 
             // tsmi_menu
             // 
@@ -338,7 +367,7 @@
             this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificil.Name = "tsmi_dificil";
             this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
-            this.tsmi_dificil.Text = "Dificil";
+            this.tsmi_dificil.Text = "Difícil";
             // 
             // tsmi_logout
             // 
@@ -384,35 +413,6 @@
             this.pic_info.TabStop = false;
             this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
             // 
-            // pic_obanai
-            // 
-            this.pic_obanai.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.obanaiico;
-            this.pic_obanai.Location = new System.Drawing.Point(154, 244);
-            this.pic_obanai.Name = "pic_obanai";
-            this.pic_obanai.Size = new System.Drawing.Size(270, 149);
-            this.pic_obanai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_obanai.TabIndex = 97;
-            this.pic_obanai.TabStop = false;
-            // 
-            // pic_canvas
-            // 
-            this.pic_canvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pic_canvas.Location = new System.Drawing.Point(0, 0);
-            this.pic_canvas.Name = "pic_canvas";
-            this.pic_canvas.Size = new System.Drawing.Size(580, 416);
-            this.pic_canvas.TabIndex = 86;
-            this.pic_canvas.TabStop = false;
-            this.pic_canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
-            // 
-            // snakeToolStripMenuItem
-            // 
-            this.snakeToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snakeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.snakeToolStripMenuItem.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake1;
-            this.snakeToolStripMenuItem.Name = "snakeToolStripMenuItem";
-            this.snakeToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
-            this.snakeToolStripMenuItem.Text = "Snake";
-            // 
             // frm_semlimites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,11 +437,11 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.mst_snake.ResumeLayout(false);
             this.mst_snake.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_info)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

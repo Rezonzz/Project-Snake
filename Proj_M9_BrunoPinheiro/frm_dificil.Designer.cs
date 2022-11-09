@@ -221,7 +221,7 @@
             this.lbl_modo.Name = "lbl_modo";
             this.lbl_modo.Size = new System.Drawing.Size(171, 32);
             this.lbl_modo.TabIndex = 109;
-            this.lbl_modo.Text = "Modo - Díficil";
+            this.lbl_modo.Text = "Modo - Difícil";
             // 
             // lbl_score
             // 
@@ -369,7 +369,7 @@
             this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificil.Name = "tsmi_dificil";
             this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
-            this.tsmi_dificil.Text = "Díficil";
+            this.tsmi_dificil.Text = "Difícil";
             this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
             // 
             // tsmi_logout

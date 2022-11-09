@@ -34,6 +34,7 @@
             this.mst_snake = new System.Windows.Forms.MenuStrip();
             this.snakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_modo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_multiplayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_semlimites = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.tmr_prima = new System.Windows.Forms.Timer(this.components);
             this.lbl_highscore = new System.Windows.Forms.Label();
             this.pic_info = new System.Windows.Forms.PictureBox();
-            this.tsmi_creditos = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_snake.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_obanai)).BeginInit();
@@ -111,6 +111,15 @@
             this.tsmi_menu.Size = new System.Drawing.Size(71, 30);
             this.tsmi_menu.Text = "Menu";
             this.tsmi_menu.Click += new System.EventHandler(this.tsmi_menu_Click);
+            // 
+            // tsmi_creditos
+            // 
+            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_creditos.Name = "tsmi_creditos";
+            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
+            this.tsmi_creditos.Text = "Créditos";
+            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // tsmi_modo
             // 
@@ -181,7 +190,7 @@
             this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificil.Name = "tsmi_dificil";
             this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
-            this.tsmi_dificil.Text = "Dificil";
+            this.tsmi_dificil.Text = "Difícil";
             this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
             // 
             // tsmi_logout
@@ -402,15 +411,6 @@
             this.pic_info.TabIndex = 128;
             this.pic_info.TabStop = false;
             this.pic_info.Click += new System.EventHandler(this.pic_info_Click);
-            // 
-            // tsmi_creditos
-            // 
-            this.tsmi_creditos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_creditos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_creditos.Name = "tsmi_creditos";
-            this.tsmi_creditos.Size = new System.Drawing.Size(96, 30);
-            this.tsmi_creditos.Text = "Créditos";
-            this.tsmi_creditos.Click += new System.EventHandler(this.tsmi_creditos_Click);
             // 
             // frm_facil
             // 
