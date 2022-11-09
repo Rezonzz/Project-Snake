@@ -417,6 +417,7 @@
             // 
             // pic_info
             // 
+            this.pic_info.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_info.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
             this.pic_info.Location = new System.Drawing.Point(665, 357);
             this.pic_info.Name = "pic_info";

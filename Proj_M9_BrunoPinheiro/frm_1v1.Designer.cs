@@ -618,6 +618,7 @@
             // lbl_editarj1
             // 
             this.lbl_editarj1.AutoSize = true;
+            this.lbl_editarj1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_editarj1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_editarj1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbl_editarj1.Location = new System.Drawing.Point(256, 2);
@@ -666,6 +667,7 @@
             // lbl_editarj2
             // 
             this.lbl_editarj2.AutoSize = true;
+            this.lbl_editarj2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_editarj2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_editarj2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbl_editarj2.Location = new System.Drawing.Point(256, 2);
@@ -680,6 +682,7 @@
             // lbl_mudarp
             // 
             this.lbl_mudarp.AutoSize = true;
+            this.lbl_mudarp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_mudarp.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_mudarp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbl_mudarp.Location = new System.Drawing.Point(449, 336);
@@ -755,6 +758,7 @@
             // 
             // pic_info1v1
             // 
+            this.pic_info1v1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_info1v1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.information;
             this.pic_info1v1.Location = new System.Drawing.Point(511, 446);
             this.pic_info1v1.Name = "pic_info1v1";

@@ -30,11 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_info1v1));
             this.pnl_top = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_minimize = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_background = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,19 +50,13 @@
             this.btn_page3 = new System.Windows.Forms.Button();
             this.btn_page2 = new System.Windows.Forms.Button();
             this.btn_page1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_minimize = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.pnl_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_background.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_top
@@ -72,6 +72,44 @@
             this.pnl_top.Size = new System.Drawing.Size(337, 28);
             this.pnl_top.TabIndex = 45;
             this.pnl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_top_MouseDown);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_minimize
+            // 
+            this.btn_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimize.FlatAppearance.BorderSize = 0;
+            this.btn_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimize.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.minus__3___1_;
+            this.btn_minimize.Location = new System.Drawing.Point(278, 0);
+            this.btn_minimize.Name = "btn_minimize";
+            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
+            this.btn_minimize.TabIndex = 8;
+            this.btn_minimize.UseVisualStyleBackColor = true;
+            this.btn_minimize.Click += new System.EventHandler(this.btn_minimize_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.close__1___1_;
+            this.btn_close.Location = new System.Drawing.Point(306, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(31, 28);
+            this.btn_close.TabIndex = 7;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label1
             // 
@@ -114,6 +152,16 @@
             this.label6.TabIndex = 136;
             this.label6.Text = "Controlos";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.enter;
+            this.pictureBox3.Location = new System.Drawing.Point(261, 193);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(47, 39);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 135;
+            this.pictureBox3.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -135,6 +183,26 @@
             this.label4.Size = new System.Drawing.Size(86, 26);
             this.label4.TabIndex = 133;
             this.label4.Text = "No Jogo";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.arrows;
+            this.pictureBox1.Location = new System.Drawing.Point(182, 355);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(87, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 132;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.keyboard_button;
+            this.pictureBox4.Location = new System.Drawing.Point(182, 279);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(87, 67);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 131;
+            this.pictureBox4.TabStop = false;
             // 
             // label3
             // 
@@ -195,6 +263,7 @@
             // btn_sair
             // 
             this.btn_sair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btn_sair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_sair.FlatAppearance.BorderSize = 2;
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sair.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,6 +279,7 @@
             // 
             // btn_page3
             // 
+            this.btn_page3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_page3.FlatAppearance.BorderSize = 2;
             this.btn_page3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_page3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,6 +294,7 @@
             // 
             // btn_page2
             // 
+            this.btn_page2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_page2.FlatAppearance.BorderSize = 2;
             this.btn_page2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_page2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +310,7 @@
             // btn_page1
             // 
             this.btn_page1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_page1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_page1.FlatAppearance.BorderSize = 2;
             this.btn_page1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_page1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,74 +322,6 @@
             this.btn_page1.Text = "1";
             this.btn_page1.UseVisualStyleBackColor = false;
             this.btn_page1.Click += new System.EventHandler(this.btn_page1_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.enter;
-            this.pictureBox3.Location = new System.Drawing.Point(261, 193);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 135;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.arrows;
-            this.pictureBox1.Location = new System.Drawing.Point(182, 355);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 132;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.keyboard_button;
-            this.pictureBox4.Location = new System.Drawing.Point(182, 279);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(87, 67);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 131;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.snake;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btn_minimize
-            // 
-            this.btn_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimize.FlatAppearance.BorderSize = 0;
-            this.btn_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimize.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.minus__3___1_;
-            this.btn_minimize.Location = new System.Drawing.Point(278, 0);
-            this.btn_minimize.Name = "btn_minimize";
-            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
-            this.btn_minimize.TabIndex = 8;
-            this.btn_minimize.UseVisualStyleBackColor = true;
-            this.btn_minimize.Click += new System.EventHandler(this.btn_minimize_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::Proj_M9_BrunoPinheiro.Properties.Resources.close__1___1_;
-            this.btn_close.Location = new System.Drawing.Point(306, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(31, 28);
-            this.btn_close.TabIndex = 7;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // frm_info1v1
             // 
@@ -336,13 +340,13 @@
             this.Text = "Info - 1v1";
             this.pnl_top.ResumeLayout(false);
             this.pnl_top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_background.ResumeLayout(false);
             this.pnl_background.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
