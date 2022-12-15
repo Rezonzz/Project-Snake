@@ -91,7 +91,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_dificuldade frm_dificuldade = new frm_dificuldade();
             frm_dificuldade.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void pic_info_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace Proj_M9_BrunoPinheiro
         {
             frm_1v1 frm_1v1 = new frm_1v1();
             frm_1v1.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btn_jogarm_MouseMove(object sender, MouseEventArgs e)
@@ -129,7 +129,7 @@ namespace Proj_M9_BrunoPinheiro
             btn_jogars.Font = new Font("Comic Sans MS", 10);
             frm_semlimites frm_semlimites = new frm_semlimites();
             frm_semlimites.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btn_jogars_MouseDown(object sender, MouseEventArgs e)
