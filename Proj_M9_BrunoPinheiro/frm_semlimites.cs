@@ -49,13 +49,6 @@ namespace Proj_M9_BrunoPinheiro
             frm_sair.Show();
         }
 
-        private void tsmi_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
         private void tsmi_dificuldade_Click(object sender, EventArgs e)
         {
             tsmi_modo.ForeColor = Color.Black;

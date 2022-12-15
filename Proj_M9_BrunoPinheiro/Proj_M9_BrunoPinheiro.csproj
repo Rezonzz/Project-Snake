@@ -158,12 +158,6 @@
     <Compile Include="frm_infosl2.Designer.cs">
       <DependentUpon>frm_infosl2.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_login.Designer.cs">
-      <DependentUpon>frm_login.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_medio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,12 +187,6 @@
     </Compile>
     <Compile Include="frm_semlimites.Designer.cs">
       <DependentUpon>frm_semlimites.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_signin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_signin.Designer.cs">
-      <DependentUpon>frm_signin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -265,9 +253,6 @@
     <EmbeddedResource Include="frm_infosl2.resx">
       <DependentUpon>frm_infosl2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_login.resx">
-      <DependentUpon>frm_login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_medio.resx">
       <DependentUpon>frm_medio.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_semlimites.resx">
       <DependentUpon>frm_semlimites.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_signin.resx">
-      <DependentUpon>frm_signin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -384,9 +366,6 @@
     <None Include="Resources\ezgif.com-gif-maker %289%29.gif" />
     <None Include="Resources\ezgif.com-gif-maker %2810%29.gif" />
     <None Include="Resources\ezgif.com-gif-maker %2811%29.gif" />
-    <Content Include="Users.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="MediaPlayer">

@@ -838,13 +838,6 @@ namespace Proj_M9_BrunoPinheiro
             frm_sair.Show();
         }
 
-        private void tsmi_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
         private void tsmi_mtfacil_Click(object sender, EventArgs e)
         {
             frm_mtfacil frm_mtfacil = new frm_mtfacil();

@@ -58,7 +58,6 @@
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_medio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificil = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
             this.tmr_temp = new System.Windows.Forms.Timer(this.components);
@@ -253,7 +252,6 @@
             this.tsmi_creditos,
             this.tsmi_modo,
             this.tsmi_dificuldade,
-            this.tsmi_logout,
             this.tsmi_sair});
             this.mst_snake.Location = new System.Drawing.Point(0, 0);
             this.mst_snake.Name = "mst_snake";
@@ -369,15 +367,6 @@
             this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
             this.tsmi_dificil.Text = "Difícil";
             // 
-            // tsmi_logout
-            // 
-            this.tsmi_logout.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_logout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_logout.Name = "tsmi_logout";
-            this.tsmi_logout.Size = new System.Drawing.Size(93, 30);
-            this.tsmi_logout.Text = "Log Out";
-            this.tsmi_logout.Click += new System.EventHandler(this.tsmi_logout_Click);
-            // 
             // tsmi_sair
             // 
             this.tsmi_sair.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -475,7 +464,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_mtfacil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_medio;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificil;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_logout;
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
         private System.Windows.Forms.ToolStripMenuItem tsmi_singleplayer;
         private System.Windows.Forms.ToolStripMenuItem tsmi_facil;

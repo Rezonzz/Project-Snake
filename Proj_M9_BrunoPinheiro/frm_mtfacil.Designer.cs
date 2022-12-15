@@ -45,7 +45,6 @@
             this.tsmi_facil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_medio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dificil = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.pic_canvas = new System.Windows.Forms.PictureBox();
             this.tmr_game = new System.Windows.Forms.Timer(this.components);
@@ -120,7 +119,6 @@
             this.tsmi_creditos,
             this.tsmi_modo,
             this.tsmi_dificuldade,
-            this.tsmi_logout,
             this.tsmi_sair});
             this.mst_snake.Location = new System.Drawing.Point(0, 0);
             this.mst_snake.Name = "mst_snake";
@@ -206,7 +204,7 @@
             this.tsmi_facil.BackColor = System.Drawing.Color.Black;
             this.tsmi_facil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_facil.Name = "tsmi_facil";
-            this.tsmi_facil.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_facil.Size = new System.Drawing.Size(136, 30);
             this.tsmi_facil.Text = "Fácil";
             this.tsmi_facil.Click += new System.EventHandler(this.tsmi_facil_Click);
             // 
@@ -215,7 +213,7 @@
             this.tsmi_medio.BackColor = System.Drawing.Color.Black;
             this.tsmi_medio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_medio.Name = "tsmi_medio";
-            this.tsmi_medio.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_medio.Size = new System.Drawing.Size(136, 30);
             this.tsmi_medio.Text = "Médio";
             this.tsmi_medio.Click += new System.EventHandler(this.tsmi_medio_Click);
             // 
@@ -224,18 +222,9 @@
             this.tsmi_dificil.BackColor = System.Drawing.Color.Black;
             this.tsmi_dificil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tsmi_dificil.Name = "tsmi_dificil";
-            this.tsmi_dificil.Size = new System.Drawing.Size(180, 30);
+            this.tsmi_dificil.Size = new System.Drawing.Size(136, 30);
             this.tsmi_dificil.Text = "Difícil";
             this.tsmi_dificil.Click += new System.EventHandler(this.tsmi_dificil_Click);
-            // 
-            // tsmi_logout
-            // 
-            this.tsmi_logout.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmi_logout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tsmi_logout.Name = "tsmi_logout";
-            this.tsmi_logout.Size = new System.Drawing.Size(93, 30);
-            this.tsmi_logout.Text = "Log Out";
-            this.tsmi_logout.Click += new System.EventHandler(this.tsmi_logout_Click);
             // 
             // tsmi_sair
             // 
@@ -423,7 +412,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_dificuldade;
         private System.Windows.Forms.ToolStripMenuItem tsmi_facil;
         private System.Windows.Forms.ToolStripMenuItem tsmi_medio;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_logout;
         private System.Windows.Forms.ToolStripMenuItem tsmi_sair;
         private System.Windows.Forms.PictureBox pic_canvas;
         private System.Windows.Forms.Timer tmr_game;

@@ -38,7 +38,6 @@
             this.btn_jogar = new System.Windows.Forms.Button();
             this.btn_jogars = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_jogarm = new System.Windows.Forms.Button();
             this.btn_creditos = new System.Windows.Forms.Button();
             this.pic_info = new System.Windows.Forms.PictureBox();
@@ -172,24 +171,6 @@
             this.btn_sair.MouseLeave += new System.EventHandler(this.btn_sair_MouseLeave);
             this.btn_sair.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_sair_MouseMove);
             // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_logout.FlatAppearance.BorderSize = 2;
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_logout.Location = new System.Drawing.Point(86, 421);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(160, 43);
-            this.btn_logout.TabIndex = 72;
-            this.btn_logout.Text = "Log out";
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            this.btn_logout.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_logout_MouseDown);
-            this.btn_logout.MouseLeave += new System.EventHandler(this.btn_logout_MouseLeave);
-            this.btn_logout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_logout_MouseMove);
-            // 
             // btn_jogarm
             // 
             this.btn_jogarm.FlatAppearance.BorderSize = 2;
@@ -242,7 +223,6 @@
             this.Controls.Add(this.btn_creditos);
             this.Controls.Add(this.btn_jogarm);
             this.Controls.Add(this.pic_info);
-            this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_jogars);
             this.Controls.Add(this.btn_jogar);
@@ -274,7 +254,6 @@
         private System.Windows.Forms.Button btn_jogar;
         private System.Windows.Forms.Button btn_jogars;
         private System.Windows.Forms.Button btn_sair;
-        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.PictureBox pic_info;
         private System.Windows.Forms.Button btn_jogarm;
         private System.Windows.Forms.Button btn_creditos;

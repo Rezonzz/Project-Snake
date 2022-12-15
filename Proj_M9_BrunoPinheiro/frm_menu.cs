@@ -30,22 +30,6 @@ namespace Proj_M9_BrunoPinheiro
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 16, 16));
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
-        private void btn_logout_MouseMove(object sender, MouseEventArgs e)
-        {
-            btn_logout.BackColor = Color.FromArgb(172, 0, 14);
-        }
-
-        private void btn_logout_MouseLeave(object sender, EventArgs e)
-        {
-            btn_logout.BackColor = Color.FromArgb(64, 0, 0);
-        }
 
         private void btn_minimize_Click(object sender, EventArgs e)
         {
@@ -54,8 +38,7 @@ namespace Proj_M9_BrunoPinheiro
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            frm_sair frm_sair = new frm_sair();
-            frm_sair.Show();
+            Application.Exit();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -65,12 +48,6 @@ namespace Proj_M9_BrunoPinheiro
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void btn_logout_MouseDown(object sender, MouseEventArgs e)
-        {
-            btn_logout.Size = new Size(145, 40);
-            btn_logout.Location = new Point(95, 422);
         }
 
         private void btn_sair_Click(object sender, EventArgs e)

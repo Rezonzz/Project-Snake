@@ -288,13 +288,6 @@ namespace Proj_M9_BrunoPinheiro
             ));
         }
 
-        private void tsmi_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
         private void tsmi_menu_Click(object sender, EventArgs e)
         {
             frm_menu frm_menu = new frm_menu();

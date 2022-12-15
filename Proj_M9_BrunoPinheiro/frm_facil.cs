@@ -202,14 +202,6 @@ namespace Proj_M9_BrunoPinheiro
                 goDown = false;
             }
         }
-
-        private void tsmi_logout_Click(object sender, EventArgs e)
-        {
-            frm_login frm_login = new frm_login();
-            frm_login.Show();
-            this.Close();
-        }
-
         private void mst_snake_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
